@@ -1,13 +1,9 @@
 # WebReel
 A web reel for coding projects.
 
-<<<<<<< HEAD
 
 //tME eeeeeeeeeeeeeeeeeee
-=======
-//GM change
->>>>>>> 741583a7fbf9dfd40d492d95cb481f714e581d3a
 
-//second change
 
-//third change
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+>>>>>>> acc1cd2544487dcd868317449f30f0dfe02330db
