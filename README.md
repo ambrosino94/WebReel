@@ -46,4 +46,8 @@ A web reel for coding projects.
 //eight change
 >>>>>>> d7933500c689224d352d7ffd6303a2091948469e
 
+<<<<<<< HEAD
 //ninth message
+=======
+//84578347598347859
+>>>>>>> 78e6275 (one)
