@@ -62,6 +62,14 @@ A web reel for coding projects.
 //4am
 
 >>>>>>> 2e3c4d6 (4am)
+<<<<<<< HEAD
+
+//10101010
+=======
 >>>>>>> 4508f218d892dc58305b40a4347f499746e493c0
+<<<<<<< HEAD
 
 //Kill me
+=======
+>>>>>>> 6c5e109b8dead7b22d0be23a92718dede9f38889
+>>>>>>> 806ae8f8cd333bc53d656f80dfbc6238b6f60eab
