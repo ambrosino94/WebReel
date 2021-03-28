@@ -37,7 +37,11 @@ A web reel for coding projects.
 <<<<<<< HEAD
 //seventh change
 =======
-//asdasdsargter tregfwe 
+//asdasdsargter tregfwe
 >>>>>>> df6478a (asdasdsad)
 
+<<<<<<< HEAD
 //hhdfjhdfjdhfhdj
+=======
+//eight change 
+>>>>>>> d7933500c689224d352d7ffd6303a2091948469e
