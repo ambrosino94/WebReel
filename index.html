@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>WebReel</title>
+  <head>
+    <title>WebReel</title>
 
-  <!-- <link rel="icon" href="Assets/Images/CovidFavicon.png"> -->
+    <!-- <link rel="icon" href="Assets/Images/CovidFavicon.png"> -->
 
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Dependencies port -->
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
-  <script language="javascript" type="text/javascript" src="b_bone.js"></script>
-  <!-- ===================================================================== -->
+    <!-- Dependencies port -->
+    <!-- <script language="javascript" type="text/javascript" src="intersection-observer.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="b_bone.js"></script>
+    <!-- ===================================================================== -->
 
 
-  <!-- This line removes any default padding and style.
-       You might only need one of these values set. -->
-  <style> body { padding: 0; margin: 0; } </style>
+    <!-- This line removes any default padding and style.
+         You might only need one of these values set. -->
+    <style> body { padding: 0; margin: 0; } </style>
 
-  <h1>header</h1>
-</head>
+  </head>
 
-<body>
-<header>
-  <div class="container">
+  <body>
+    <header>
+      <div class="nav-menu">
 
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmaxcdn.icons8.com%2FShare%2Ficon%2Fnolan%2FProgramming%2Fsource_code1600.png&f=1&nofb=1"
-    class="navlogo" alt="WebReelLogo" height="60" width="60">
+        <img src="WebReel_Coding_logo.png"
+        class="navlogo" alt="WebReelLogo" height="60" width="60">
 
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
+        <nav class="main-nav">
+          <ul class="nav_list">
+            <li class="nav_list_element"><a class="nav_a" href="#">Home</a></li>
+            <li class="nav_list_element"><a class="nav_a" href="#">Projects</a></li>
+            <li class="nav_list_element"><a class="nav_a" href="#">About</a></li>
+          </ul>
+        </nav>
 
-  </div>
-</header>
+      </div>
+    </header>
 
-  <canvas id="responsive-canvas"></canvas>
+    <main>
 
-</body>
+      <section id="introid" class="intro">
+        <h1>test</h1>
+      </section>
+
+      <div class="about">
+        <h2>test2</h2>
+      </div>
+
+      <canvas id="responsive-canvas"></canvas>
+
+    </main>
+    <script language="javascript" type="text/javascript" src="intersection-observer.js"></script>
+  </body>
 </html>
