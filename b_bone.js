@@ -43,6 +43,8 @@ var arrivato = false;
 var pagBtnX;
 var pagBtnY;
 var pagBtnSize;
+
+
 // _ _ _
 // \\/\/orkspace
 //  ═══════════════════════════════ ° ═══════════════════════════════
@@ -77,24 +79,16 @@ function setup() {
   // console.log(nextBtn.x)
   selector = new Selector(group1.x, pagBtnY, pagBtnSize);
 
-  description = document.getElementById("d1");
-  description.style.display = "block";
+  // description = document.getElementById("d1");
+  // description.style.display = "block";
 }
 
 function draw() {
-// <<<<<<< HEAD
 
-
-// =======
-// <<<<<<< HEAD
-  var canvas = document.getElementById('responsive-canvas');
-  var heightRatio = 1;
-  canvas.height = canvas.width * heightRatio;
   background(0);
   fill(200,100,50);
   rect(100,100,50,50);
-// =======
-// >>>>>>> 3c0381e9a8c76d9d12ed5ddad8f2a55b4d2d0f22
+
   background(12);
   noStroke();
   fill(255);
@@ -115,7 +109,7 @@ function draw() {
   selector.Disp();
 
 
->>>>>>> 7d73dcea9039c6b1e51cf64a4c7f7fd47c7dd537
+
 
 }
 
