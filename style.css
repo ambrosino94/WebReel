@@ -1,3 +1,9 @@
+:root{
+  --navlogo_height: 50px;
+}
+
+/* navE_padding-top = 1/5 * logo_Height */
+
 
 * {box-sizing: border-box;
   margin: 0;
@@ -14,6 +20,11 @@ body{
 .navlogo{
   float: left;
   padding: 2px,1px;
+  padding-bottom: 2px;
+  width: 65px;
+  height: var(--navlogo_height);
+  /* height: 50px; */
+  cursor: pointer;
 }
 
 .container{
@@ -31,12 +42,15 @@ header{
   right: 0;
   display: flex;
   z-index: 1000;
-  padding: 2em 3em;
+  /* padding: 2em 3em; */
+  padding: 0px;
+  padding-left: 10px;
   justify-content: space-between;
   align-items: center;
   background: var(--background);
   color: var(--text);
   transition: background 125ms ease-in;
+  border-radius: 0px 0px 5px 5px;
 }
 
 header::after{
@@ -50,12 +64,19 @@ header::after{
   padding: 0;
   display: flex;
   list-style: none;
+  position: absolute;
+  /* @include ease-out; */
+  right: 35px;
+  box-sizing: border-box;
 }
 
 .nav_list_element{
   display: inline-block;
-  margin-left: 52px;
-  padding-top: 14px;
+  margin-left: 32px;
+  padding-top: calc(var(--navlogo_height) - 40px);
+  padding-bottom: 10px;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .nav_a{
@@ -86,7 +107,7 @@ header::after{
   --text: #262626;
   --text-inverse: #f4f4f4;
   --background: #f4f4f4;
-box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .intro{
@@ -96,4 +117,11 @@ box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
   background-blend-mode: multiply;
   color: white;
   text-align: center;
+}
+
+.rpar{
+  padding: 4em 0;
+  max-width: 900px;
+  margin: 0 auto;
+  background: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.baltana.com%2Ffiles%2Fwallpapers-5%2FWhite-Background-Wallpaper-16577.jpg&f=1&nofb=1);
 }
