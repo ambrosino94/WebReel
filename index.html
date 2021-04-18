@@ -1,56 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>WebReel</title>
+  <head>
+    <title>WebReel</title>
 
-  <!-- <link rel="icon" href="Assets/Images/CovidFavicon.png"> -->
+    <!-- style and stuff -->
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+    <!-- <link rel="icon" href="Assets/Images/CovidFavicon.png"> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-
-  <!-- Dependencies port -->
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
-  <script language="javascript" type="text/javascript" src="b_bone.js"></script>
-  <!-- ===================================================================== -->
+    <!-- Dependencies port -->
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="classes/arcanum.js"></script>
+    <script language="javascript" type="text/javascript" src="b_bone.js"></script>
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
 
 
-  <!-- This line removes any default padding and style.
-       You might only need one of these values set. -->
-  <style> body { padding: 0; margin: 0; } </style>
+    <style> body { padding: 0; margin: 0; } </style>
+  </head>
 
-  <!-- <h1>header</h1> -->
-</head>
+  <body>
+    <!-- Header -->
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+    <header>
+      <div class="nav-menu">
 
-<body>
-<header>
-  <div class="container">
+        <img src="WebReel_Coding_logo.png"
+        class="navlogo" alt="WebReelLogo" height="60" width="60">
 
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmaxcdn.icons8.com%2FShare%2Ficon%2Fnolan%2FProgramming%2Fsource_code1600.png&f=1&nofb=1"
-    class="navlogo" alt="WebReelLogo" height="60" width="60">
+        <nav class="main-nav">
+          <ul class="nav_list">
+            <li class="nav_list_element"><a class="nav_a" href="#">Home</a></li>
+            <li class="nav_list_element"><a class="nav_a" href="#">Projects</a></li>
+            <li class="nav_list_element"><a class="nav_a" href="#">About</a></li>
+          </ul>
+        </nav>
 
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
+      </div>
+    </header>
+    <main>
 
-  </div>
-</header>
-<div class="game"
-  <canvas id="responsive-canvas"></canvas>
-  <!-- <script type="text/javascript">
-    var context = document.querySelector("canvas").getContext("2d");
-    var render = function() {
-      context.canvas.width = document.documentElement.clientWidth*0.5;
-      context.canvas.height = document.documentElement.clientHeight*1;
-      background(150);
-    }
-    window.addEventListener("resize",render);
-    render();
-  </script> -->
-</div>
-</body>
+
+      <!-- Home Canvas -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+      <section class="intro">
+        <h1>test</h1>
+      </section>
+
+      <!-- Game Canvas -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+      <div class="game" id="gameParent" position="relative">
+        <!-- <canvas id="responsive-canvas" width="100%" height="100%" position="relative"></canvas> -->
+        <!-- <script type="text/javascript">
+          var context = document.querySelector("canvas").getContext("2d");
+          var render = function() {
+            context.canvas.width = document.documentElement.clientWidth*0.5;
+            context.canvas.height = document.documentElement.clientHeight*1;
+            background(150);
+          }
+          window.addEventListener("resize",render);
+          render();
+        </script> -->
+      </div>
+
+      <!-- Descriptions -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+      <div class="description" position="absolute">
+        <div id="d1">d1</div>
+        <div id="d2">d2</div>
+        <div id="d3">d3</div>
+        <div id="d4">d4</div>
+        <div id="d5">d5</div>
+      </div>
+
+      <script>
+      var descriptions = document.querySelectorAll(".description");
+      for(var i = 0; i < descriptions[0].children.length; i++) {
+        descriptions[0].children[i].style.display = "none"
+      }
+
+      var description = document.getElementById("d1");
+      description.style.display = "block";
+      </script>
+
+    </main>
+
+    <!-- Observer -->
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+    <script language="javascript" type="text/javascript" src="intersection-observer.js"></script>
+
+  </body>
+  <!-- Footer -->
+  <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
 </html>

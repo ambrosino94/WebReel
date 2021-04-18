@@ -1,21 +1,19 @@
-#responsive-canvas {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: -1;
-}
 
 * {box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-
-
 body{
   margin: 0;
   background: #FEFDF3;
+  font-family: sans-serif;
   font-weight: 240;
+}
+
+.navlogo{
+  float: left;
+  padding: 2px,1px;
 }
 
 .container{
@@ -24,38 +22,78 @@ body{
 }
 
 header{
-  background: #0B0B0B;
+  --background: transparent;
+  --text: #FCFAEA;
+  --inverted-text: #262626;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 1000;
+  padding: 2em 3em;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background);
+  color: var(--text);
+  transition: background 125ms ease-in;
 }
+
 header::after{
   content: '';
   display: table;
   clear: both;
 }
 
-.navlogo{
-  float: left;
-  padding: 2px,1px;
-}
-
-nav{
-  float: right;
-}
-
-nav ul{
+.nav_list{
   margin: 0;
   padding: 0;
+  display: flex;
   list-style: none;
 }
 
-nav ul li{
+.nav_list_element{
   display: inline-block;
   margin-left: 52px;
   padding-top: 14px;
 }
 
-nav a{
-  color: #FCFAEA;
+.nav_a{
+  --spacing: 2em;
+  display: inline-block;
+  position: relative;
+  padding: calc(var(--spacing/2) var(--spacing))
+  color: inherit;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 25px;
+  letter-spacing: 2px;
+}
+
+.nav_a:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--spacing);
+  right: var(--spacing);
+  -webkit-transform: scaleX(0)
+  transition: -webkit-transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+}
+
+.nav-scrolled{
+  --text: #262626;
+  --text-inverse: #f4f4f4;
+  --background: #f4f4f4;
+box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.intro{
+  padding: 50vh 0;
+  background: #123 url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F03%2FFree-Dark-Blue-Wallpaper-HD.jpg&f=1&nofb=1);
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: white;
+  text-align: center;
 }
