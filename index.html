@@ -17,13 +17,12 @@
     <script language="javascript" type="text/javascript" src="b_bone.js"></script>
     <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
 
-
     <style> body { padding: 0; margin: 0; } </style>
   </head>
 
   <body>
-    <!-- Header -->
-    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+<!-- Header -->
+<!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
 
   </head>
 
@@ -34,44 +33,46 @@
         <!-- <img src="WebReel_Coding_logo.png"
         class="navlogo" alt="WebReelLogo" height="60" width="60"> -->
 
+        <!-- Logo -->
+        <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
         <nav class="main-nav">
           <img src="WebReel_Coding_logo.png"
           class="navlogo" alt="WebReelLogo">
 
-
+        <!-- Pagination -->
+        <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
           <div class="pagination">
-            <button class="pagination-button active" id="g1">
+            <button class="pagination-button active" id="g1" onclick="ActiveGroup('g1')">
                 <span class="visually-hidden">Go to page 1</span>
               <span> 1 </span>
               </button>
-              <button class="pagination-button" id="g2">
+              <button class="pagination-button" id="g2" onclick="ActiveGroup('g2')">
                 <span class="visually-hidden">Go to page 2</span>
               </button>
-              <button class="pagination-button" id="g3">
+              <button class="pagination-button" id="g3" onclick="ActiveGroup('g3')">
                 <span class="visually-hidden">Go to page 3</span>
               </button>
-              <button class="pagination-button" id="g4">
+              <button class="pagination-button" id="g4" onclick="ActiveGroup('g4')">
                 <span class="visually-hidden">Go to page 4</span>
               </button>
-            <span class="pagination-current" aria-hidden="true" onclick="ActiveGroup()"></span>
+            <span class="pagination-current" aria-hidden="true"></span>
           </div>
 
           <script>
           const paginationButtons = document.querySelectorAll(".pagination-button");
 
-          function ActiveGroup(){
-            activeId = document.querySelector('.active').id;
-            console.log(activeId);
-            // Accessing all descriptions through query selection
+          function ActiveGroup(id){
+            descriptionId = "d" + id.substring(1);
             descriptions = document.querySelectorAll(".description");
-
+            console.log(descriptionId);
             // Invisibility cape for all descriptions
             for(var i = 0; i < descriptions[0].children.length; i++) {
               descriptions[0].children[i].style.display = "none"
             }
 
             // Except for the one imported in the argument id
-            description = document.getElementById(activeId);
+            description = document.getElementById(descriptionId);
+            console.log(description);
             description.style.display = "block";
 
           }
@@ -82,29 +83,45 @@
 
             if (activeButton) {
 
-              descriptions = document.querySelectorAll(".description");
-
-              // Invisibility cape for all descriptions
-              for(var i = 0; i < descriptions[0].children.length; i++) {
-                descriptions[0].children[i].style.display = "none"
-              }
-              console.log(str(activeButton.id))
-              description = document.getElementById(activeButton.id);
-              description.style.display = "block";
-
               activeButton.classList.remove('active');
 
 
             }
             e.target.classList.add('active');
-            console.log(activeButton.id)
+
           }
 
           paginationButtons.forEach(button => button.addEventListener('click', handleClick));
           paginationButtons.forEach(button => button.addEventListener('touchstart', handleClick));
-          </script>
+        </script>
 
 
+<!-- Note: Another pagination action approach would be with a custom event
+Template:
+
+html
+  <button type="button"
+          className="btn btn-default"
+          onClick="invoke"
+          name='gotoNode'
+          data-arg1='1234'>GotoNode</button>
+
+
+js
+
+  invoke = (event) => {
+      let nameOfFunction = this[event.target.name];
+      let arg1 = event.target.getAttribute('data-arg1');
+      // We can add more arguments as needed...
+      window[nameOfFunction](arg1)
+      // Hope the function is in the window.
+      // Else the respective object need to be used
+      })
+    } -->
+
+
+        <!-- Navigation Buttons -->
+        <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
           <ul class="nav_list">
             <li class="nav_list_element"><a class="nav_a" href="#">Home</a></li>
             <li class="nav_list_element"><a class="nav_a" href="#">Projects</a></li>
@@ -117,15 +134,15 @@
     <main>
 
 
-      <!-- Home Canvas -->
-      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+<!-- Home Canvas -->
+<!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
       <section class="intro">
         <h1>test</h1>
       </section>
 
 
-      <!-- Game Canvas -->
-      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+<!-- Game Canvas -->
+<!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
       <div class="game" id="gameParent" position="relative">
         <!-- <canvas id="responsive-canvas" width="100%" height="100%" position="relative"></canvas> -->
         <!-- <script type="text/javascript">
@@ -140,8 +157,8 @@
         </script> -->
       </div>
 
-      <!-- Descriptions -->
-      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+<!-- Descriptions -->
+<!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
       <div class="description" position="absolute">
         <div id="d1">d1</div>
         <div id="d2">d2</div>
@@ -150,8 +167,22 @@
         <div id="d5">d5</div>
       </div>
 
+      <!-- Coding sharing options -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+      <!-- <div class="code_wrap_btn">
+        <span>Code</span>
+        <div class="wrap_btn_ctnr">
+            <i class="fas fa-code"></i>
+            <i class="processing"><div class="pText">openprocessing.org</div></i> -->
+
+<!--             <i class="fab fa-instagram"></i>
+            <i class="fab fa-github"></i> -->
+
+        <!-- </div>
+    </div> -->
 
 
+<!-- <a href="https://dribbble.com/YancyMin" class="dr-url" target="_blank"><img class="dr" src="https://cdn.dribbble.com/assets/logo-footer-hd-a05db77841b4b27c0bf23ec1378e97c988190dfe7d26e32e1faea7269f9e001b.png" alt=""></a> -->
 
 
       <p class="rpar">
