@@ -1,47 +1,3 @@
-var nextBtn = {x: 0, y: 0};
-
-var group1, group2, group3;
-var selector;
-var moveTrigger = false;
-var arrivato = false;
-
-
-
-function setup() {
-  createCanvas(windowWidth,windowHeight);
-  group1 = new GroupBtn(500,500,120);
-  group2 = new GroupBtn(800,500,120);
-  group3 = new GroupBtn(1100,500,120);
-  group4 = new GroupBtn(1400,500,120);
-  selector = new Selector(800,500,120);
-}
-
-
-function draw() {
-  background(53, 53, 51);
-  selector.GroupChange(nextBtn.x);
-  //selector.Disp();
-  group1.Disp();
-  group2.Disp();
-  group3.Disp();
-  group4.Disp();
-  selector.GroupChange(nextBtn.x);
-  selector.Disp();
-}
-
-function mouseClicked(){
-
-  print(moveTrigger);
-//   print(prevBtn.x + "" + prevBtn.y);
-
-}
-
-
-
-// tab2
-
-
-
 class GroupBtn{
 
   // Data--------------------------
@@ -52,12 +8,23 @@ class GroupBtn{
   }
 
   // Methods-----------------------
-  Disp(){
+  Disp(id){
 
     if ( mouseIsPressed && dist(mouseX,mouseY,this.x,this.y) <= this.r && moveTrigger == false){
       moveTrigger = true;
       nextBtn.x = this.x;
-      //this.Swap(prevBtnX);
+
+      // Accessing all descriptions through query selection
+      descriptions = document.querySelectorAll(".description");
+
+      // Invisibility cape for all descriptions
+      for(var i = 0; i < descriptions[0].children.length; i++) {
+        descriptions[0].children[i].style.display = "none"
+      }
+
+      // Except for the one imported in the argument id
+      description = document.getElementById(id);
+      description.style.display = "block";
 
     }
 
@@ -66,20 +33,21 @@ class GroupBtn{
     ellipse(this.x, this.y,2*this.r,2*this.r);
   }
 
+  ChangeContent(id){
+    if ( mouseIsPressed && dist(mouseX,mouseY,this.x,this.y) <= this.r){
+      for(var i = 0; i < descriptions.length; i++) {
+        descriptions[i].style('display','none');
+      }
 
+      descriptions[id].style('display','block')
+      console.log(description[id]);
+      console.log('done');
+    }
+  }
 
 
 
 }
-
-
-
-
-// tab3
-
-
-
-
 
 class Selector {
 
@@ -98,6 +66,7 @@ class Selector {
   GroupChange(nextBtnX) {
     if (moveTrigger) {
       this.Swap(nextBtnX);
+      console.log(nextBtnX);
     }
   }
 

@@ -3,57 +3,131 @@
   <head>
     <title>WebReel</title>
 
+    <!-- style and stuff -->
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
     <!-- <link rel="icon" href="Assets/Images/CovidFavicon.png"> -->
-
-    <<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    =======
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    >>>>>>> 7d73dcea9039c6b1e51cf64a4c7f7fd47c7dd537
 
     <!-- Dependencies port -->
-    <!-- <script language="javascript" type="text/javascript" src="intersection-observer.js"></script> -->
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="classes/arcanum.js"></script>
     <script language="javascript" type="text/javascript" src="b_bone.js"></script>
-    <!-- ===================================================================== -->
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
 
 
-    <!-- This line removes any default padding and style.
-    You might only need one of these values set. -->
     <style> body { padding: 0; margin: 0; } </style>
+  </head>
 
-    <<<<<<< HEAD
+  <body>
+    <!-- Header -->
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+
   </head>
 
   <body>
     <header>
       <div class="nav-menu">
 
-        <img src="WebReel_Coding_logo.png"
-        class="navlogo" alt="WebReelLogo" height="60" width="60">
+        <!-- <img src="WebReel_Coding_logo.png"
+        class="navlogo" alt="WebReelLogo" height="60" width="60"> -->
 
         <nav class="main-nav">
+          <img src="WebReel_Coding_logo.png"
+          class="navlogo" alt="WebReelLogo">
+
+
+          <div class="pagination">
+            <button class="pagination-button active" id="g1">
+                <span class="visually-hidden">Go to page 1</span>
+              <span> 1 </span>
+              </button>
+              <button class="pagination-button" id="g2">
+                <span class="visually-hidden">Go to page 2</span>
+              </button>
+              <button class="pagination-button" id="g3">
+                <span class="visually-hidden">Go to page 3</span>
+              </button>
+              <button class="pagination-button" id="g4">
+                <span class="visually-hidden">Go to page 4</span>
+              </button>
+            <span class="pagination-current" aria-hidden="true" onclick="ActiveGroup()"></span>
+          </div>
+
+          <script>
+          const paginationButtons = document.querySelectorAll(".pagination-button");
+
+          function ActiveGroup(){
+            activeId = document.querySelector('.active').id;
+            console.log(activeId);
+            // Accessing all descriptions through query selection
+            descriptions = document.querySelectorAll(".description");
+
+            // Invisibility cape for all descriptions
+            for(var i = 0; i < descriptions[0].children.length; i++) {
+              descriptions[0].children[i].style.display = "none"
+            }
+
+            // Except for the one imported in the argument id
+            description = document.getElementById(activeId);
+            description.style.display = "block";
+
+          }
+
+          function handleClick(e) {
+            e.preventDefault();
+            const activeButton = document.querySelector('.active');
+
+            if (activeButton) {
+
+              descriptions = document.querySelectorAll(".description");
+
+              // Invisibility cape for all descriptions
+              for(var i = 0; i < descriptions[0].children.length; i++) {
+                descriptions[0].children[i].style.display = "none"
+              }
+              console.log(str(activeButton.id))
+              description = document.getElementById(activeButton.id);
+              description.style.display = "block";
+
+              activeButton.classList.remove('active');
+
+
+            }
+            e.target.classList.add('active');
+            console.log(activeButton.id)
+          }
+
+          paginationButtons.forEach(button => button.addEventListener('click', handleClick));
+          paginationButtons.forEach(button => button.addEventListener('touchstart', handleClick));
+          </script>
+
+
           <ul class="nav_list">
             <li class="nav_list_element"><a class="nav_a" href="#">Home</a></li>
             <li class="nav_list_element"><a class="nav_a" href="#">Projects</a></li>
             <li class="nav_list_element"><a class="nav_a" href="#">About</a></li>
           </ul>
         </nav>
+
       </div>
     </header>
-
     <main>
 
+
+      <!-- Home Canvas -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
       <section class="intro">
         <h1>test</h1>
       </section>
 
-      <div class="game"
-        <canvas id="responsive-canvas"></canvas>
+
+      <!-- Game Canvas -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+      <div class="game" id="gameParent" position="relative">
+        <!-- <canvas id="responsive-canvas" width="100%" height="100%" position="relative"></canvas> -->
         <!-- <script type="text/javascript">
           var context = document.querySelector("canvas").getContext("2d");
           var render = function() {
@@ -66,9 +140,59 @@
         </script> -->
       </div>
 
-      <canvas id="responsive-canvas"></canvas>
+      <!-- Descriptions -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+      <div class="description" position="absolute">
+        <div id="d1">d1</div>
+        <div id="d2">d2</div>
+        <div id="d3">d3</div>
+        <div id="d4">d4</div>
+        <div id="d5">d5</div>
+      </div>
+
+
+
+
+
+      <p class="rpar">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet iaculis enim, eget fermentum eros. Phasellus egestas mattis sodales. Nam fringilla dapibus libero quis luctus. Proin quis rhoncus libero. Pellentesque eget justo condimentum leo placerat tristique a quis enim. Proin urna eros, luctus et nisl in, consequat cursus ex. Aliquam erat volutpat. Aliquam vestibulum suscipit felis a auctor. Morbi vehicula finibus urna, quis sagittis ipsum ultrices sed. Cras lorem leo, tincidunt at dapibus et, bibendum in leo. Nulla eget purus venenatis, gravida tellus sit amet, volutpat dolor. Donec nec est non lacus cursus condimentum. Nulla aliquet, enim a euismod egestas, orci tellus placerat velit, vel dapibus quam ligula sed quam.
+
+        Nunc et augue lacus. Duis vestibulum ultrices leo, eu faucibus eros accumsan id. In rhoncus blandit quam ut sagittis. Nam auctor posuere dui quis vulputate. In vitae turpis quis erat fermentum pharetra id id turpis. Nulla venenatis faucibus fringilla. Sed mattis pharetra nibh, eu finibus arcu eleifend ut. Quisque vehicula ipsum eget mollis posuere. Quisque iaculis, metus et imperdiet laoreet, turpis nulla blandit tellus, in euismod purus tortor ac lectus. Vestibulum accumsan hendrerit sem, quis malesuada dolor dignissim quis. Donec vehicula urna tristique, facilisis dolor in, viverra arcu. Curabitur sed nunc tincidunt, vulputate massa sollicitudin, consectetur felis. Ut et finibus ligula. Aliquam in accumsan velit. Duis bibendum diam nunc, non faucibus dolor condimentum non.
+
+        Praesent ut libero vitae urna eleifend commodo in vitae sem. Ut sed luctus metus. Suspendisse dignissim eget metus et tristique. Ut vel tempor velit, a tempus metus. Maecenas posuere pulvinar condimentum. Etiam mollis in ante sit amet viverra. Donec interdum imperdiet imperdiet. Aliquam pharetra velit et placerat fermentum. Nullam varius commodo vestibulum. Pellentesque sed lorem vitae diam posuere pharetra a aliquam purus. Fusce vitae mauris justo. Etiam porta, turpis id vehicula finibus, arcu nibh lacinia diam, id tincidunt eros velit eget magna.
+
+        Vestibulum sed faucibus arcu. Nullam accumsan pharetra arcu, ac bibendum sapien molestie a. Pellentesque mattis erat ut eleifend fermentum. Nullam fringilla est vitae finibus sollicitudin. Aenean faucibus leo a orci interdum, a vehicula odio vehicula. Integer tempus, ipsum et vestibulum accumsan, velit leo bibendum nisi, at semper diam ante ut lorem. Fusce malesuada in nisl et hendrerit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam ultricies ornare tristique. Sed fermentum facilisis turpis, sit amet blandit metus accumsan et. Curabitur ultricies ante purus, non pretium lectus efficitur sit amet. Nam accumsan placerat placerat. In hac habitasse platea dictumst. Donec maximus arcu nec nisl faucibus elementum. Nam eu neque non justo dapibus commodo in sed nunc. Donec interdum, massa at pulvinar efficitur, lectus metus aliquam lorem, eu ultricies turpis mi et turpis.
+
+        Aenean quis risus sapien. Morbi pulvinar quam porta orci imperdiet suscipit. Aliquam id fermentum ligula. Praesent sed molestie erat. Phasellus ultricies magna elit, eu pulvinar tellus imperdiet a. Etiam dapibus nulla et blandit semper. Duis hendrerit sapien orci, eu tempor metus suscipit dapibus. Morbi eu pulvinar metus. Ut placerat ac ante ut maximus. Integer commodo massa quis dignissim hendrerit. Donec a ante nec urna consectetur vestibulum dignissim vitae ligula.
+
+        Nulla id ipsum at enim sodales rhoncus. Quisque volutpat feugiat rhoncus. Vestibulum sit amet egestas metus, at ultrices mauris. Vestibulum commodo, nisi varius vulputate laoreet, ipsum odio feugiat turpis, ut cursus nunc ex vitae mi. Maecenas nec dolor libero. Maecenas at tempus metus, et tempor odio. Phasellus hendrerit lacus eget hendrerit ornare. Nunc vel tincidunt dolor, eget dapibus ipsum. Pellentesque et feugiat est, vel egestas ipsum. Quisque feugiat quis sem non fermentum. Nulla ultricies orci eu velit laoreet, sit amet commodo nisl viverra.
+
+        Morbi consequat erat ante, id vehicula justo sollicitudin quis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut maximus odio felis, sed tristique nulla ornare et. Sed at nunc velit. Nam hendrerit magna gravida lacus ultrices, eu sollicitudin turpis iaculis. Pellentesque a lacinia libero, ut viverra mauris. Etiam et mauris risus. Quisque molestie eget nibh ut euismod. Nulla non interdum metus. Phasellus nec convallis felis. Sed fringilla gravida iaculis. Aliquam tincidunt tempor dolor, vitae fringilla risus. Nullam at enim at nibh blandit tincidunt.
+
+        Vivamus sed suscipit tellus. Sed at nisl feugiat lorem maximus accumsan. Duis libero justo, venenatis eget metus at, hendrerit rhoncus ante. Aliquam ac ex sagittis, ultricies sapien ut, laoreet ante. Mauris efficitur orci est, non pellentesque elit posuere ut. Integer dolor massa, accumsan vel varius a, eleifend euismod sem. Duis mattis tellus nec metus vulputate, lobortis mattis ipsum tempus. Aenean iaculis, lectus vel aliquam ultrices, augue libero fringilla ligula, et rutrum dolor turpis nec odio. Suspendisse nec eleifend nunc, sed gravida mauris. Nam sed neque eleifend, bibendum odio sed, elementum metus. Etiam quis consequat felis.
+
+        Donec diam urna, sagittis ut rutrum varius, auctor quis quam. Curabitur ut malesuada nibh, nec egestas nisi. Integer quis ex at enim facilisis efficitur quis ut lectus. Ut et pellentesque nunc. Integer leo mi, sagittis vel eleifend ac, condimentum vel nunc. Aliquam vel nulla elit. Nullam congue metus non enim vulputate, eu scelerisque tortor rutrum. Integer in lectus et magna faucibus venenatis.
+
+        Sed fringilla, sapien et porttitor ullamcorper, tellus ex maximus metus, feugiat porttitor dolor tellus eget ipsum. Aliquam massa nunc, fringilla at turpis vitae, blandit lobortis felis. Donec pellentesque mollis orci, ut dignissim libero ultrices ac. Suspendisse sit amet volutpat mi, nec gravida dolor. Curabitur in volutpat tellus. Sed aliquet cursus ex, vel pretium metus ultricies nec. Aliquam auctor orci eu nisi tempus placerat. Morbi sagittis lobortis eros sit amet consectetur.
+      </p>
+
+      <script>
+      var descriptions = document.querySelectorAll(".description");
+      for(var i = 0; i < descriptions[0].children.length; i++) {
+        descriptions[0].children[i].style.display = "none"
+      }
+
+      var description = document.getElementById("d1");
+      description.style.display = "block";
+      </script>
 
     </main>
+
+    <!-- Observer -->
+    <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
     <script language="javascript" type="text/javascript" src="intersection-observer.js"></script>
+
   </body>
+  <!-- Footer -->
+  <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
 </html>
