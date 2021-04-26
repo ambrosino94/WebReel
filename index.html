@@ -31,10 +31,80 @@
     <header>
       <div class="nav-menu">
 
-        <img src="WebReel_Coding_logo.png"
-        class="navlogo" alt="WebReelLogo" height="60" width="60">
+        <!-- <img src="WebReel_Coding_logo.png"
+        class="navlogo" alt="WebReelLogo" height="60" width="60"> -->
 
         <nav class="main-nav">
+          <img src="WebReel_Coding_logo.png"
+          class="navlogo" alt="WebReelLogo">
+
+
+          <div class="pagination">
+            <button class="pagination-button active" id="g1">
+                <span class="visually-hidden">Go to page 1</span>
+              <span> 1 </span>
+              </button>
+              <button class="pagination-button" id="g2">
+                <span class="visually-hidden">Go to page 2</span>
+              </button>
+              <button class="pagination-button" id="g3">
+                <span class="visually-hidden">Go to page 3</span>
+              </button>
+              <button class="pagination-button" id="g4">
+                <span class="visually-hidden">Go to page 4</span>
+              </button>
+            <span class="pagination-current" aria-hidden="true" onclick="ActiveGroup()"></span>
+          </div>
+
+          <script>
+          const paginationButtons = document.querySelectorAll(".pagination-button");
+
+          function ActiveGroup(){
+            activeId = document.querySelector('.active').id;
+            console.log(activeId);
+            // Accessing all descriptions through query selection
+            descriptions = document.querySelectorAll(".description");
+
+            // Invisibility cape for all descriptions
+            for(var i = 0; i < descriptions[0].children.length; i++) {
+              descriptions[0].children[i].style.display = "none"
+            }
+
+            // Except for the one imported in the argument id
+            description = document.getElementById(activeId);
+            description.style.display = "block";
+
+          }
+
+          function handleClick(e) {
+            e.preventDefault();
+            const activeButton = document.querySelector('.active');
+
+            if (activeButton) {
+
+              descriptions = document.querySelectorAll(".description");
+
+              // Invisibility cape for all descriptions
+              for(var i = 0; i < descriptions[0].children.length; i++) {
+                descriptions[0].children[i].style.display = "none"
+              }
+              console.log(str(activeButton.id))
+              description = document.getElementById(activeButton.id);
+              description.style.display = "block";
+
+              activeButton.classList.remove('active');
+
+
+            }
+            e.target.classList.add('active');
+            console.log(activeButton.id)
+          }
+
+          paginationButtons.forEach(button => button.addEventListener('click', handleClick));
+          paginationButtons.forEach(button => button.addEventListener('touchstart', handleClick));
+          </script>
+
+
           <ul class="nav_list">
             <li class="nav_list_element"><a class="nav_a" href="#">Home</a></li>
             <li class="nav_list_element"><a class="nav_a" href="#">Projects</a></li>
@@ -79,6 +149,10 @@
         <div id="d4">d4</div>
         <div id="d5">d5</div>
       </div>
+
+
+
+
 
       <p class="rpar">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet iaculis enim, eget fermentum eros. Phasellus egestas mattis sodales. Nam fringilla dapibus libero quis luctus. Proin quis rhoncus libero. Pellentesque eget justo condimentum leo placerat tristique a quis enim. Proin urna eros, luctus et nisl in, consequat cursus ex. Aliquam erat volutpat. Aliquam vestibulum suscipit felis a auctor. Morbi vehicula finibus urna, quis sagittis ipsum ultrices sed. Cras lorem leo, tincidunt at dapibus et, bibendum in leo. Nulla eget purus venenatis, gravida tellus sit amet, volutpat dolor. Donec nec est non lacus cursus condimentum. Nulla aliquet, enim a euismod egestas, orci tellus placerat velit, vel dapibus quam ligula sed quam.
