@@ -1,16 +1,6 @@
 #responsive-canvas {
   width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: -1;
 }
-
-* {box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-
 
 body{
   margin: 0;
@@ -72,7 +62,7 @@ header{
   letter-spacing: 2px;
 }
 
-/* .nav_a:after{
+.nav_a:after{
   content: "";
   position: absolute;
   bottom: 0;
@@ -82,7 +72,7 @@ header{
   transition: -webkit-transform 150ms ease-in-out;
   transition: transform 150ms ease-in-out;
   transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
-} */
+}
 
 .nav-scrolled{
   --text: #262626;
@@ -98,10 +88,4 @@ box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
   background-blend-mode: multiply;
   color: white;
   text-align: center;
-}
-
-.about{
-  padding: 1em 0;
-  max-width: 90px;
-  margin: 0 auto;
 }
