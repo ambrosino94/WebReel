@@ -31,6 +31,8 @@
 //  ═══════════════════════════════ ° ═══════════════════════════════
 var canvas;                  //main canvas
 var ctx;                     //context
+var groupId = 'g1';          //global group id
+var descriptionId = 'd1';    //global description id
 var description;             //current selected description
 var descriptions;            //all descriptions
 

@@ -7,6 +7,7 @@
     <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
     <!-- <link rel="icon" href="Assets/Images/CovidFavicon.png"> -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/ed2ee1aa4d.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
 
@@ -16,16 +17,11 @@
     <script language="javascript" type="text/javascript" src="classes/arcanum.js"></script>
     <script language="javascript" type="text/javascript" src="b_bone.js"></script>
     <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
-
-    <style> body { padding: 0; margin: 0; } </style>
   </head>
 
-  <body>
+
 <!-- Header -->
 <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
-
-  </head>
-
   <body>
     <header>
       <div class="nav-menu">
@@ -62,9 +58,10 @@
           const paginationButtons = document.querySelectorAll(".pagination-button");
 
           function ActiveGroup(id){
+            groupId = id;
             descriptionId = "d" + id.substring(1);
             descriptions = document.querySelectorAll(".description");
-            console.log(descriptionId);
+            // console.log(descriptionId);
             // Invisibility cape for all descriptions
             for(var i = 0; i < descriptions[0].children.length; i++) {
               descriptions[0].children[i].style.display = "none"
@@ -72,7 +69,7 @@
 
             // Except for the one imported in the argument id
             description = document.getElementById(descriptionId);
-            console.log(description);
+            // console.log(description);
             description.style.display = "block";
 
           }
@@ -131,9 +128,8 @@ js
 
       </div>
     </header>
-    <main>
 
-
+  <main>
 <!-- Home Canvas -->
 <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
       <section class="intro">
@@ -169,21 +165,19 @@ js
 
       <!-- Coding sharing options -->
       <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
-      <!-- <div class="code_wrap_btn">
-        <span>Code</span>
-        <div class="wrap_btn_ctnr">
+      <div class="code_wrap_btn">
+        <span id="code_wrap_txt">Code</span>
+        <div class="container" onclick="ActiveCode()">
             <i class="fas fa-code"></i>
-            <i class="processing"><div class="pText">openprocessing.org</div></i> -->
+            <i class="processing"><div class="pText">openprocessing.org</div></i>
+        </div>
+    </div>
 
-<!--             <i class="fab fa-instagram"></i>
-            <i class="fab fa-github"></i> -->
-
-        <!-- </div>
-    </div> -->
-
-
-<!-- <a href="https://dribbble.com/YancyMin" class="dr-url" target="_blank"><img class="dr" src="https://cdn.dribbble.com/assets/logo-footer-hd-a05db77841b4b27c0bf23ec1378e97c988190dfe7d26e32e1faea7269f9e001b.png" alt=""></a> -->
-
+      <script>
+      function ActiveCode(){
+        console.log(groupId);
+      }
+      </script>
 
       <p class="rpar">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet iaculis enim, eget fermentum eros. Phasellus egestas mattis sodales. Nam fringilla dapibus libero quis luctus. Proin quis rhoncus libero. Pellentesque eget justo condimentum leo placerat tristique a quis enim. Proin urna eros, luctus et nisl in, consequat cursus ex. Aliquam erat volutpat. Aliquam vestibulum suscipit felis a auctor. Morbi vehicula finibus urna, quis sagittis ipsum ultrices sed. Cras lorem leo, tincidunt at dapibus et, bibendum in leo. Nulla eget purus venenatis, gravida tellus sit amet, volutpat dolor. Donec nec est non lacus cursus condimentum. Nulla aliquet, enim a euismod egestas, orci tellus placerat velit, vel dapibus quam ligula sed quam.
