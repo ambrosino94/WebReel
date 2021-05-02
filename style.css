@@ -18,6 +18,8 @@
   padding: 0;
 }
 
+body, html {width: 100%; height: 100%; margin: 0; padding: 0}
+
 body{
   margin: 0;
   background: #FEFDF3;
@@ -27,6 +29,10 @@ body{
   place-items: center;
   margin: 0;
   min-height: 100vh;
+}
+
+main{
+  height: 100%;
 }
 
 .navlogo{
@@ -78,7 +84,7 @@ header::after{
   list-style: none;
   position:absolute;
   /* @include ease-out; */
-  right: 35px;g
+  right: 35px;
   box-sizing: border-box;
 }
 
@@ -438,3 +444,34 @@ i {
   .pagination {
     padding-top: calc(var(--navlogo_height)/2 - (var(--menu_text_h) + 16px)/2);
 }
+
+/* Descriptions */
+/* ========================================================================== */
+
+.description{
+  position: fixed;
+  width: 100%;
+  height: 100%; 
+  /* background-color: red */
+}
+
+
+.description iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+
+
+/* iframe{
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: block;
+  margin-left: 50em;
+} */
