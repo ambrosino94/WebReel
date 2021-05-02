@@ -26,6 +26,12 @@ function includeHTML() {
   }
 }
 
+function resizeIframe(e){
+    console.log(e);
+    var iframe = document.getElementById("d1");
+    iframe.height = iframe.contentWindow.document.body.scrollHeight;
+}
+
 
 class GroupBtn{
 
