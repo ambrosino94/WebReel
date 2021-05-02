@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://kit.fontawesome.com/ed2ee1aa4d.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Dependencies port -->
     <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
@@ -20,18 +20,16 @@
   </head>
 
 
-<!-- Header -->
-<!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+  <!-- Header -->
+  <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
   <body>
     <header>
-      <div class="nav-menu">
-
+      <nav class="nav-menu">
         <!-- <img src="WebReel_Coding_logo.png"
         class="navlogo" alt="WebReelLogo" height="60" width="60"> -->
 
         <!-- Logo -->
         <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
-        <nav class="main-nav">
           <img src="WebReel_Coding_logo.png"
           class="navlogo" alt="WebReelLogo">
 
@@ -54,7 +52,7 @@
             <span class="pagination-current" aria-hidden="true"></span>
           </div>
 
-          <script>
+        <script>
           const paginationButtons = document.querySelectorAll(".pagination-button");
 
           function ActiveGroup(id){
@@ -93,28 +91,28 @@
         </script>
 
 
-<!-- Note: Another pagination action approach would be with a custom event
-Template:
+        <!-- Note: Another pagination action approach would be with a custom event
+        Template:
 
-html
-  <button type="button"
-          className="btn btn-default"
-          onClick="invoke"
-          name='gotoNode'
-          data-arg1='1234'>GotoNode</button>
+        html
+          <button type="button"
+                  className="btn btn-default"
+                  onClick="invoke"
+                  name='gotoNode'
+                  data-arg1='1234'>GotoNode</button>
 
 
-js
+        js
 
-  invoke = (event) => {
-      let nameOfFunction = this[event.target.name];
-      let arg1 = event.target.getAttribute('data-arg1');
-      // We can add more arguments as needed...
-      window[nameOfFunction](arg1)
-      // Hope the function is in the window.
-      // Else the respective object need to be used
-      })
-    } -->
+          invoke = (event) => {
+              let nameOfFunction = this[event.target.name];
+              let arg1 = event.target.getAttribute('data-arg1');
+              // We can add more arguments as needed...
+              window[nameOfFunction](arg1)
+              // Hope the function is in the window.
+              // Else the respective object need to be used
+              })
+            } -->
 
 
         <!-- Navigation Buttons -->
@@ -124,21 +122,42 @@ js
             <li class="nav_list_element"><a class="nav_a" href="#">Projects</a></li>
             <li class="nav_list_element"><a class="nav_a" href="#">About</a></li>
           </ul>
-        </nav>
+        <!-- Mobile Navigation Buttons -->
+        <div class="mobile_nav_list">
+          <a class="mobile_nav_a" href="#">Home</a>
+          <a class="mobile_nav_a" href="#">Projects</a>
+          <a class="mobile_nav_a" href="#">About</a>
+        </div>
 
-      </div>
+        <!-- hamburger menu icon -->
+        <a href="javascript:void(0);" class="hamburger_menu_icon" onclick="reveal()">
+          <i class="fas fa-code"></i>
+        </a>
+
+        <script>
+          function reveal() {
+            var x = document.getElementByClassName("mobile_nav_list");
+            if (x.style.display === "block") {
+              x.style.display = "none";
+            } else {
+              x.style.display = "block";
+            }
+          }
+        </script>
+
+      </nav>
     </header>
 
-  <main>
-<!-- Home Canvas -->
-<!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+    <main>
+      <!-- Home Canvas -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
       <section class="intro">
         <h1>test</h1>
       </section>
 
 
-<!-- Game Canvas -->
-<!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+      <!-- Game Canvas -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
       <div class="game" id="gameParent" position="relative">
         <!-- <canvas id="responsive-canvas" width="100%" height="100%" position="relative"></canvas> -->
         <!-- <script type="text/javascript">
@@ -153,8 +172,8 @@ js
         </script> -->
       </div>
 
-<!-- Descriptions -->
-<!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+      <!-- Descriptions -->
+      <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
       <div class="description" position="absolute">
         <div id="d1">d1</div>
         <div id="d2">d2</div>
@@ -171,7 +190,7 @@ js
             <i class="fas fa-code"></i>
             <i class="processing"><div class="pText">openprocessing.org</div></i>
         </div>
-    </div>
+      </div>
 
       <script>
       function ActiveCode(){
