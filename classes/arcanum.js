@@ -29,8 +29,8 @@ function includeHTML() {
 function resizeIframe(e){
     console.log(e);
     var iframe = document.getElementById("d1");
-    console.log(iframe.contentDocument.body.scrollHeight);
-    iframe.height = iframe.contentWindow.document.body.scrollHeight;
+    console.log(iframe.contentWindow);
+    iframe.height = iframe.contentDocument.document.body.scrollHeight;
 }
 
 
