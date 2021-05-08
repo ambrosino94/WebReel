@@ -2,6 +2,15 @@
 
 ###### Development Project Report.
 
+#### `Authors`
+
+> `🦐 Fanny Lisbeth Hau Qiu`			 —————— `Report Writer` & `Coding Assistant`
+> `🦔 Sarah Cristina Pineda Avila`   —————— `Main Coder` & `Debugger`
+> `🐀 Stephanie Nicole Yau Barria`  —————— `Main Coder` & `Debugger`
+> `🐑 Valeria Halit Carreño Pastor` —————— `Coding Assistant` & `Stress Manager`.
+>
+> `Group 10 - 1`
+
 
 
 #### `Description`
@@ -9,7 +18,7 @@
 This project is inspired by the internet browser game named `Cookie Clicker`. This game is an incremental game (a game whose gameplay consists of the player performing a simple action such as clicking on the screen continuously). The objective of a Cookie Clicker is to bake cookies as fast as possible by clicking the starter cookie that appears when you freshly open the game on your web browser. As you click, the number of cookies produced increases. The currency of this game is macarons, as you get macarons, upgrades on the side will be available for you to purchase. These upgrades help to increase your macaron production per second. (We've made some changes while coding the game to personalize it according to our likings, still
 making it true and very similar to the actual game.) 
 
-The features this game includes are:
+
 
 These are the features of this project:
 
@@ -19,15 +28,17 @@ There is a main button, that increases your currency everytime you click on it.
 Said button shows an animation when clicked.
 An indicator on the screen that shows the amount of currency collected in the game.
 3 upgrades that can be bought, that give you a specific amount of macarons per time.
-3 items that can be bought, that allow you automatic currency production
+3 items that can be bought, that allow you automatic currency production.
 ```
 
 
 
 #### `Error Debugging`
 
-(Error debugging is not necessary for our report but we did like to include this two small and
-annoying errors that came along our way).
+> Error debugging is not necessary for our report but we did like to include this two small and
+> annoying errors that came along our way.
+>
+> - Macaron Team
 
 
 
@@ -58,14 +69,3 @@ if( dist(mouseX, mouseY, this.x, this.y) < this.d/2){
 // CODE AFTER THE FIX
 if( dist(mouseX, mouseY, this.x, this.y) < this.d/3.2){
 ```
-
-
-
-#### `Authors`
-
-> `🦐 Fanny Lisbeth Hau Qiu`			 —————— `Report Writer` & `Coding Assistant`
-> `🦔 Sarah Cristina Pineda Avila`   —————— `Main Coder` & `Debugger`
-> `🐀 Stephanie Nicole Yau Barria`  —————— `Main Coder` & `Debugger`
-> `🐑 Valeria Halit Carreño Pastor` —————— `Coding Assistant` & `Stress Manager`.
->
-> `Group 10 - 1`
