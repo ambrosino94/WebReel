@@ -92,6 +92,7 @@ function setup() {
 function draw() {
 
   background(0);
+  noStroke();
   fill(200,100,50);
   rect(100,100,50,50);
 
@@ -110,6 +111,7 @@ function draw() {
   group2.Disp('d2');
   group3.Disp('d3');
   group4.Disp('d4');
+  // group5.Disp('d5');
 
   selector.GroupChange(nextBtn.x);
   selector.Disp();

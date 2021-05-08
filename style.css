@@ -23,6 +23,7 @@ body, html {width: 100%; height: 100%; margin: 0; padding: 0}
 body{
   margin: 0;
   background: #FEFDF3;
+  background: #1D1F21;
   font-family: sans-serif;
   font-weight: 240;
   display: grid;
@@ -33,6 +34,8 @@ body{
 
 main{
   height: 100%;
+  margin: 0;
+  width: 100%;
 }
 
 .navlogo{
@@ -159,7 +162,7 @@ header::after{
 .intro{
   padding: 50vh 0;
   /* background: #123 url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F03%2FFree-Dark-Blue-Wallpaper-HD.jpg&f=1&nofb=1); */
-  background-color: #0F2032; 
+  background-color: #0F2032;
   background-size: cover;
   background-blend-mode: multiply;
   color: white;
@@ -232,6 +235,9 @@ header::after{
  .pagination-button:nth-of-type(4).active ~ .pagination-current {
 	 transform: translateX(300%);
 }
+ .pagination-button:nth-of-type(5).active ~ .pagination-current {
+   transform: translateX(400%);
+}
  .pagination-button::before {
 	 position: absolute;
 	 content: '';
@@ -285,6 +291,17 @@ header::after{
 	 transition: transform 225ms 120ms cubic-bezier(0, 1.95, 0.75, 1);
 	 cursor: pointer;
 }
+
+/* Game
+/* ========================================================================== */
+.game {
+  display:block;
+  margin-bottom: -5px;
+  padding: 0;
+  bottom: 5px;
+  postion: fixed;
+}
+
 
 /* Coding Sharing Options Btn */
 /* ========================================================================== */
@@ -450,26 +467,20 @@ i {
 /* ========================================================================== */
 
 .description{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   width: 100%;
   height: 100%;
-  /* background-color: red */
+  background-color: #141E24;
 }
 
 
-.description iframe {
+.description div {
   display: block;
   width: 100%;
   height: 100%;
   border: none;
-}
-
-iframe{
-  display: block;
-  position: relative;
-  width: 500px;
-  height: 500px;
-  border: 0px;
-  left: 50%;
-  transform: translate(-50%);
+  background-color: #141E24;
 }
