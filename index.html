@@ -7,6 +7,7 @@
     <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
     <!-- <link rel="icon" href="Assets/Images/CovidFavicon.png"> -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="DescriptionStyles/descriptionStyle.css">
     <script src="https://kit.fontawesome.com/ed2ee1aa4d.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +26,7 @@
   <body>
     <header>
       <nav class="nav-menu">
+<<<<<<< HEAD
         <div class="nav-wrap">
           <!-- <img src="WebReel_Coding_logo.png"
           class="navlogo" alt="WebReelLogo" height="60" width="60"> -->
@@ -70,6 +72,66 @@
               description = document.getElementById(descriptionId);
               // console.log(description);
               description.style.display = "block";
+=======
+        <!-- <img src="WebReel_Coding_logo.png"
+        class="navlogo" alt="WebReelLogo" height="60" width="60"> -->
+
+        <!-- Logo -->
+        <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+          <img src="WebReel_Coding_logo.png"
+          class="navlogo" alt="WebReelLogo">
+
+        <!-- Pagination -->
+        <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+          <div class="pagination">
+            <button class="pagination-button active" id="g1" onclick="ActiveGroup('g1')">
+                <span class="visually-hidden">Go to page 1</span>
+              <span> 1 </span>
+              </button>
+              <button class="pagination-button" id="g2" onclick="ActiveGroup('g2')">
+                <span class="visually-hidden">Go to page 2</span>
+              </button>
+              <button class="pagination-button" id="g3" onclick="ActiveGroup('g3')">
+                <span class="visually-hidden">Go to page 3</span>
+              </button>
+              <button class="pagination-button" id="g4" onclick="ActiveGroup('g4')">
+                <span class="visually-hidden">Go to page 4</span>
+              </button>
+              <button class="pagination-button" id="g5" onclick="ActiveGroup('g5')">
+                <span class="visually-hidden">Go to page 4</span>
+              </button>
+            <span class="pagination-current" aria-hidden="true"></span>
+          </div>
+
+        <script>
+          const paginationButtons = document.querySelectorAll(".pagination-button");
+
+          function ActiveGroup(id){
+            groupId = id;
+            descriptionId = "d" + id.substring(1);
+            descriptions = document.querySelectorAll(".description");
+            // console.log(descriptionId);
+            // Invisibility cape for all descriptions
+            for(var i = 0; i < descriptions[0].children.length; i++) {
+              descriptions[0].children[i].style.display = "none"
+            }
+
+            // Except for the one imported in the argument id
+            description = document.getElementById(descriptionId);
+            // console.log(description);
+            description.style.display = "block";
+
+          }
+
+          function handleClick(e) {
+            e.preventDefault();
+            const activeButton = document.querySelector('.active');
+
+            if (activeButton) {
+
+              activeButton.classList.remove('active');
+
+>>>>>>> e552bbb2660148598e55571c7f3338b7e379716e
 
             }
 
@@ -164,12 +226,19 @@
 
       <!-- Descriptions -->
       <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
-      <div class="description" position="absolute">
-        <div id="d1">d1</div>
-        <div id="d2">d2</div>
-        <div id="d3">d3</div>
-        <div id="d4">d4</div>
-        <div id="d5">d5</div>
+      <div class="description" position="fixed">
+        <!-- <div id="d1" w3-include-html="Groups/Macaron - 10-1-I.html"></div> -->
+        <!-- <iframe id="d1" width="100%" height="100%" style="height:100%;"src="http://127.0.0.1:3000/Collab/WebReel/WebReel/Groups/Macaron - 10-1-I.html"></iframe> -->
+        <!-- <iframe src="https://www.youtube.com" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:150%;width:150%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="150%" width="150%"></iframe> -->
+
+        <!-- <iframe id="d1" src="http://127.0.0.1:3000/Collab/WebReel/WebReel/Groups/Macaron - 10-1-I.html" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:110%;position:absolute;top:0px;left:0px;right:0px;bottom:0px;" height="150%" width="110%"></iframe> -->
+
+        <!-- <iframe class="dcptn_iframe" onload="resizeIframe()" width=100%  id="d1" scrolling='no' src="https://learnrz.netlify.app/groups/macaron - 10-1-I.html"></iframe> -->
+        <div id="d1" w3-include-html="Groups/Netflix_1.html"></div>
+        <div id="d2" w3-include-html="Groups/Disneyland_2.html"></div>
+        <div id="d3" w3-include-html="Groups/Macaron_3.html"></div>
+        <div id="d4" w3-include-html="Groups/Strawberry_4.html"></div>
+        <div id="d5" w3-include-html="Groups/Cage_5.html"></div>
       </div>
 
       <!-- Coding sharing options -->
@@ -187,8 +256,7 @@
         console.log(groupId);
       }
       </script>
-
-      <p class="rpar">
+      <!-- <p class="rpar">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet iaculis enim, eget fermentum eros. Phasellus egestas mattis sodales. Nam fringilla dapibus libero quis luctus. Proin quis rhoncus libero. Pellentesque eget justo condimentum leo placerat tristique a quis enim. Proin urna eros, luctus et nisl in, consequat cursus ex. Aliquam erat volutpat. Aliquam vestibulum suscipit felis a auctor. Morbi vehicula finibus urna, quis sagittis ipsum ultrices sed. Cras lorem leo, tincidunt at dapibus et, bibendum in leo. Nulla eget purus venenatis, gravida tellus sit amet, volutpat dolor. Donec nec est non lacus cursus condimentum. Nulla aliquet, enim a euismod egestas, orci tellus placerat velit, vel dapibus quam ligula sed quam.
 
         Nunc et augue lacus. Duis vestibulum ultrices leo, eu faucibus eros accumsan id. In rhoncus blandit quam ut sagittis. Nam auctor posuere dui quis vulputate. In vitae turpis quis erat fermentum pharetra id id turpis. Nulla venenatis faucibus fringilla. Sed mattis pharetra nibh, eu finibus arcu eleifend ut. Quisque vehicula ipsum eget mollis posuere. Quisque iaculis, metus et imperdiet laoreet, turpis nulla blandit tellus, in euismod purus tortor ac lectus. Vestibulum accumsan hendrerit sem, quis malesuada dolor dignissim quis. Donec vehicula urna tristique, facilisis dolor in, viverra arcu. Curabitur sed nunc tincidunt, vulputate massa sollicitudin, consectetur felis. Ut et finibus ligula. Aliquam in accumsan velit. Duis bibendum diam nunc, non faucibus dolor condimentum non.
@@ -208,7 +276,7 @@
         Donec diam urna, sagittis ut rutrum varius, auctor quis quam. Curabitur ut malesuada nibh, nec egestas nisi. Integer quis ex at enim facilisis efficitur quis ut lectus. Ut et pellentesque nunc. Integer leo mi, sagittis vel eleifend ac, condimentum vel nunc. Aliquam vel nulla elit. Nullam congue metus non enim vulputate, eu scelerisque tortor rutrum. Integer in lectus et magna faucibus venenatis.
 
         Sed fringilla, sapien et porttitor ullamcorper, tellus ex maximus metus, feugiat porttitor dolor tellus eget ipsum. Aliquam massa nunc, fringilla at turpis vitae, blandit lobortis felis. Donec pellentesque mollis orci, ut dignissim libero ultrices ac. Suspendisse sit amet volutpat mi, nec gravida dolor. Curabitur in volutpat tellus. Sed aliquet cursus ex, vel pretium metus ultricies nec. Aliquam auctor orci eu nisi tempus placerat. Morbi sagittis lobortis eros sit amet consectetur.
-      </p>
+      </p> -->
 
       <script>
       var descriptions = document.querySelectorAll(".description");
@@ -218,14 +286,21 @@
 
       var description = document.getElementById("d1");
       description.style.display = "block";
+
+      // window.addEventListener('DOMContentLoaded', function(e) {
+      //     resizeIframe();
+      //     resizeIframe();
+      // });
+
       </script>
 
     </main>
 
+    <!-- <iframe src="http://www.youraddress.com" frameborder="0" style="overflow:hidden;height:150%;width:150%" height="150%" width="150%"></iframe> -->
     <!-- Observer -->
     <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
     <script language="javascript" type="text/javascript" src="intersection-observer.js"></script>
-
+    <script> includeHTML(); </script>
   </body>
   <!-- Footer -->
   <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
