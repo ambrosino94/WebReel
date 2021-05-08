@@ -19,133 +19,123 @@
     <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
   </head>
 
-<!-- Header -->
-<!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
 
+  <!-- Header -->
+  <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
   <body>
     <header>
       <nav class="nav-menu">
-        <!-- <img src="WebReel_Coding_logo.png"
-        class="navlogo" alt="WebReelLogo" height="60" width="60"> -->
+        <div class="nav-wrap">
+          <!-- <img src="WebReel_Coding_logo.png"
+          class="navlogo" alt="WebReelLogo" height="60" width="60"> -->
 
-        <!-- Logo -->
-        <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
-          <img src="WebReel_Coding_logo.png"
-          class="navlogo" alt="WebReelLogo">
+          <!-- Logo -->
+          <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+            <img src="WebReel_Coding_logo.png"
+            class="navlogo" alt="WebReelLogo">
 
-        <!-- Pagination -->
-        <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
-          <div class="pagination">
-            <button class="pagination-button active" id="g1" onclick="ActiveGroup('g1')">
-                <span class="visually-hidden">Go to page 1</span>
-              <span> 1 </span>
-              </button>
-              <button class="pagination-button" id="g2" onclick="ActiveGroup('g2')">
-                <span class="visually-hidden">Go to page 2</span>
-              </button>
-              <button class="pagination-button" id="g3" onclick="ActiveGroup('g3')">
-                <span class="visually-hidden">Go to page 3</span>
-              </button>
-              <button class="pagination-button" id="g4" onclick="ActiveGroup('g4')">
-                <span class="visually-hidden">Go to page 4</span>
-              </button>
-            <span class="pagination-current" aria-hidden="true"></span>
-          </div>
+          <!-- Pagination -->
+          <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+            <div class="pagination">
+              <button class="pagination-button active" id="g1" onclick="ActiveGroup('g1')">
+                  <span class="visually-hidden">Go to page 1</span>
+                <span> 1 </span>
+                </button>
+                <button class="pagination-button" id="g2" onclick="ActiveGroup('g2')">
+                  <span class="visually-hidden">Go to page 2</span>
+                </button>
+                <button class="pagination-button" id="g3" onclick="ActiveGroup('g3')">
+                  <span class="visually-hidden">Go to page 3</span>
+                </button>
+                <button class="pagination-button" id="g4" onclick="ActiveGroup('g4')">
+                  <span class="visually-hidden">Go to page 4</span>
+                </button>
+              <span class="pagination-current" aria-hidden="true"></span>
+            </div>
 
-        <script>
-          const paginationButtons = document.querySelectorAll(".pagination-button");
+          <script>
+            const paginationButtons = document.querySelectorAll(".pagination-button");
 
-          function ActiveGroup(id){
-            groupId = id;
-            descriptionId = "d" + id.substring(1);
-            descriptions = document.querySelectorAll(".description");
-            // console.log(descriptionId);
-            // Invisibility cape for all descriptions
-            for(var i = 0; i < descriptions[0].children.length; i++) {
-              descriptions[0].children[i].style.display = "none"
-            }
+            function ActiveGroup(id){
+              groupId = id;
+              descriptionId = "d" + id.substring(1);
+              descriptions = document.querySelectorAll(".description");
+              // console.log(descriptionId);
+              // Invisibility cape for all descriptions
+              for(var i = 0; i < descriptions[0].children.length; i++) {
+                descriptions[0].children[i].style.display = "none"
+              }
 
-            // Except for the one imported in the argument id
-            description = document.getElementById(descriptionId);
-            // console.log(description);
-            description.style.display = "block";
-
-          }
-
-          function handleClick(e) {
-            e.preventDefault();
-            const activeButton = document.querySelector('.active');
-
-            if (activeButton) {
-
-              activeButton.classList.remove('active');
-
+              // Except for the one imported in the argument id
+              description = document.getElementById(descriptionId);
+              // console.log(description);
+              description.style.display = "block";
 
             }
-            e.target.classList.add('active');
 
-          }
+            function handleClick(e) {
+              e.preventDefault();
+              const activeButton = document.querySelector('.active');
 
-          paginationButtons.forEach(button => button.addEventListener('click', handleClick));
-          paginationButtons.forEach(button => button.addEventListener('touchstart', handleClick));
-        </script>
+              if (activeButton) {
+                activeButton.classList.remove('active');
+              }
+              e.target.classList.add('active');
 
+            }
 
-        <!-- Note: Another pagination action approach would be with a custom event
-        Template:
+            paginationButtons.forEach(button => button.addEventListener('click', handleClick));
+            paginationButtons.forEach(button => button.addEventListener('touchstart', handleClick));
+          </script>
 
-        html
-          <button type="button"
-                  className="btn btn-default"
-                  onClick="invoke"
-                  name='gotoNode'
-                  data-arg1='1234'>GotoNode</button>
+          <!-- Note: Another pagination action approach would be with a custom event
+          Template:
 
-
-        js
-
-          invoke = (event) => {
-              let nameOfFunction = this[event.target.name];
-              let arg1 = event.target.getAttribute('data-arg1');
-              // We can add more arguments as needed...
-              window[nameOfFunction](arg1)
-              // Hope the function is in the window.
-              // Else the respective object need to be used
-              })
-            } -->
+          html
+            <button type="button"
+                    className="btn btn-default"
+                    onClick="invoke"
+                    name='gotoNode'
+                    data-arg1='1234'>GotoNode</button>
 
 
-        <!-- Navigation Buttons -->
-        <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
-          <ul class="nav_list">
-            <li class="nav_list_element"><a class="nav_a" href="#">Home</a></li>
-            <li class="nav_list_element"><a class="nav_a" href="#">Projects</a></li>
-            <li class="nav_list_element"><a class="nav_a" href="#">About</a></li>
-          </ul>
-        <!-- Mobile Navigation Buttons -->
-        <div class="mobile_nav_list">
-          <a class="mobile_nav_a" href="#">Home</a>
-          <a class="mobile_nav_a" href="#">Projects</a>
-          <a class="mobile_nav_a" href="#">About</a>
+          js
+
+            invoke = (event) => {
+                let nameOfFunction = this[event.target.name];
+                let arg1 = event.target.getAttribute('data-arg1');
+                // We can add more arguments as needed...
+                window[nameOfFunction](arg1)
+                // Hope the function is in the window.
+                // Else the respective object need to be used
+                })
+              } -->
+
+          <!-- Navigation Buttons -->
+          <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
+            <ul class="nav_list">
+              <li class="nav_list_element"><a class="nav_a" href="#">Home</a></li>
+              <li class="nav_list_element"><a class="nav_a" href="#">Projects</a></li>
+              <li class="nav_list_element"><a class="nav_a" href="#">About</a></li>
+            </ul>
         </div>
+      </nav>
+
+      <div class="mobile-menu">
+        <!-- Mobile Navigation Buttons -->
+        <ul class="mobile_nav_list display-none">
+          <li class="m_nav_list"><a class="mobile_nav_a" href="#">Home</a></li>
+          <li class="m_nav_list"><a class="mobile_nav_a" href="#">Projects</a></li>
+          <li class="m_nav_list"><a class="mobile_nav_a" href="#">About</a></li>
+        </ul>
 
         <!-- hamburger menu icon -->
-        <a href="javascript:void(0);" class="hamburger_menu_icon" onclick="reveal()">
-          <i class="fas fa-code"></i>
-        </a>
+        <div class="mobile_menu_btn">
+          <div class="hamburger"></div>
+        </div>
 
-        <script>
-          function reveal() {
-            var x = document.getElementByClassName("mobile_nav_list");
-            if (x.style.display === "block") {
-              x.style.display = "none";
-            } else {
-              x.style.display = "block";
-            }
-          }
-        </script>
-
-      </nav>
+        <script src="hamburger.js"></script>
+      </div>
     </header>
 
     <main>
