@@ -158,7 +158,8 @@ header::after{
 
 .intro{
   padding: 50vh 0;
-  background: #123 url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F03%2FFree-Dark-Blue-Wallpaper-HD.jpg&f=1&nofb=1);
+  /* background: #123 url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F03%2FFree-Dark-Blue-Wallpaper-HD.jpg&f=1&nofb=1); */
+  background-color: #0F2032; 
   background-size: cover;
   background-blend-mode: multiply;
   color: white;
