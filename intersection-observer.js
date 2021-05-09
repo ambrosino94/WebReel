@@ -1,7 +1,9 @@
 const header = document.querySelector('header');
 const intro = document.querySelector('.intro');
+const paginationBtn = document.querySelectorAll('pagination-button');
 const hamburger = document.querySelector('.hamburger');
 var mobileNavTxt = document.querySelectorAll(".mobile_nav_a");
+
 
 console.log(header);
 console.log(intro);
@@ -18,6 +20,7 @@ const introObserver = new IntersectionObserver(function(entries, introObserver) 
       for(var i = 0; i < mobileNavTxt.length; i++){
         mobileNavTxt[i].classList.add("mobile_nav_a_scrolled")
       }
+
     }
     else{
       header.classList.remove("nav-scrolled")
@@ -25,6 +28,9 @@ const introObserver = new IntersectionObserver(function(entries, introObserver) 
 
       for(var i = 0; i < mobileNavTxt.length; i++){
         mobileNavTxt[i].classList.remove("mobile_nav_a_scrolled")
+      }
+      for(var i = 0; i < paginationWrap.length; i++){
+        paginationWrap[i].style.color = "var(--color-bg)";
       }
     }
   })

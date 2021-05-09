@@ -7,6 +7,8 @@
   --base-sizing-sm: 14px;
   /* --color-bg: #242240; */
   --color-dot: #B452FF;
+  --color-dot2: #F603FF;
+
 }
 
 /* navE_padding-top = 1/5 * logo_Height */
@@ -32,15 +34,14 @@ body{
   min-height: 100vh;
 }
 
-<<<<<<< HEAD
+
 .display-none{
   display: none;
-=======
+}
 main{
   height: 100%;
   margin: 0;
   width: 100%;
->>>>>>> e552bbb2660148598e55571c7f3338b7e379716e
 }
 
 .navlogo{
@@ -96,15 +97,8 @@ header::after{
   flex: 1;
   display: flex;
   list-style: none;
-<<<<<<< HEAD
   justify-content: flex-end;
   align-items: center;
-=======
-  position:absolute;
-  /* @include ease-out; */
-  right: 35px;
-  box-sizing: border-box;
->>>>>>> e552bbb2660148598e55571c7f3338b7e379716e
 }
 
 .nav_list_element{
@@ -179,9 +173,10 @@ header::after{
 .hamburger{
   width: 40px;
   height: 4px;
-  background: #FFFFFF;
+  background: #B452FF;
   transition: 0.25 ease-in-out;
   border-radius: 10px;
+  transform: translateY(6px);
 }
 
 .hamburger::before,
@@ -190,7 +185,7 @@ header::after{
   position: absolute;
   width: 40px;
   height: 4px;
-  background: #FFFFFF;
+  background: #B452FF;
   transition: 0.5s ease-in-out;
   border-radius: 10px;
 }
@@ -206,7 +201,7 @@ header::after{
 .hamburger_scrolled{
   width: 40px;
   height: 4px;
-  background: #000;
+  background: #F603FF;
   transition: 0.25 ease-in-out;
   border-radius: 10px;
 }
@@ -217,7 +212,7 @@ header::after{
   position: absolute;
   width: 40px;
   height: 4px;
-  background: #000;
+  background: #F603FF;
   transition: 0.5s ease-in-out;
   border-radius: 10px;
 }
@@ -306,12 +301,13 @@ header::after{
   background: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.baltana.com%2Ffiles%2Fwallpapers-5%2FWhite-Background-Wallpaper-16577.jpg&f=1&nofb=1);
 }
 
-* {
+/* * {
 	 box-sizing: border-box;
 }
  *::before, *::after {
 	 box-sizing: border-box;
-}
+} */
+
  .visually-hidden {
 	 border: 0;
 	 clip: rect(0 0 0 0);
@@ -327,13 +323,14 @@ header::after{
 	 outline: none;
 	 border: 0;
 }
- body {
+
+ /* body {
 	 display: grid;
 	 place-items: center;
 	 margin: 0;
 	 min-height: 100vh;
 	 background-color: var(--color-bg);
-}
+} */
 
 /* Pagination Buttons */
 /* ========================================================================== */
@@ -585,8 +582,7 @@ i {
   .mobile_menu_btn{
     display: flex;
   }
-<<<<<<< HEAD
-=======
+
 
   .pagination {
     padding-top: calc(var(--navlogo_height)/2 - (var(--menu_text_h) + 16px)/2);
@@ -613,4 +609,3 @@ i {
   border: none;
   background-color: #141E24;
 }
->>>>>>> e552bbb2660148598e55571c7f3338b7e379716e
