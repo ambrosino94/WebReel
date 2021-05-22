@@ -141,29 +141,29 @@
 	pointer-events: none;
 }
 
-.description @media screen and (max-width: 500px) {
-	body.typora-export {
+@media screen and (max-width: 500px) {
+	.description body.typora-export {
 		padding-left: 0px;
 		padding-right: 0px;
 	}
-	#write {
+	.description #write {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-	.CodeMirror-sizer {
+	.description .CodeMirror-sizer {
 		margin-left: 0px !important;
 	}
-	.CodeMirror-gutters {
+	.description .CodeMirror-gutters {
 		display: none !important;
 	}
 }
 
-#write li>figure:last-child {
+.description #write li>figure:last-child {
 	margin-bottom: 0.5rem;
 }
 
-#write ol,
-#write ul {
+.description #write ol,
+.description #write ul {
 	position: relative;
 }
 
@@ -193,6 +193,12 @@
 	box-sizing: border-box;
 }
 
+.description #write p span{
+	font-size: 25px;
+	margin-bottom: 10px;
+	line-height: 1.3em;
+}
+
 #write h1,
 #write h2,
 #write h3,
@@ -212,6 +218,7 @@
 #write h6,
 #write p {
 	position: relative;
+	text-align:justify;
 }
 
 .description p {
@@ -267,7 +274,7 @@
 .description h6,
 .description p {
 	margin-top: 1rem;
-	margin-bottom: 1rem;
+	margin-bottom: 10rem;
 }
 
 .description .hidden {
@@ -336,6 +343,8 @@ sup.md-footnote a:hover {
 
 .description table.md-table td {
 	min-width: 32px;
+	display: block;
+	margin: -95px;
 }
 
 .CodeMirror-gutters {
@@ -356,7 +365,7 @@ sup.md-footnote a:hover {
 }
 
 .CodeMirror pre {
-	padding: 0px 4px;
+	padding: 0px 4px 10px;
 }
 
 .CodeMirror-lines {
@@ -384,7 +393,7 @@ sup.md-footnote a:hover {
 }
 
 .md-fences {
-	font-size: 0.9rem;
+	font-size: 1.3rem;
 	display: block;
 	break-inside: avoid;
 	text-align: left;
@@ -908,7 +917,7 @@ mark .md-meta {
 }
 
 .md-fences.md-fences-math {
-	font-size: 1em;
+	font-size: 1.4em;
 }
 
 .md-fences-math .MathJax_SVG_Display {
@@ -1631,7 +1640,7 @@ mark .md-meta {
 	max-width: 100%;
 	margin: 0 auto;
 	padding: 30px;
-	padding-bottom: 100px;
+	padding-bottom: 20px;
 	color: #F8F8F2;
 }
 
@@ -1716,7 +1725,7 @@ mark .md-meta {
 }
 
 .description h4 {
-	font-size: 1.2em;
+	font-size: 1.6em;
 }
 
 .description h5 {
@@ -1724,7 +1733,7 @@ mark .md-meta {
 }
 
 .description h6 {
-	font-size: 1em;
+	font-size: 1.3em;
 	color: var(--light-trait-300);
 }
 
@@ -1734,7 +1743,7 @@ mark .md-meta {
 .description ol,
 .description dl,
 .description table {
-	margin: 0.8em 0;
+	margin: 0.6em 0 0.8em;
 }
 
 .description li>ol,
@@ -1826,6 +1835,8 @@ blockquote blockquote {
 	overflow:hidden;
   padding:5px 5px;
 	word-break:normal;
+
+	right: -50px;
 }
 
 .description .tg th{
@@ -1875,6 +1886,7 @@ blockquote blockquote {
 	border: 1px solid var(--dark-trait);
 	margin: 0;
 	padding: 6px 13px;
+
 }
 
 .description table tr th:first-child,
@@ -1895,6 +1907,12 @@ kbd {
 	color: var(--text-color-secondary);
 }
 
+.description hr{
+	line-height:10%;
+	margin-bottom: 5px;
+
+}
+
 .md-fences,
 code,
 tt {
@@ -1902,7 +1920,7 @@ tt {
 	background-color: var(--bg-color-dark);
 	border-radius: var(--border-radius);
 	padding: 2px 4px 0px 4px;
-	font-size: 0.9em;
+	font-size: 1.3em;
 	font-family: var(--monospace);
 }
 
