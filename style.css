@@ -458,7 +458,7 @@ header::after{
 i {
     opacity: 0;
     font-size: 28px;
-    color: #1F1E1E;
+    color: #EEEEED;
     will-change: transform;
     -webkit-transform: scale(.1);
             transform: scale(.1);
@@ -481,9 +481,10 @@ i {
     cursor: pointer;
     width: 240px;
     height: 72px;
-    background-color: #EEEEED;
+    background-color: #1F1E1E;
     border-radius: 80px;
     padding: 0 18px;
+    margin: 20px 0px 10px;
     will-change: transform;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -493,6 +494,11 @@ i {
     /* transition-delay: .4s; */
     -webkit-transform: scale(1.1);
             transform: scale(1.1)
+}
+
+a:link{
+  text-decoration: none;
+  
 }
 
 #code_wrap_txt {
@@ -506,9 +512,10 @@ i {
     text-align: center;
     line-height: 70px;
     letter-spacing: 2px;
-    color: #EEEEED;
-    background-color: #1F1E1E;
+    color: #1F1E1E;
+    background-color: #EEEEED;
     padding: 0 18px;
+    margin: 20px 0px 10px;
     -webkit-transition: all 1.2s ease;
     transition: all 1.2s ease;
 }
