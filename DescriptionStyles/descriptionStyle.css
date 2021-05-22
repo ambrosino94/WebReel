@@ -7,6 +7,37 @@
 	--select-text-font-color: auto;
 	--monospace: "Lucida Console", Consolas, "Courier", monospace;
 	--title-bar-height: 20px;
+	--primary-color: #fcba03;
+	--primary-color-rgb: 252, 186, 3;
+	--bg-color: #292929;
+	--bg-color-dark: #1F1F1F;
+	--dark-trait: #141414;
+	--light-trait-100: #3d3d3d;
+	--light-trait-200: #545454;
+	--light-trait-300: #777;
+	--light-trait-400: #8c8c8c;
+	--text-color: #f8f8f2;
+	--text-color-secondary: #d2d3d3;
+	--select-text-bg-color: rgba(255, 255, 255, 0.2);
+	--text-highlight-bg: rgba(var(--primary-color-rgb), 0.3);
+	--search-select-bg-color: var(--text-highlight-bg);
+	--code-color: #f3b3f8;
+	--border-radius: 3px;
+	--font-size: 14px;
+	--font-family: system-ui;
+	--monospace: 'Fira Mono', 'Cousine', 'Consolas', monospace;
+	--heading-char-color: var(--light-trait-400);
+	--color-popover-bg-color: var(--text-color);
+	--rawblock-edit-panel-bd: var(--bg-color-dark);
+	--control-text-color: var(--text-color);
+	--meta-content-color: var(--primary-color);
+	--primary-btn-border-color: var(--primary-color);
+	--side-bar-bg-color: var(--bg-color-dark);
+	--item-hover-bg-color: var(--bg-color);
+	--active-file-bg-color: var(--bg-color);
+	--active-file-border-color: var(--bg-color);
+	--window-border: 1px solid var(--bg-color);
+	--focus-ring-color: transparent;
 }
 
 :root {
@@ -74,7 +105,7 @@
 	white-space: normal;
 	overflow-x: visible;
 	padding-top: 36px;
-	background-color: #1D1F21;
+	background-color: #292929;
 }
 
 #write.first-line-indent p {
@@ -1550,12 +1581,12 @@ mark .md-meta {
 	border-right: none;
 }
 
-@import '';
+/* @import '';
 :root {
 	--primary-color: #fcba03;
 	--primary-color-rgb: 252, 186, 3;
 	--bg-color: #292929;
-	--bg-color-dark: #1f1f1f;
+	--bg-color-dark: #1F1F1F;
 	--dark-trait: #141414;
 	--light-trait-100: #3d3d3d;
 	--light-trait-200: #545454;
@@ -1583,7 +1614,7 @@ mark .md-meta {
 	--active-file-border-color: var(--bg-color);
 	--window-border: 1px solid var(--bg-color);
 	--focus-ring-color: transparent;
-}
+} */
 
 .description html {
 	font-size: var(--font-size);
@@ -1601,6 +1632,7 @@ mark .md-meta {
 	margin: 0 auto;
 	padding: 30px;
 	padding-bottom: 100px;
+	color: #F8F8F2;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -1774,12 +1806,59 @@ blockquote blockquote {
 }
 
 .description table tr {
-	border-top: 1px solid var(--dark-trait);
+	/* border-top: 1px solid var(--dark-trait); */
 	margin: 0;
 	padding: 0;
 }
 
-.description table tr:nth-child(2n),
+.description .tg  {
+	border:none;
+	border-collapse:collapse;
+	border-spacing:0;
+	margin:0px auto;
+}
+
+.description .tg td{
+	border-style:solid;
+	border-width:0px;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	overflow:hidden;
+  padding:5px 5px;
+	word-break:normal;
+}
+
+.description .tg th{
+	border-style:solid;
+	border-width:0px;
+	font-family:Arial, sans-serif;
+	font-size:14px;
+	font-weight:normal;
+  overflow:hidden;
+	padding:10px 5px;
+	word-break:normal;
+}
+
+.description .tg .tg-0lax{
+	text-align:left;
+	vertical-align:top;
+}
+
+@media screen and (max-width: 767px) {
+	.description .tg {
+		width: auto !important;
+		}
+	.description .tg col {
+		width: auto !important;
+		}
+	.description .tg-wrap {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;margin: auto 0px;
+		}
+	}
+
+
+/* .description table tr:nth-child(2n), */
 .description thead {
 	background-color: var(--side-bar-bg-color);
 }
@@ -1825,6 +1904,11 @@ tt {
 	padding: 2px 4px 0px 4px;
 	font-size: 0.9em;
 	font-family: var(--monospace);
+}
+
+blockquote span{
+	display: inline-block;
+	padding-bottom: 5px;
 }
 
 .md-fences {
