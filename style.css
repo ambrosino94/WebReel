@@ -8,7 +8,6 @@
   /* --color-bg: #242240; */
   --color-dot: #B452FF;
   --color-dot2: #F603FF;
-
 }
 
 /* navE_padding-top = 1/5 * logo_Height */
@@ -57,6 +56,7 @@ header{
   --background: transparent;
   --inverted-text: #262626;
   position: fixed;
+  height: 8.6vh;
   top: 0;
   left: 0;
   right: 0;
@@ -71,6 +71,7 @@ header{
   color: #FCFAEA;
   transition: background 125ms ease-in;
   border-radius: 0px 0px 5px 5px;
+  flex-direction: column;
 }
 
 header::after{
@@ -93,7 +94,7 @@ header::after{
 
 .nav_list{
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   flex: 1;
   display: flex;
   list-style: none;
@@ -144,7 +145,7 @@ header::after{
 
 /* Mobile menu Buttons */
 /* ========================================================================== */
-/* .mobile-menu{
+/* #mobile-menu{
   flex-direction: column;
   position: fixed;
   max-width: 100%;
@@ -165,7 +166,7 @@ header::after{
   height: 45px;
   cursor: pointer;
   transition: 0.5s ease-in-out;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
 }
@@ -176,7 +177,7 @@ header::after{
   background: #B452FF;
   transition: 0.25 ease-in-out;
   border-radius: 10px;
-  transform: translateY(6px);
+  transform: translateY(13px);
 }
 
 .hamburger::before,
@@ -241,14 +242,24 @@ header::after{
 
 /* Mobile menu Content */
 /* ========================================================================== */
+.overlay{
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+  display: none;
+}
+
 .mobile_nav_list{
-  color: #fff;
-  opacity: 0;
-  transition: 0.5s ease all;
-  transform: translateX(50px);
-  pointer-events: none;
-  display: flex;
-  list-style: none;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  margin-top: 50%;
 }
 
 .menu_open{
@@ -256,25 +267,19 @@ header::after{
   transition: 0.3s;
   transform: translateX(0px);
   pointer-events: all;
+
 }
 
-.mobile_nav_list{
-  font-size: 25px;
-  color: rgba(136, 77, 255, 1);
-  text-align: center;
-  margin-left: 0;
-  padding: 15px 35px;
-}
-
-/* .mobile_nav_a{
-  color: white;
-  padding: 14px 16px;
+.mobile_nav_a{
+  padding: 10px;
   text-decoration: none;
-  font-size: 18px;
-  display: flex;
+  font-size: 40px;
+  color: #818181;
+  display: none;
+  transition: 0.4s;
 }
 
-.mobile_nav_a_scrolled{
+/*.mobile_nav_a_scrolled{
   color: #262626;
   padding: 14px 16px;
   text-decoration: none;
