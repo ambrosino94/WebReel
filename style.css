@@ -43,6 +43,7 @@ main{
   width: 100%;
   align-items: center;
   justify-content: center;
+  border: none;
 }
 
 .navlogo{
@@ -426,11 +427,36 @@ header::after{
 /* Game
 /* ========================================================================== */
 .game {
-  display:block;
+  /* display:block; */
   margin-bottom: -5px;
   padding: 0;
-  bottom: 5px;
-  postion: fixed;
+  /* bottom: 5px; */
+  /* position: fixed; */
+  /* position: absolute; */
+
+  /* top: 100px; */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: red  */
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  /* background-color: blue;  */
+  overflow: hidden;
+}
+
+.game iframe {
+  flex-grow: 1;
+  display: block;
+  /* background: #000; */
+  border: none;
+  height: calc(100vh - 30px);
+  width: 100%;
+  overflow: hidden;
+
 }
 
 

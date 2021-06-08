@@ -54,72 +54,72 @@ var pagBtnSize;
 
 
 
-function setup() {
+// function setup() {
+//
+//   // canvas = createCanvas(windowWidth,windowHeight);
+//   // canvas.parent('gameParent');
+//   // ctx = document.querySelector("#responsive-canvas")
+//   // console.log(ctx)
+//   windowResized();
+//
+//   // ctx.canvas.height = window.innerHeight;
+//   // ctx.canvas.width = window.innerWidth;
+//   // console.log(ctx.canvas)
+//   // var canva = document.getElementById('responsive-canvas');
+//   // console.log(ctx);
+//   // createElement('h1','My fav');
+//
+//   background(12);
+//
+//
+//   pagBtnY = height/2;
+//   pagBtnSize = height/32;
+//   var pagBtnX = width/4 + 2.5 * pagBtnSize;
+//
+//   group1 = new GroupBtn((500-300), pagBtnY, pagBtnSize);
+//   group2 = new GroupBtn(800-300, pagBtnY, pagBtnSize);
+//   group3 = new GroupBtn(1100-300, pagBtnY, pagBtnSize);
+//   group4 = new GroupBtn(1400-300, pagBtnY, pagBtnSize);
+//
+//   nextBtn = {x: group1.x, y: 0};
+//   // console.log(nextBtn.x)
+//   selector = new Selector(group1.x, pagBtnY, pagBtnSize);
+//
+//   // description = document.getElementById("d1");
+//   // description.style.display = "block";
+// }
 
-  canvas = createCanvas(windowWidth,windowHeight);
-  canvas.parent('gameParent');
-  // ctx = document.querySelector("#responsive-canvas")
-  // console.log(ctx)
-  windowResized();
-
-  // ctx.canvas.height = window.innerHeight;
-  // ctx.canvas.width = window.innerWidth;
-  // console.log(ctx.canvas)
-  // var canva = document.getElementById('responsive-canvas');
-  // console.log(ctx);
-  // createElement('h1','My fav');
-
-  background(12);
-
-
-  pagBtnY = height/2;
-  pagBtnSize = height/32;
-  var pagBtnX = width/4 + 2.5 * pagBtnSize;
-
-  group1 = new GroupBtn((500-300), pagBtnY, pagBtnSize);
-  group2 = new GroupBtn(800-300, pagBtnY, pagBtnSize);
-  group3 = new GroupBtn(1100-300, pagBtnY, pagBtnSize);
-  group4 = new GroupBtn(1400-300, pagBtnY, pagBtnSize);
-
-  nextBtn = {x: group1.x, y: 0};
-  // console.log(nextBtn.x)
-  selector = new Selector(group1.x, pagBtnY, pagBtnSize);
-
-  // description = document.getElementById("d1");
-  // description.style.display = "block";
-}
-
-function draw() {
-
-  background(0);
-  noStroke();
-  fill(200,100,50);
-  rect(100,100,50,50);
-
-  background(12);
-  noStroke();
-  fill(255);
-  rect(windowWidth/4,windowHeight/4,windowWidth/2,windowHeight/2);
-
-
-
-//               __
-// |U|          [|-
-// `-'pdating   `-lements
-//  ═══════════════════════════════ ° ═══════════════════════════════
-  group1.Disp('d1');
-  group2.Disp('d2');
-  group3.Disp('d3');
-  group4.Disp('d4');
-  // group5.Disp('d5');
-
-  selector.GroupChange(nextBtn.x);
-  selector.Disp();
-
-
-
-
-}
+// function draw() {
+//
+//   background(0);
+//   noStroke();
+//   fill(200,100,50);
+//   rect(100,100,50,50);
+//
+//   background(12);
+//   noStroke();
+//   fill(255);
+//   rect(windowWidth/4,windowHeight/4,windowWidth/2,windowHeight/2);
+//
+//
+//
+// //               __
+// // |U|          [|-
+// // `-'pdating   `-lements
+// //  ═══════════════════════════════ ° ═══════════════════════════════
+//   group1.Disp('d1');
+//   group2.Disp('d2');
+//   group3.Disp('d3');
+//   group4.Disp('d4');
+//   // group5.Disp('d5');
+//
+//   selector.GroupChange(nextBtn.x);
+//   selector.Disp();
+//
+//
+//
+//
+// }
 
 
 //  _              __
