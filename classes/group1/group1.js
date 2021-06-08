@@ -1,6 +1,6 @@
 //DEVELOPMENT PROJECT - FINAL PROJECT
 //POPCORN CLICKER - NETFLIX THEME
-//Members: Erika Zou, Victor Escobar, Samuel Pinto & Kush Patel
+//Members: Erika Zou & Samuel Pinto 
 //Group: 10-3A
 //November 20, 2020
 //===============================================VARIABLES DECLARATION===================================================//
