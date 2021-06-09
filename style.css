@@ -8,6 +8,7 @@
   /* --color-bg: #242240; */
   --color-dot: #B452FF;
   --color-dot2: #F603FF;
+  --footerlogo_width: 128px;
 }
 
 /* navE_padding-top = 1/5 * logo_Height */
@@ -617,7 +618,7 @@ a:link{
 }
 
 .footerlogo {
-  width: 128px;
+  width: var(--footerlogo_width);
   height: 84px;
   cursor: pointer;
   margin: auto;
@@ -631,11 +632,18 @@ h2{
   color: #fff;
 }
 
-.about{
-  font-size: 68px;
+.aboutLogo{
+  font-size: 88px;
   display: contents;
   color: #fff;
 }
+
+.aboutLogo
+span{
+  color:#B452FF;
+}
+
+
 
 .main-content {
   grid-area: main-content;
@@ -645,6 +653,10 @@ h2{
 }
 .main-content p{
   text-align: justify;
+  margin-top: -30px;
+  margin-left: calc(var(--footerlogo_width) + 19px);
+  letter-spacing: 10px;
+
 }
 
 .tech{
