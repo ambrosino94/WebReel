@@ -693,6 +693,27 @@ h2{
   justify-self: right;
 }
 
+@media only screen and (max-width: 1472px) {
+  /* Footer */
+  /* ========================================================================== */
+  .grid-container {
+    padding: 41px 91px 41px 118px;
+  }
+}
+
+@media only screen and (max-width: 1472px) {
+  /* Footer */
+  /* ========================================================================== */
+  .grid-container {
+    padding: 41px 91px 41px 118px;
+  }
+}
+
+@media only screen and (max-width: 1472px) {
+  /* Footer */
+  /* ========================================================================== */
+
+}
 
 @media only screen and (max-width: 765px) {
   :root{
@@ -731,21 +752,5 @@ h2{
   /* Descriptions */
   /* ========================================================================== */
 
-  .description{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #141E24;
-  }
 
-  .description div {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: none;
-    background-color: #141E24;
-  }
 }
