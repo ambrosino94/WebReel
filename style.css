@@ -314,10 +314,16 @@ header::after{
 }
 
 /* Intro Button */
+/* credits to yourpalnurav https://freefrontend.com/css-buttons/ */
 /* ========================================================================== */
 .brk-btn {
   position: absolute;
-  background: rgba(253, 158, 153, 0.55);
+  /* background: rgba(253, 158, 153, 0.55); pink */
+  /* background: rgba(253, 158, 1, 0.55); orange */
+  /* background: rgba(85, 26, 139, 0.75); project purple */
+  /* background: rgba(220, 80, 168, 0.75); bg pink */
+  /* background: rgba(0, 0, 0, 0.45); black */
+  background: rgba(255, 255, 255, 0.555);
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
