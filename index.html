@@ -89,9 +89,20 @@
               description = document.getElementById(descriptionId);
               description.style.display = "block";
 
+
               game = document.getElementById("gameFrame");
-              url = "classes/group" + id.substring(1) + "/index.html";
-              game.src = url;
+
+              if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+                // true for mobile device
+                url = "classes/MobileAssets/mobile_group" + id.substring(1) + "/.png";
+                game.src = url;
+              }else{
+                // false for not mobile device
+                url = "classes/group" + id.substring(1) + "/index.html";
+                game.src = url;
+
+              }
+
 
 // <iframe src="https://openprocessing.org/sketch/1161759/embed/" width="400" height="400"></iframe>
 
@@ -108,7 +119,7 @@
             }
 
             paginationButtons.forEach(button => button.addEventListener('click', handleClick));
-            paginationButtons.forEach(button => button.addEventListener('touchstart', handleClick));
+            paginationButtons.forEach(button => button.addEventListener('touchend', handleClick));
           </script>
 
           <!-- Note: Another pagination action approach would be with a custom event
@@ -138,7 +149,7 @@
           <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
             <ul class="nav_list">
               <li class="nav_list_element"><a class="nav_a" href="#home">Home</a></li>
-              <li class="nav_list_element"><a class="nav_a" href="#GameParent">Projects</a></li>
+              <li class="nav_list_element"><a class="nav_a" href="#gameAnchor">Projects</a></li>
               <li class="nav_list_element"><a class="nav_a" href="#footer">About</a></li>
             </ul>
         </div>
@@ -149,7 +160,7 @@
         <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
         <ul class="mobile_nav_list">
           <li class="m_nav_list"><a class="mobile_nav_a" href="#home">Home</a></li>
-          <li class="m_nav_list"><a class="mobile_nav_a" href="#GameParent">Projects</a></li>
+          <li class="m_nav_list"><a class="mobile_nav_a" href="#gameAnchor">Projects</a></li>
           <li class="m_nav_list"><a class="mobile_nav_a" href="#footer">About</a></li>
         </ul>
 
@@ -177,6 +188,7 @@
       <!-- Game Canvas -->
       <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
       <section>
+        <span class="anchor" id="gameAnchor"></span>
         <div class="game" id="GameParent" position="fixed">
           <!-- <iframe src="https://jsfiddle.net/about" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe >></iframe> -->
           <iframe id="gameFrame" src="classes/group1/index.html" scrolling="no"></iframe>
@@ -262,6 +274,19 @@
 
       var description = document.getElementById("d1");
       description.style.display = "block";
+
+      game = document.getElementById("gameFrame");
+
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        // true for mobile device
+        url = "classes/MobileAssets/mobile_group1.png";
+        game.src = url;
+      }else{
+        // false for not mobile device
+        url = "classes/group1/index.html";
+        game.src = url;
+
+      }
 
       // var game = document.getElementById("gameParent1");
       // game.style.display = "block";
