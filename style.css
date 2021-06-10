@@ -532,8 +532,8 @@ header::after{
 
 .anchor{
   display: block;
-  height: calc( var(--header_height) + 3px); /*same height as header*/
-  margin-top: calc( (var(--header_height) + 3px) * -1px); /*same height as header*/
+  height: calc( var(--header_height) + 1px); /*same height as header*/
+  margin-top: calc( -1px - var(--header_height) ); /*same height as header*/
   visibility: hidden;
 }
 
