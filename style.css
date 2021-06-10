@@ -9,6 +9,8 @@
   --color-dot: #B452FF;
   --color-dot2: #F603FF;
   --footerlogo_width: 128px;
+
+  --header_height: 8.6vh;
 }
 
 /* navE_padding-top = 1/5 * logo_Height */
@@ -60,7 +62,7 @@ header{
   --background: transparent;
   --inverted-text: #262626;
   position: fixed;
-  height: 8.6vh;
+  height: var(--header_height);
   top: 0;
   left: 0;
   right: 0;
@@ -509,16 +511,25 @@ header::after{
 }
 
 .game iframe {
+  /* padding-top: calc( var(--header_height) + 3px);
+  margin-top: -82.7167px; */
+  /* margin-top: calc( -(var(--header_height) + 3px)); */
   flex-grow: 1;
   display: block;
   /* background: #000; */
   border: none;
-  height: calc(100vh - 30px);
+  height: calc(101vh - (var(--header_height) + 3px ) );
   width: 100%;
   overflow: hidden;
 
 }
 
+.anchor{
+  display: block;
+  height: calc( var(--header_height) + 3px); /*same height as header*/
+  margin-top: calc( (var(--header_height) + 3px) * -1px); /*same height as header*/
+  visibility: hidden;
+}
 
 /* Coding Sharing Options Btn */
 /* ========================================================================== */
