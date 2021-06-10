@@ -20,7 +20,7 @@
   padding: 0;
 }
 
-body, html {width: 100%; height: 100%; margin: 0; padding: 0}
+body, html {width: 100%; height: 100%; margin: 0; padding: 0; scroll-behavior: smooth;}
 
 body{
   margin: 0;
@@ -253,7 +253,7 @@ header::after{
   position: fixed;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.94);
   overflow-x: hidden;
   transition: 0.5s;
   display: none;
@@ -294,13 +294,72 @@ header::after{
 /* Sections */
 /* ========================================================================== */
 .intro{
-  padding: 50vh 0;
   /* background: #123 url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F03%2FFree-Dark-Blue-Wallpaper-HD.jpg&f=1&nofb=1); */
   background-color: #0F2032;
   background-size: cover;
   background-blend-mode: multiply;
   color: white;
   text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.introvid{
+  position: relative;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Intro Button */
+/* ========================================================================== */
+.brk-btn {
+  position: absolute;
+  background: rgba(253, 158, 153, 0.55);
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid #fff;
+  padding: 0.5em 1em;
+  z-index: 1;
+  font-size: 30px;
+  transform: translateX(-220%) translateY(-380%);
+}
+
+.brk-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #E56DBC;
+  height: 0.3em;
+  right: 20%;
+  top: -0.21em;
+  transform: skewX(-45deg);
+  -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #E56DBC;
+  height: 0.3em;
+  left: 20%;
+  bottom: -0.25em;
+  transform: skewX(45deg);
+  -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn:hover::before {
+  right: 80%;
+}
+
+.brk-btn:hover::after {
+  left: 80%;
 }
 
 .rpar{
@@ -602,19 +661,14 @@ a:link{
 .grid-container {
   display: grid;
   grid-template-columns: 1.9fr 0.05fr 0.1fr 1.1fr;
-  grid-template-rows: 0.5fr 1fr;
+  grid-template-rows: 0.5fr 0.35fr;
   gap: 9px 3px;
   grid-template-areas:
-    "logo logo logo logo"
+    /* "logo logo logo logo" */
     "main-content vl icons names"
-    "tech tech tech tech"
+    /* "tech tech tech tech" */
     "footer footer footer footer";
-  padding: 46px 96px 46px 156px;
-}
-
-.logo {
-  grid-area: logo;
-  margin-left: -9px;
+  padding: 116px 96px 41px 156px;
 }
 
 .footerlogo {
@@ -643,14 +697,13 @@ span{
   color:#B452FF;
 }
 
-
-
 .main-content {
   grid-area: main-content;
   color: #fff;
   line-height: 1.5;
   font-size: 20px;
 }
+
 .main-content p{
   text-align: justify;
   margin-top: -30px;
@@ -684,8 +737,8 @@ span{
 .names ul li {
   list-style: none;
   line-height: 1.8;
-  margin-top: 8px;
-  font-size: 18px;
+  margin-top: 18px;
+  font-size: 20px;
 }
 
 .Bard{
@@ -702,32 +755,47 @@ span{
 
 .vl {
   grid-area: vl;
-  justify-self: right;
+  justify-self: center;
 }
 
-@media only screen and (max-width: 1472px) {
+/*  1680x1050 */
+@media only screen and (max-width: 1680px) {
   /* Footer */
   /* ========================================================================== */
   .grid-container {
-    padding: 41px 91px 41px 118px;
+    padding: 116px 91px 41px 118px;
   }
 }
 
-@media only screen and (max-width: 1472px) {
+/* 1440x900 */
+@media only screen and (max-width: 1440px) {
   /* Footer */
   /* ========================================================================== */
   .grid-container {
-    padding: 41px 91px 41px 118px;
+    padding: 116px 91px 41px 118px;
+    grid-template-columns: 1.6fr 0.05fr 0.1fr 1.1fr;
   }
 }
 
-@media only screen and (max-width: 1472px) {
+/* 1280x1024 */
+@media only screen and (max-width: 1280px) {
+  /* Footer */
+  /* ========================================================================== */
+  .grid-container {
+    padding: 116px 12px 41px 14px;
+    grid-template-columns: 1.45fr 0.05fr 0.1fr 1.1fr;
+  }
+}
+
+/* 1024x768 */
+@media only screen and (max-width: 1024px) {
   /* Footer */
   /* ========================================================================== */
 
 }
 
-@media only screen and (max-width: 765px) {
+/* tablet */
+@media only screen and (max-width: 768px) {
   :root{
     --navlogo_height: 49px;
     --base-sizing: 48px;
@@ -761,8 +829,35 @@ span{
 
   }
 
+  /* Game
+  /* ========================================================================== */
+  .game {
+    display: none;
+  }
+
   /* Descriptions */
   /* ========================================================================== */
 
+
+}
+
+/* Large Mobile */
+@media only screen and (max-width: 425px) {
+  /* Footer */
+  /* ========================================================================== */
+
+}
+
+/* Medium Mobile */
+@media only screen and (max-width: 375px) {
+  /* Footer */
+  /* ========================================================================== */
+
+}
+
+/* Small Mobile */
+@media only screen and (max-width: 320px) {
+  /* Footer */
+  /* ========================================================================== */
 
 }
