@@ -314,16 +314,10 @@ header::after{
 }
 
 /* Intro Button */
-/* credits to yourpalnurav https://freefrontend.com/css-buttons/ */
 /* ========================================================================== */
 .brk-btn {
   position: absolute;
-  /* background: rgba(253, 158, 153, 0.55); pink */
-  /* background: rgba(253, 158, 1, 0.55); orange */
-  /* background: rgba(85, 26, 139, 0.75); project purple */
-  /* background: rgba(220, 80, 168, 0.75); bg pink */
-  /* background: rgba(0, 0, 0, 0.45); black */
-  background: rgba(255, 255, 255, 0.555);
+  background: rgba(253, 158, 153, 0.55);
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
@@ -675,6 +669,10 @@ a:link{
 /* Footer */
 /* ========================================================================== */
 
+footer {
+  display: none;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1.9fr 0.05fr 0.1fr 1.1fr;
@@ -811,6 +809,61 @@ span{
 
 }
 
+
+/* Mobile */
+/* 360x780 */
+@media only screen and (max-width: 375px) {
+
+  .game {
+    /* display:block; */
+    margin-bottom: -5px;
+    padding: 0;
+    /* bottom: 5px; */
+    /* position: fixed; */
+    /* position: absolute; */
+
+    /* top: 100px; */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: red  */
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    /* background-color: blue;  */
+    overflow: hidden;
+  }
+
+  .game iframe {
+    /* padding-top: calc( var(--header_height) + 3px);
+    margin-top: -82.7167px; */
+    /* margin-top: calc( -(var(--header_height) + 3px)); */
+    flex-grow: 1;
+    display: block;
+    /* background: #000; */
+    border: none;
+    height: calc(100vh - (var(--header_height) + 3px ) );
+    width: 100%;
+    overflow: hidden;
+
+  }
+
+  .anchor{
+    display: block;
+    height: calc( var(--header_height) + 1px); /*same height as header*/
+    margin-top: calc( -1px - var(--header_height) ); /*same height as header*/
+    visibility: hidden;
+  }
+
+}
+/* 414x816 */
+
+/* 375x812 */
+
+
+
 /* tablet */
 @media only screen and (max-width: 768px) {
   :root{
@@ -849,7 +902,7 @@ span{
   /* Game
   /* ========================================================================== */
   .game {
-    display: none;
+    /* display: none; */
   }
 
   /* Descriptions */

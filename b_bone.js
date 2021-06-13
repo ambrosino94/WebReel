@@ -137,3 +137,29 @@ function windowResized() {
 // Divisor -> Efti Piti
 
 // Fonts credits and references available at README.md
+
+
+
+// ======================================================================
+// Note: Another pagination action approach would be with a custom event
+// Template:
+//
+// html
+//   <button type="button"
+//           className="btn btn-default"
+//           onClick="invoke"
+//           name='gotoNode'
+//           data-arg1='1234'>GotoNode</button>
+//
+//
+// js
+//
+//   invoke = (event) => {
+//       let nameOfFunction = this[event.target.name];
+//       let arg1 = event.target.getAttribute('data-arg1');
+//       // We can add more arguments as needed...
+//       window[nameOfFunction](arg1)
+//       // Hope the function is in the window.
+//       // Else the respective object need to be used
+//       })
+//     }
