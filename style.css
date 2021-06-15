@@ -8,8 +8,7 @@
   /* --color-bg: #242240; */
   --color-dot: #B452FF;
   --color-dot2: #F603FF;
-  --footerlogo_width: 128px;
-
+  --footerlogo_width: 164px;
   --header_height: 8.6vh;
 }
 
@@ -124,11 +123,14 @@ header::after{
   display: inline-block;
   position: relative;
   padding: calc(var(--spacing/2) var(--spacing))
-  color: inherit;
   text-decoration: none;
   text-transform: uppercase;
   font-size: var(--menu_text_h);
   letter-spacing: 2px;
+}
+
+a.nav_a{
+  color: #FFFF98;
 }
 
 .nav_a:after{
@@ -318,7 +320,7 @@ header::after{
 /* ========================================================================== */
 .brk-btn {
   position: absolute;
-  background: rgba(253, 158, 153, 0.55);
+  background: rgba(220, 80, 168, 0.75);
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
@@ -687,12 +689,12 @@ a:link{
 
 .footerlogo {
   width: var(--footerlogo_width);
-  height: 84px;
+  height: 116px;
   cursor: pointer;
   margin: auto;
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: -11px;
+  margin-bottom: -41.5px;
 }
 
 h2{
@@ -718,6 +720,10 @@ span{
   font-size: 20px;
 }
 
+div.main-content{
+  align-self: baseline;
+}
+
 .main-content p{
   text-align: justify;
   margin-top: -30px;
@@ -741,6 +747,7 @@ span{
   text-align: center;
   line-height: 1.6;
   align-items: stretch;
+  font-size: 18px;
 }
 
 .names {
@@ -756,7 +763,7 @@ span{
   list-style: none;
   line-height: 1.8;
   margin-top: 18px;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .Bard{
@@ -776,13 +783,75 @@ span{
   justify-self: center;
 }
 
+.hl {
+  display: none;
+}
+
 /*  1680x1050 */
 @media only screen and (max-width: 1680px) {
   /* Footer */
   /* ========================================================================== */
-  .grid-container {
+  /* .grid-container {
     padding: 116px 91px 41px 118px;
+    grid-template-columns: 1.7fr 0.05fr 0.1fr 1.3fr;
+    gap: 9px 3px;
   }
+
+  .footerlogo {
+    width: var(--footerlogo_width);
+    height: 84px;
+    cursor: pointer;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: -11px;
+  }
+
+  h2{
+    font-size: 38px;
+    color: #fff;
+  }
+
+  .aboutLogo{
+    font-size: 88px;
+    display: contents;
+    color: #fff;
+  }
+
+  .main-content {
+    grid-area: main-content;
+    color: #fff;
+    line-height: 1.5;
+    font-size: 20px;
+  }
+
+  .main-content p{
+    text-align: justify;
+    margin-top: -30px;
+    margin-left: calc(var(--footerlogo_width) + 19px);
+    letter-spacing: 10px;
+  }
+
+  .icons{
+    grid-area: icons;
+    margin: 0px;
+  }
+
+  .copyright {
+    margin-top: 60px;
+    grid-area: footer;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    align-items: stretch;
+  }
+
+  .names ul li {
+    list-style: none;
+    line-height: 1.8;
+    margin-top: 18px;
+    font-size: 20px;
+  } */
 }
 
 /* 1440x900 */
@@ -800,7 +869,7 @@ span{
   /* Footer */
   /* ========================================================================== */
   .grid-container {
-    padding: 116px 12px 41px 14px;
+    padding: 6px 12px 41px 14px;
     grid-template-columns: 1.45fr 0.05fr 0.1fr 1.1fr;
   }
 }
@@ -811,25 +880,36 @@ span{
   /* ========================================================================== */
   .grid-container {
   grid-template-columns: 0.1fr 1fr;
-  grid-template-rows: 1.2fr 1fr 0.6fr;
+  grid-template-rows: 0.6fr 0.05fr 1fr 0.6fr;
   gap: 0px 0px;
   grid-template-areas:
     "main-content main-content"
+    "hl hl"
     "icons names"
     "footer footer";
   align-content: center;
   align-items: center;
   justify-content: center;
   }
+
+  .hl{
+    display: block;
+    grid-area: hl;
+  }
+
   .vl{
     display: none;
   }
 }
 
-
-/* Mobile */
-/* 360x780 */
-@media only screen and (max-width: 375px) {
+/* tablet */
+@media only screen and (max-width: 768px) {
+  :root{
+    --navlogo_height: 49px;
+    --base-sizing: 48px;
+    --base-sizing-md: 22px;
+    --base-sizing-sm: 22px;
+  }
 
   .game {
     /* display:block; */
@@ -874,22 +954,6 @@ span{
     visibility: hidden;
   }
 
-}
-/* 414x816 */
-
-/* 375x812 */
-
-
-
-/* tablet */
-@media only screen and (max-width: 768px) {
-  :root{
-    --navlogo_height: 49px;
-    --base-sizing: 48px;
-    --base-sizing-md: 22px;
-    --base-sizing-sm: 22px;
-  }
-
   .navlogo{
     width: 68px;
   }
@@ -930,6 +994,13 @@ span{
 
 /* Large Mobile */
 @media only screen and (max-width: 425px) {
+  :root{
+    --navlogo_height: 48px;
+    --base-sizing: 48px;
+    --base-sizing-md: 21px;
+    --base-sizing-sm: 21px;
+  }
+
   /* Footer */
   /* ========================================================================== */
   .footerlogo {
@@ -989,8 +1060,34 @@ span{
 
 /* Medium Mobile */
 @media only screen and (max-width: 375px) {
+  :root{
+    --navlogo_height: 36px;
+    --base-sizing: 49px;
+    --base-sizing-md: 20px;
+    --base-sizing-sm: 20px;
+  }
+
+  /* Mobile menu Buttons */
+  /* ========================================================================== */
+  .mobile_menu_btn{
+    width: 70px;
+    height: 41px;
+  }
+
+  .pagination-button {
+    width: 44px;
+  }
+
+  .pagination-current {
+    width: 44px;
+  }
+
   /* Footer */
   /* ========================================================================== */
+
+  .navlogo{
+    width: 50px;
+  }
 
   .copyright {
     font-size: 13px;
@@ -999,6 +1096,30 @@ span{
 
 /* Small Mobile */
 @media only screen and (max-width: 320px) {
+  :root{
+    --navlogo_height: 36px;
+    --base-sizing: 45px;
+    --base-sizing-md: 20px;
+    --base-sizing-sm: 20px;
+  }
+
+  .mobile_menu_btn{
+    width: 70px;
+    height: 40px;
+  }
+
+  .pagination{
+    margin-left: 6px;
+  }
+
+  .pagination-button {
+    width: 36px;
+  }
+
+  .pagination-current {
+    width: 36px;
+  }
+
   /* Footer */
   /* ========================================================================== */
   .footerlogo {
