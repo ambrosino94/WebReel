@@ -740,6 +740,21 @@ div.main-content{
   margin: 0px;
 }
 
+.G_icon{
+  height: 86px;
+  width: 86px;
+}
+
+.C_icon{
+  height: 86px;
+  width: 86px;
+}
+
+.K_icon{
+  height: 86px;
+  width: 86px;
+}
+
 .copyright {
   margin-top: 60px;
   grid-area: footer;
@@ -766,16 +781,20 @@ div.main-content{
   font-size: 22px;
 }
 
-.Bard{
-  color: #F4D95D;
+.role{
+  color: #b452ff;
 }
 
 .Berserker{
-  color: #E50505;
+  color: #a13ded;
+}
+
+.Bard{
+  color: #ac66e1;
 }
 
 .Mage{
-  color: #0066F9;
+  color: #b67ee1;
 }
 
 .vl {
@@ -859,8 +878,8 @@ div.main-content{
   /* Footer */
   /* ========================================================================== */
   .grid-container {
-    padding: 116px 91px 41px 118px;
-    grid-template-columns: 1.6fr 0.05fr 0.1fr 1.1fr;
+    /* padding: 116px 91px 41px 118px; */
+    grid-template-columns: 1.6fr 0.05fr 0.1fr 1.2fr;
   }
 }
 
@@ -869,8 +888,8 @@ div.main-content{
   /* Footer */
   /* ========================================================================== */
   .grid-container {
-    padding: 6px 12px 41px 14px;
-    grid-template-columns: 1.45fr 0.05fr 0.1fr 1.1fr;
+    /* padding: 6px 12px 41px 14px; */
+    grid-template-columns: 1.35fr 0.05fr 0.1fr 1.1fr;
   }
 }
 
@@ -893,6 +912,7 @@ div.main-content{
   }
 
   .hl{
+    margin-top: 24px;
     display: block;
     grid-area: hl;
   }
@@ -909,6 +929,20 @@ div.main-content{
     --base-sizing: 48px;
     --base-sizing-md: 22px;
     --base-sizing-sm: 22px;
+  }
+
+  .grid-container {
+  grid-template-columns: 0.1fr 0.9fr;
+  grid-template-rows: 0.6fr 0.05fr 1fr 0.6fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "main-content main-content"
+    "hl hl"
+    "icons names"
+    "footer footer";
+  align-content: center;
+  align-items: center;
+  justify-content: center;
   }
 
   .game {
@@ -1003,6 +1037,12 @@ div.main-content{
 
   /* Footer */
   /* ========================================================================== */
+
+  .grid-container {
+  grid-template-columns: 0.1fr 0.825fr;
+  grid-template-rows: 0.6fr 0.05fr 1fr 0.6fr;
+  }
+
   .footerlogo {
     width: var(--footerlogo_width)/2;
     height: 62px;
@@ -1049,7 +1089,7 @@ div.main-content{
   }
 
   .main-content p{
-    margin-left: calc(var(--footerlogo_width) - 21px);
+    margin-left: calc(var(--footerlogo_width) - 55.5px);
     letter-spacing: 7px;
   }
 
@@ -1065,6 +1105,7 @@ div.main-content{
     --base-sizing: 49px;
     --base-sizing-md: 20px;
     --base-sizing-sm: 20px;
+    --footerlogo_width: 84px;
   }
 
   /* Mobile menu Buttons */
@@ -1084,6 +1125,43 @@ div.main-content{
 
   /* Footer */
   /* ========================================================================== */
+  .grid-container {
+  grid-template-columns: 0.1fr 0.825fr;
+  grid-template-rows: 0.26fr 0.05fr 0.56fr 0.1fr;
+  margin: 20px 0px;
+  }
+
+  .footerlogo {
+    width: var(--footerlogo_width)/2;
+    height: 52px;
+    cursor: pointer;
+    margin-bottom: -11px;
+  }
+
+  .aboutLogo{
+    font-size: 54px;
+    display: contents;
+    color: #fff;
+  }
+
+  .main-content {
+    line-height: 1.85;
+    font-size: 11px;
+  }
+
+  .main-content p{
+    margin-left: calc(var(--footerlogo_width) + 7px);
+    letter-spacing: 7px;
+  }
+
+  .hl{
+    align-self: Start;
+    margin-top: 16px;
+  }
+
+  .names ul li {
+    font-size: 18px;
+  }
 
   .navlogo{
     width: 50px;
@@ -1129,6 +1207,10 @@ div.main-content{
     margin-bottom: -5px;
   }
 
+  .grid-container{
+    margin: 15px 0px;
+  }
+
   h2{
     font-size: 38px;
     color: #fff;
@@ -1136,27 +1218,36 @@ div.main-content{
 
   .aboutLogo{
     font-size: 44px;
-    display: contents;
-    color: #fff;
-  }
-
-  .aboutLogo
-  span{
-    color:#B452FF;
   }
 
   .main-content {
-    grid-area: main-content;
-    color: #fff;
-    line-height: 2.1;
+    line-height: 1.85;
     font-size: 10px;
   }
 
   .main-content p{
-    text-align: justify;
-    margin-top: -30px;
-    margin-left: calc(var(--footerlogo_width) - 53px);
+    margin-top: -20px;
+    margin-left: calc(var(--footerlogo_width) - 9.8px);
     letter-spacing: 5px;
+  }
+
+  .names ul li {
+    font-size: 15px;
+  }
+
+  .G_icon{
+    height: 80px;
+    width: 80px;
+  }
+
+  .C_icon{
+    height: 80px;
+    width: 80px;
+  }
+
+  .K_icon{
+    height: 80px;
+    width: 80px;
   }
 
   .copyright {
