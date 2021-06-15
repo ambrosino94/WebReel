@@ -69,9 +69,9 @@ function preload() {
 //=====================================================================================================================
 
 function setup() {
-	print(windowHeight);
+	// print(windowHeight);
 	windowHeight = windowHeight/heightMultiplier-menuOffset;
-	print(windowHeight);
+	// print(windowHeight);
 	imageMode (CENTER);                        //changing the origen of the image
 	createCanvas(windowWidth, windowHeight);   //create canvas
 	windowResized();

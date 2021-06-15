@@ -2,6 +2,7 @@
 //Cookie Clicker Game
 //Authors: Vanessa Wu Cen, Lucía Castillo, Analaura Quiros, Luis Tejeira (worked? not really, just came to the meeting)
 //November 2020
+//Mobile adaptation: Giacomo E. Ambrosino
 //-----------------------------------------------------------------------
 
 
@@ -46,6 +47,9 @@ var ra;
 //Array for coookie text "+1" when clicked
 var clickTxts = [];
 
+var menuOffset = 70;
+var heightMultiplier = 0.9178;
+
 //-----------------------------------------------------------------------
 
 
@@ -68,8 +72,10 @@ function preload() {
 
 function setup() {
 	//position main cookie btn
+	windowHeight = windowHeight/heightMultiplier-menuOffset;
 	imageMode(CENTER);
 	createCanvas(windowWidth, windowHeight);
+	windowResized();
 
 	circleX=windowWidth*2/8;
 	ax=windowWidth*2/8 +35;
@@ -77,7 +83,10 @@ function setup() {
 	ra=2
 
 	//create main cooke using class cookieClickr
-	mainCookie = new cookieClickr(windowWidth / 8, windowHeight / 2, 0.9375 * windowWidth * 1 / 4, cookieImg);
+	mainCookie = new cookieClickr(windowWidth / 2,
+																windowHeight* 1/3,
+																windowHeight*4/11,
+																cookieImg);
 
 	//Item 1: Mickey Mouse bakes cookies
 	cursorBtn = new structureBtn("Mickey Mouse", //name
@@ -310,7 +319,7 @@ function windowResized() {
 
 function mousePressed(){
 	mainCookie.Bite(); //button for main cookie
-	mainCookie.d = mainCookie.d + 10
+	// mainCookie.d = mainCookie.d + 10;
 
 	//Buttons for buying objects 1-6
 	cursorBtn.Buy();
@@ -337,39 +346,39 @@ function bgd() {
 	//left column
 	noStroke();
 	fill(155, 218, 250);
-	rect(0, 0, windowWidth / 4, windowHeight);
+	rect(0, 0, windowWidth , windowHeight);
 
-	//middle column
-	stroke(43, 83, 41);
-	strokeWeight(4);
-	fill(100, 170, 200);
-	rect(windowWidth / 4, 0, windowWidth / 2, windowHeight);
-
-	//right column
-	noStroke();
-	fill(255, 255, 255);
-	rect(windowWidth * 3 / 4, 0, windowWidth / 4, windowHeight);
+	// //middle column
+	// stroke(43, 83, 41);
+	// strokeWeight(4);
+	// fill(100, 170, 200);
+	// rect(windowWidth / 4, 0, windowWidth / 2, windowHeight);
+	//
+	// //right column
+	// noStroke();
+	// fill(255, 255, 255);
+	// rect(windowWidth * 3 / 4, 0, windowWidth / 4, windowHeight);
 
 	//Curvy Tree layout
-	noStroke();
-	fill(69, 35, 16);
-	rect(65, windowHeight * 11 / 12, 85, windowHeight / 12);
-
-	noStroke();
-	fill(0, 150, 56);
-	triangle(0, windowHeight * 11.5 / 12, windowWidth / 8, windowHeight * 11.5 / 12, windowWidth / 16, windowHeight * 10 / 12);
-
-	noStroke();
-	fill(0, 150, 56);
-	triangle(20, windowHeight * 10.85 / 12, windowWidth / 8.5, windowHeight * 10.85 / 12, windowWidth / 16.5, windowHeight * 10 / 12);
-
-	noStroke();
-	fill(0, 150, 56);
-	triangle(32, windowHeight * 10.5 / 12, windowWidth / 9, windowHeight * 10.5 / 12, windowWidth / 16, windowHeight * 9.5 / 12);
+	// noStroke();
+	// fill(69, 35, 16);
+	// rect(65, windowHeight * 11 / 12, 85, windowHeight / 12);
+	//
+	// noStroke();
+	// fill(0, 150, 56);
+	// triangle(0, windowHeight * 11.5 / 12, windowWidth / 8, windowHeight * 11.5 / 12, windowWidth / 16, windowHeight * 10 / 12);
+	//
+	// noStroke();
+	// fill(0, 150, 56);
+	// triangle(20, windowHeight * 10.85 / 12, windowWidth / 8.5, windowHeight * 10.85 / 12, windowWidth / 16.5, windowHeight * 10 / 12);
+	//
+	// noStroke();
+	// fill(0, 150, 56);
+	// triangle(32, windowHeight * 10.5 / 12, windowWidth / 9, windowHeight * 10.5 / 12, windowWidth / 16, windowHeight * 9.5 / 12);
 }
 
 function mouseReleased() {
-  mainCookie.d = mainCookie.d - 10
+  // mainCookie.d = mainCookie.d - 10
 }
 
 class cookieClickr {
