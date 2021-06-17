@@ -586,7 +586,7 @@ i {
     background-color: #1F1E1E;
     border-radius: 80px;
     padding: 0 18px;
-    margin: 20px 0px 0px;
+    /* margin: 20px 0px 0px; */
     will-change: transform;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -617,7 +617,7 @@ a:link{
     color: #1F1E1E;
     background-color: #EEEEED;
     padding: 0 18px;
-    margin: 20px 0px 20px;
+    /* margin: 20px 0px 20px; */
     -webkit-transition: all 1.2s ease;
     transition: all 1.2s ease;
 }
