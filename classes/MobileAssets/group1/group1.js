@@ -39,7 +39,8 @@ var upgrade5Shade;
 let d;
 
 var menuOffset = 70;
-var heightMultiplier = 0.9178;
+// var heightMultiplier = 0.9178;
+var heightMultiplier = 0.925;
 
 //-----------------------------------------------------------------------------------------------------
 
