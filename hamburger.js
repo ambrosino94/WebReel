@@ -45,25 +45,3 @@ function hamburgerDynamic(MenuActive, location){
 const mobileNav = document.querySelectorAll(".m_nav_list");
 mobileNav.forEach(element => element.addEventListener('touchstart', () => {MenuActive = hamburgerDynamic(true, element.children[0].hash);}));
 mobileNav.forEach(element => element.addEventListener('click', () => {MenuActive = hamburgerDynamic(true, element.children[0].hash);}));
-
-
-// MenuActive = !MenuActive;
-//
-// if(MenuActive){
-//   menuBtn.classList.add('open');
-//   menuContent.classList.add('menu_open');
-//   overlay.style.display = 'block';
-//
-//   for(var i = 0; i < menuTxt.length; i++){
-//     menuTxt[i].style.display = 'block';
-//   }
-// }
-// else{
-//   menuBtn.classList.remove('open');
-//   menuContent.classList.remove('menu_open');
-//   overlay.style.display = 'none';
-//
-//   for(var i = 0; i < menuTxt.length; i++){
-//     menuTxt[i].style.display = 'none';
-//   }
-// }
