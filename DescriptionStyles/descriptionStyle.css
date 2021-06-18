@@ -221,6 +221,13 @@
 	text-align:justify;
 }
 
+@media only screen and (max-width: 425px){
+	#write p,
+	#write h1{
+		text-align:left;
+	}
+}
+
 .description p {
 	line-height: inherit;
 }
