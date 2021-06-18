@@ -329,6 +329,14 @@ a.nav_a{
   overflow: hidden;
 }
 
+.introvid_tablet{
+  display: none;
+}
+
+.introvid_mobile{
+  display: none;
+}
+
 /* Intro Button */
 /* ========================================================================== */
 .brk-btn {
@@ -944,6 +952,22 @@ div.main-content{
     --base-sizing-sm: 22px;
   }
 
+  .introvid{
+    display: none;
+  }
+
+  .introvid_tablet{
+    position: relative;
+    display: flex;
+    width: calc(100vw - 1px);
+    height: calc(100vh - 1px);
+    overflow: hidden;
+  }
+
+  .introvid_mobile{
+    display: none;
+  }
+
   .grid-container {
   grid-template-columns: 0.1fr 0.9fr;
   grid-template-rows: 0.6fr 0.05fr 1fr 0.6fr;
@@ -1047,6 +1071,21 @@ div.main-content{
     --base-sizing-md: 21px;
     --base-sizing-sm: 21px;
     --footerlogo_width: 78px;
+  }
+
+  .introvid{
+    display: none;
+  }
+
+  .introvid_tablet{
+    display: none;
+  }
+
+  .introvid_mobile{
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
   }
 
   /* Footer */
