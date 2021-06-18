@@ -1085,6 +1085,8 @@ div.main-content{
     display: flex;
     width: 100%;
     overflow: hidden;
+    object-fit: cover;
+    height: 100vh;
   }
 
   /* Footer */
