@@ -1095,6 +1095,11 @@ div.main-content{
     height: 100vh;
   }
 
+  .brk-btn{
+    font-size: 21.2px;
+    transform: translateX(-47.45%) translateY(-210%);
+  }
+
   /* Footer */
   /* ========================================================================== */
 
