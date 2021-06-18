@@ -35,6 +35,19 @@ body{
   min-height: 100vh;
 }
 
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* #ffd9fb */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #ffd9fb, #aa42f9, transparent);
+  border-radius: 10px;
+}
 
 .display-none{
   display: none;
@@ -1033,6 +1046,7 @@ div.main-content{
     --base-sizing: 48px;
     --base-sizing-md: 21px;
     --base-sizing-sm: 21px;
+    --footerlogo_width: 78px;
   }
 
   /* Footer */
@@ -1044,8 +1058,8 @@ div.main-content{
   }
 
   .footerlogo {
-    width: var(--footerlogo_width)/2;
-    height: 62px;
+    width: var(--footerlogo_width);
+    height: 58px;
     cursor: pointer;
     margin-bottom: -11px;
   }
@@ -1071,7 +1085,7 @@ div.main-content{
   }
 
   .aboutLogo{
-    font-size: 59px;
+    font-size: 57px;
     display: contents;
     color: #fff;
   }
@@ -1085,11 +1099,11 @@ div.main-content{
     grid-area: main-content;
     color: #fff;
     line-height: 1.8;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .main-content p{
-    margin-left: calc(var(--footerlogo_width) - 55.5px);
+    margin-left: calc(var(--footerlogo_width) + 13px);
     letter-spacing: 7px;
   }
 
@@ -1133,7 +1147,7 @@ div.main-content{
 
   .footerlogo {
     width: var(--footerlogo_width)/2;
-    height: 52px;
+    height: 54px;
     cursor: pointer;
     margin-bottom: -11px;
   }
