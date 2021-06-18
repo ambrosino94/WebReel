@@ -959,8 +959,7 @@ div.main-content{
   .introvid_tablet{
     position: relative;
     display: flex;
-    width: calc(100vw - 1px);
-    height: calc(100vh - 1px);
+    width: 100%;
     overflow: hidden;
   }
 
