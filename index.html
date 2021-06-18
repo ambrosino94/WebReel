@@ -45,56 +45,41 @@
           <!-- ═══════════════════════════════ ° ═══════════════════════════════ -->
             <div class="pagination">
               <button class="pagination-button active" id="g1" onclick="ActiveGroup('g1')">
-                  <span class="visually-hidden">Go to page 1</span>
-                <span> 1 </span>
+                  <span class="visually-hidden">Go to team 1</span>
                 </button>
                 <button class="pagination-button" id="g2" onclick="ActiveGroup('g2')">
-                  <span class="visually-hidden">Go to page 2</span>
+                  <span class="visually-hidden">Go to team 2</span>
                 </button>
                 <button class="pagination-button" id="g3" onclick="ActiveGroup('g3')">
-                  <span class="visually-hidden">Go to page 3</span>
+                  <span class="visually-hidden">Go to team 3</span>
                 </button>
                 <button class="pagination-button" id="g4" onclick="ActiveGroup('g4')">
-                  <span class="visually-hidden">Go to page 4</span>
+                  <span class="visually-hidden">Go to team 4</span>
                 </button>
                 <button class="pagination-button" id="g5" onclick="ActiveGroup('g5')">
-                  <span class="visually-hidden" onclick="document.location='https://openprocessing.org/sketch/1161721'">Go to page 4</span>
+                  <span class="visually-hidden">Go to page 5</span>
                 </button>
               <span class="pagination-current" aria-hidden="true"></span>
             </div>
 
           <script>
             const paginationButtons = document.querySelectorAll(".pagination-button");
-            const pagBtn5 = document.querySelector("#g5");
 
             function ActiveGroup(id){
               groupId = id;
-
               descriptionId = "d" + id.substring(1);
               descriptions = document.querySelectorAll(".description");
 
-              // gameId = 'gameParent' + id.substring(1);
-              // games = document.querySelectorAll(".game");
-
-              // console.log(descriptionId);
               // Invisibility cape for all descriptions
               for(var i = 0; i < descriptions[0].children.length; i++) {
                 descriptions[0].children[i].style.display = "none"
               }
 
-              // for(var i = 0; i < games.length; i++) {
-              //   games[i].style.display = "none"
-              // }
-
               // Except for the one imported in the argument id
               description = document.getElementById(descriptionId);
               description.style.display = "block";
 
-
               game = document.getElementById("gameFrame");
-
-
-
               if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) | (screen.width)<= 768 ){
                 console.log('inside');
                 // true for mobile device
@@ -106,10 +91,6 @@
                 game.src = url;
 
               }
-
-
-
-
             }
 
             function handleClick(e) {
@@ -125,8 +106,6 @@
             paginationButtons.forEach(button => button.addEventListener('click', handleClick));
             paginationButtons.forEach(button => button.addEventListener('touchstart', handleClick));
             paginationButtons.forEach(button => button.addEventListener('touchstart', () => {ActiveGroup(button.id);}));
-
-
           </script>
 
 

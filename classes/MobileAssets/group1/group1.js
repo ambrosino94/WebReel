@@ -39,7 +39,8 @@ var upgrade5Shade;
 let d;
 
 var menuOffset = 70;
-var heightMultiplier = 0.9178;
+// var heightMultiplier = 0.9178;
+var heightMultiplier = 0.935;
 
 //-----------------------------------------------------------------------------------------------------
 
@@ -509,16 +510,16 @@ function windowResized() {
 //=====================================================================================================================
 
 
-function touchStarted(){
-	// mainPopcorn.d -= 20;
-}
+// function touchStarted(){
+// 	// mainPopcorn.d -= 20;
+// }
 
 function mouseReleased() {           //When mouse is released...
   // mainPopcorn.d += 20;               //Popcorn Image diameter increase
 }
 
 //=====================================================================================================================
-function mousePressed() {            //When mouse is pressed...
+function mouseReleased() {            //When mouse is pressed...
 	mainPopcorn.Bite();                //...over the item, popcorns are gain
 	// mainPopcorn.d -= 20;               //...popcorn size decrease
 
