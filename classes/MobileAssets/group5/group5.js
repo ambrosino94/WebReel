@@ -16,7 +16,9 @@ var imdyngBtn , ilovefrankBtn , popoffqueenBtn , bocastownBtn , youneverknowBtn;
 var LogoImg;
 var PicImg;
 
-
+var menuOffset = 70;
+// var heightMultiplier = 0.9178;
+var heightMultiplier = 0.935;
 
 // cross elements gui object handler --------------
 
@@ -39,7 +41,9 @@ function preload() {
 
 
 function setup() {
+	windowHeight = windowHeight/heightMultiplier-menuOffset;
 	createCanvas(windowWidth, windowHeight);
+	windowResized()
 	imageMode(CENTER);
 	mainCTE = new CookieClickr(1 / 8.5 * windowWidth, 1 / 2 * windowHeight, 300, CTEImg);
 
@@ -50,7 +54,7 @@ function setup() {
 	 												280,												   //yPos
 													windowWidth * 2/8,				     //width
 													60,													   //height
-											    "Social Cues",		   //title
+											    "Social Cues",		  					 //title
 											 		15,													   //price
 													0.5,												   //cps
 													color(145, 187, 198, 200));	   //shade
@@ -70,9 +74,9 @@ function setup() {
 	 												400,												   //yPos
 													windowWidth * 2/8,				     //width
 													60,													   //height
-											    "Tell Me ",       //title
+											    "Tell Me ",       						 //title
 											 		120,													 //price
-													50,												   //cps
+													50,													   //cps
 													color(123, 116, 179, 225));	   //shade
 
 
@@ -81,7 +85,7 @@ function setup() {
 	 												460,												   //yPos
 													windowWidth * 2/8,				     //width
 													60,													   //height
-											    "Melophobia",          //title
+											    "Melophobia",        				   //title
 											 		250,												   //price
 													200,												   //cps
 													color(158, 235, 179, 225));	   //shade
@@ -92,8 +96,8 @@ function setup() {
 	 												520,												   //yPos
 													windowWidth * 2/8,				     //width
 													60,													   //height
-											    "Skin and Bones",                  //title
-											 		500,												 //price
+											    "Skin and Bones",              //title
+											 		500,												 	 //price
 													3000,												   //cps
 													color(229, 229, 131, 225));	   //color
 

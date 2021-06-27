@@ -9,6 +9,10 @@
 var mainCookie;
 var clickTxts = []; // text array (array are like lists)
 
+var menuOffset = 70;
+// var heightMultiplier = 0.9178;
+var heightMultiplier = 0.935;
+
 //ITEM VARIABLES =================================================
 var chefHarryBtn;
 var wisk;
@@ -63,34 +67,34 @@ function setup() {
 	imageMode(CENTER);
 	createCanvas(windowWidth, windowHeight);
   windowResized()
-	mainCookie = new cookieClicker(windowWidth*1/8,windowHeight/2,0.93*windowWidth*2/8,cookieImg);
+	mainCookie = new cookieClicker(windowWidth/2,windowHeight/2,windowWidth/1.5,cookieImg);
 	// ^^^ creates a new object of an especific class
 
 
 	// ITEMS =====================================================================
-
-	chefHarryBtn = new itemBtn (windowWidth * 6/8, 							//xpos
-																	 125,												//ypos
-																	 windowWidth * 2/8,					//width
-																	 60,												//height
+print(windowHeight*1/11*3/4);
+	chefHarryBtn = new itemBtn (0, 															//xpos
+																	 windowHeight*8/11,					//ypos
+																	 windowWidth,								//width
+																	 windowHeight*1/11,												//height
 																	 "Chef Harry",							//name
 																	 color(187, 133, 136,180),	//color
 																	 1,												  //cps
 																	 10);												//price
 
-	wisk = new itemBtn (windowWidth * 6/8,                     //xpos
-															200,                           //ypos
-															windowWidth * 2/8,             //width
-															60,                            //height
+	wisk = new itemBtn (0,                     								 //xpos
+															windowHeight*9/11,             //ypos
+															windowWidth,             			 //width
+															windowHeight*1/11,                            //height
 															"Wisk",                        //name
 															color(187, 133, 136,180),      //color
 															5,                             //cps
 															50);                           //price
 
-	Bakery = new itemBtn (windowWidth * 6/8,                  //xpos
-															275,                          //ypos
-															windowWidth * 2/8,            //width
-															60,                           //height
+	Bakery = new itemBtn (0,                  								//xpos
+															windowHeight*10/11,           //ypos
+															windowWidth,            			//width
+															windowHeight*1/11,                           //height
 															"Bakery",                     //name
 															color(187, 133, 136,180),     //color
 															10,                           //cps
@@ -99,7 +103,7 @@ function setup() {
 
 	ganache = new upgrade (windowWidth * 6/8,               //xpos
 												 60,                              //ypos
-												 windowWidth * 1/8,               //width
+												 windowWidth,               			//width
 												 50,                              //height
 												 "Ganache",                       //name
 												 1000,                            //price
@@ -135,6 +139,7 @@ function setup() {
 function draw() {
 
 // LEFT COLUMN "BEAU BLUE" STRIPE ==================================
+<<<<<<< HEAD
 windowResized();
 	background(214, 237, 255, 180);
 // stroke(214, 237, 255);
@@ -143,13 +148,28 @@ windowResized();
 // rect(0, 0, windowWidth * 2 / 8, windowHeight);
 
 // CENTER COLUMN	"MIDDLE BLUE GREEN" STRIPE =============================
+=======
+
+stroke(214, 237, 255);
+strokeWeight(2);
+fill (214, 237, 255, 180);  //RGBA (Red, Green, Blue, Alpha)
+rect(0, 0, windowWidth, windowHeight);
+
+// // CENTER COLUMN	"MIDDLE BLUE GREEN" STRIPE =============================
+>>>>>>> 623c61874d514de46d6688c0b5926a6a76a7fc84
 //
 // stroke(132, 220, 198);
 // fill (132, 220, 198, 180); //RGBA (Red, Green, Blue, Alpha)
 // rect(windowWidth*2/8, 0, windowWidth * 4 / 8, windowHeight);
+<<<<<<< HEAD
 
 // RIGHT COLUMN  "BEAU BLUE" STRIPE ===================================
 
+=======
+//
+// // RIGHT COLUMN  "BEAU BLUE" STRIPE ===================================
+//
+>>>>>>> 623c61874d514de46d6688c0b5926a6a76a7fc84
 // stroke(214, 237, 255);
 // strokeWeight(2);
 // fill (214, 237, 255, 180); //RGBA (Red, Green, Blue, Alpha)
@@ -165,6 +185,7 @@ windowResized();
 
 	// imageMode(CENTER)
 	// image(bakery2Img, windowWidth * 4 / 8, 350, windowWidth * 4 / 8, windowHeight * 1.2);
+<<<<<<< HEAD
 	//
 	imageMode(CENTER)
 	image(harryImg, 6.31/8 * windowWidth, 155, 75, 55);
@@ -172,8 +193,17 @@ windowResized();
 	imageMode(CENTER)
 	image(bakeryImg, 6.30 / 8 * windowWidth, 305, 78, 45);
 	//
+=======
+
 	imageMode(CENTER)
-	image(wiskImg, 6.30 / 8 * windowWidth, 230, 123, 123);
+	image(harryImg, windowWidth / 8, windowHeight / 1.28, 75, 55);
+
+	imageMode(CENTER)
+	image(bakeryImg, windowWidth / 8, windowHeight / 1.08, 78, 45);
+
+>>>>>>> 623c61874d514de46d6688c0b5926a6a76a7fc84
+	imageMode(CENTER)
+	image(wiskImg, windowWidth / 8, windowHeight / 1.18, 87, 123);
 
 // METHODS =========================================================
 
