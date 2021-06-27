@@ -29,6 +29,10 @@ var bonus;
 
 var Curser;
 
+var menuOffset = 70;
+// var heightMultiplier = 0.9178;
+var heightMultiplier = 0.935;
+
 //cross elements GUI object handler
 var handler = { 		//the handler is to cross diferent class codes
 	multiplier: 1,		// handles the global multiplier
@@ -55,6 +59,7 @@ function windowResized() {
 }
 
 function setup() {
+	windowHeight = windowHeight/heightMultiplier-menuOffset;
 	imageMode(CENTER);
 	createCanvas(windowWidth, windowHeight);
   windowResized()
@@ -130,24 +135,25 @@ function setup() {
 function draw() {
 
 // LEFT COLUMN "BEAU BLUE" STRIPE ==================================
-
-stroke(214, 237, 255);
-strokeWeight(2);
-fill (214, 237, 255, 180);  //RGBA (Red, Green, Blue, Alpha)
-rect(0, 0, windowWidth * 2 / 8, windowHeight);
+windowResized();
+	background(214, 237, 255, 180);
+// stroke(214, 237, 255);
+// strokeWeight(2);
+// fill (214, 237, 255, 180);  //RGBA (Red, Green, Blue, Alpha)
+// rect(0, 0, windowWidth * 2 / 8, windowHeight);
 
 // CENTER COLUMN	"MIDDLE BLUE GREEN" STRIPE =============================
-
-stroke(132, 220, 198);
-fill (132, 220, 198, 180); //RGBA (Red, Green, Blue, Alpha)
-rect(windowWidth*2/8, 0, windowWidth * 4 / 8, windowHeight);
+//
+// stroke(132, 220, 198);
+// fill (132, 220, 198, 180); //RGBA (Red, Green, Blue, Alpha)
+// rect(windowWidth*2/8, 0, windowWidth * 4 / 8, windowHeight);
 
 // RIGHT COLUMN  "BEAU BLUE" STRIPE ===================================
 
-stroke(214, 237, 255);
-strokeWeight(2);
-fill (214, 237, 255, 180); //RGBA (Red, Green, Blue, Alpha)
-rect(windowWidth * 6 / 8, 0, windowWidth*2/8,windowHeight);
+// stroke(214, 237, 255);
+// strokeWeight(2);
+// fill (214, 237, 255, 180); //RGBA (Red, Green, Blue, Alpha)
+// rect(windowWidth * 6 / 8, 0, windowWidth*2/8,windowHeight);
 
 // TEXT OF THE COOKIE COUNTER============================================
 	stroke(40, 143, 118);
@@ -157,15 +163,15 @@ rect(windowWidth * 6 / 8, 0, windowWidth*2/8,windowHeight);
 
 // PLACING IMAGE ============================================================
 
-	imageMode(CENTER)
-	image(bakery2Img, windowWidth * 4 / 8, 350, windowWidth * 4 / 8, windowHeight * 1.2);
-
+	// imageMode(CENTER)
+	// image(bakery2Img, windowWidth * 4 / 8, 350, windowWidth * 4 / 8, windowHeight * 1.2);
+	//
 	imageMode(CENTER)
 	image(harryImg, 6.31/8 * windowWidth, 155, 75, 55);
-
+	//
 	imageMode(CENTER)
 	image(bakeryImg, 6.30 / 8 * windowWidth, 305, 78, 45);
-
+	//
 	imageMode(CENTER)
 	image(wiskImg, 6.30 / 8 * windowWidth, 230, 123, 123);
 
