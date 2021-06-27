@@ -8,7 +8,7 @@ var mainStrawBerryCake;
 
 var handler = {
 	multiplier: 1, // Teacher hope you don't change this! Play the game until you buy everything, Good luck!
-	StrawBerryCake: 0,
+	StrawBerryCake: 10000000,
 	cpTime: 1,
 	totalCPS: 0,
 	activeItems: 0,
@@ -198,7 +198,7 @@ background(255);
 	}
 }
 function mouseClicked() {
-	print("current cps: " + cursorBtn.cps);
+	// print("current cps: " + cursorBtn.cps);
 
 	mainStrawBerryCake.Bite();
 	cursorBtn.Buy();
@@ -421,22 +421,22 @@ Disp() {
 
         this.price += 0.45 * this.price;
 
-        if(this.name = "StrawBerries") {
+        if(this.name == "StrawBerries") {
            this.StrawBerries();
         }
-        if(this.name = "Cream") {
+        if(this.name == "Cream") {
            this.Cream();
         }
-        if(this.name = "Butter"){
+        if(this.name == "Butter"){
            this.Butter();
         }
-        if(this.name = "Chocolate") {
+        if(this.name == "Chocolate") {
            this.Chocolate();
         }
-        if(this.name = "Vanilla") {
+        if(this.name == "Vanilla") {
            this.Vanilla();
         }
-        if(this.name = "Sugar") {
+        if(this.name == "Sugar") {
            this.Sugar();
         }
       }

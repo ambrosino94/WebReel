@@ -496,22 +496,22 @@ Disp() {
 
         this.price += 0.45 * this.price;
 
-        if(this.name = "StrawBerries") {
+        if(this.name == "StrawBerries") {
            this.StrawBerries();
         }
-        if(this.name = "Cream") {
+        if(this.name == "Cream") {
            this.Cream();
         }
-        if(this.name = "Butter"){
+        if(this.name == "Butter"){
            this.Butter();
         }
-        if(this.name = "Chocolate") {
+        if(this.name == "Chocolate") {
            this.Chocolate();
         }
-        if(this.name = "Vanilla") {
+        if(this.name == "Vanilla") {
            this.Vanilla();
         }
-        if(this.name = "Sugar") {
+        if(this.name == "Sugar") {
            this.Sugar();
         }
       }
