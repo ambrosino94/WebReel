@@ -214,7 +214,7 @@ function draw() {
 
   //background layout setup------------------------------------------------------------------------
 	background(255);
-	windowResized()
+	windowResized();
 	//left column........................................................................
 	stroke(20,20,20);
 	strokeWeight(2);
