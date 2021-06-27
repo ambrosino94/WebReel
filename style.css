@@ -969,10 +969,6 @@ div.main-content{
     display: none;
   }
 
-  .brk-btn{
-    transform: translateX(-47.45%) translateY(-380%);
-  }
-
   .grid-container {
   grid-template-columns: 0.1fr 0.9fr;
   grid-template-rows: 0.6fr 0.05fr 1fr 0.6fr;
@@ -1093,11 +1089,6 @@ div.main-content{
     overflow: hidden;
     object-fit: cover;
     height: 100vh;
-  }
-
-  .brk-btn{
-    font-size: 21.2px;
-    transform: translateX(-47.45%) translateY(-210%);
   }
 
   /* Footer */
