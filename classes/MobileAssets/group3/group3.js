@@ -139,7 +139,6 @@ print(windowHeight*1/11*3/4);
 function draw() {
 
 // LEFT COLUMN "BEAU BLUE" STRIPE ==================================
-<<<<<<< HEAD
 windowResized();
 	background(214, 237, 255, 180);
 // stroke(214, 237, 255);
@@ -148,28 +147,13 @@ windowResized();
 // rect(0, 0, windowWidth * 2 / 8, windowHeight);
 
 // CENTER COLUMN	"MIDDLE BLUE GREEN" STRIPE =============================
-=======
-
-stroke(214, 237, 255);
-strokeWeight(2);
-fill (214, 237, 255, 180);  //RGBA (Red, Green, Blue, Alpha)
-rect(0, 0, windowWidth, windowHeight);
-
-// // CENTER COLUMN	"MIDDLE BLUE GREEN" STRIPE =============================
->>>>>>> 623c61874d514de46d6688c0b5926a6a76a7fc84
 //
 // stroke(132, 220, 198);
 // fill (132, 220, 198, 180); //RGBA (Red, Green, Blue, Alpha)
 // rect(windowWidth*2/8, 0, windowWidth * 4 / 8, windowHeight);
-<<<<<<< HEAD
 
 // RIGHT COLUMN  "BEAU BLUE" STRIPE ===================================
 
-=======
-//
-// // RIGHT COLUMN  "BEAU BLUE" STRIPE ===================================
-//
->>>>>>> 623c61874d514de46d6688c0b5926a6a76a7fc84
 // stroke(214, 237, 255);
 // strokeWeight(2);
 // fill (214, 237, 255, 180); //RGBA (Red, Green, Blue, Alpha)
@@ -185,15 +169,6 @@ rect(0, 0, windowWidth, windowHeight);
 
 	// imageMode(CENTER)
 	// image(bakery2Img, windowWidth * 4 / 8, 350, windowWidth * 4 / 8, windowHeight * 1.2);
-<<<<<<< HEAD
-	//
-	imageMode(CENTER)
-	image(harryImg, 6.31/8 * windowWidth, 155, 75, 55);
-	//
-	imageMode(CENTER)
-	image(bakeryImg, 6.30 / 8 * windowWidth, 305, 78, 45);
-	//
-=======
 
 	imageMode(CENTER)
 	image(harryImg, windowWidth / 8, windowHeight / 1.28, 75, 55);
@@ -201,7 +176,6 @@ rect(0, 0, windowWidth, windowHeight);
 	imageMode(CENTER)
 	image(bakeryImg, windowWidth / 8, windowHeight / 1.08, 78, 45);
 
->>>>>>> 623c61874d514de46d6688c0b5926a6a76a7fc84
 	imageMode(CENTER)
 	image(wiskImg, windowWidth / 8, windowHeight / 1.18, 87, 123);
 
