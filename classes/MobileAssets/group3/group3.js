@@ -186,6 +186,7 @@ function draw() {
 
 
 	chefHarryBtn.y = windowHeight*8/11;
+	chefHarryBtn.h = windowHeight*1/11;
 	chefHarryBtn.Disp();
 
 
@@ -195,7 +196,9 @@ function draw() {
 		else {
 			chefHarryBtn.color = color(187, 133, 136,50)
 	}
+
 	wisk.y = windowHeight*9/11;
+	wisk.h = windowHeight*1/11;
 	wisk.Disp();
 
 	if(handler.cookie > wisk.price) {
@@ -207,6 +210,7 @@ function draw() {
 
 
 	Bakery.y = windowHeight*10/11;
+	Bakery.h = windowHeight*1/11;
 	Bakery.Disp();
 	if(handler.cookie > Bakery.price) {
 		Bakery.color = color (187, 133, 136)
