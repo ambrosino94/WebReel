@@ -9,10 +9,6 @@
 var mainCookie;
 var clickTxts = []; // text array (array are like lists)
 
-var menuOffset = 70;
-// var heightMultiplier = 0.9178;
-var heightMultiplier = 0.935;
-
 //ITEM VARIABLES =================================================
 var chefHarryBtn;
 var wisk;
@@ -139,8 +135,12 @@ print(windowHeight*1/11*3/4);
 function draw() {
 
 // LEFT COLUMN "BEAU BLUE" STRIPE ==================================
-windowResized();
-	background(214, 237, 255, 180);
+	// background(214, 237, 255, 180);
+	windowResized();
+
+	fill(214, 237, 255, 180);
+	rect(0,0,windowWidth, windowHeight);
+
 // stroke(214, 237, 255);
 // strokeWeight(2);
 // fill (214, 237, 255, 180);  //RGBA (Red, Green, Blue, Alpha)
