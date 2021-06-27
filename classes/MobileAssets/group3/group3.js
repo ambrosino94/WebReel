@@ -182,15 +182,22 @@ function draw() {
 // METHODS =========================================================
 
 	mainCookie.Disp();
+
+
+
+	chefHarryBtn.y = windowHeight*8/11;
 	chefHarryBtn.Disp();
+
+
 	if(handler.cookie > chefHarryBtn.price) {
 		chefHarryBtn.color = color(187, 133, 136)
 	}
 		else {
 			chefHarryBtn.color = color(187, 133, 136,50)
 	}
-
+	wisk.y = windowHeight*9/11;
 	wisk.Disp();
+
 	if(handler.cookie > wisk.price) {
 		wisk.color = color (187, 133, 136)
 	}
@@ -198,6 +205,8 @@ function draw() {
 		wisk.color = color(187, 133, 136,50)
 	}
 
+
+	Bakery.y = windowHeight*10/11;
 	Bakery.Disp();
 	if(handler.cookie > Bakery.price) {
 		Bakery.color = color (187, 133, 136)
