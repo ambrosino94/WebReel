@@ -6,9 +6,13 @@
 var StrawBerryCakeImg;
 var mainStrawBerryCake;
 
+var menuOffset = 70;
+// var heightMultiplier = 0.9178;
+var heightMultiplier = 0.935;
+
 var handler = {
 	multiplier: 1, // Teacher hope you don't change this! Play the game until you buy everything, Good luck!
-	StrawBerryCake: 0,
+	StrawBerryCake: 1000000,
 	cpTime: 1,
 	totalCPS: 0,
 	activeItems: 0,
@@ -23,8 +27,11 @@ function preload() {
 }
 
 function setup() {
+	windowHeight = windowHeight/heightMultiplier-menuOffset;
 	imageMode(CENTER);
 	createCanvas(windowWidth, windowHeight); //create canvas
+	windowResized();
+
 	mainStrawBerryCake = new StrawBerryCakeClickr(windowWidth/8,windowHeight/2, 0.8375*windowWidth*1/4, StrawBerryCakeImg);
 
 	cursorBtn = new structureBtn("PastryChef",
@@ -146,47 +153,115 @@ function setup() {
 															 );
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
 function draw() {
 
 	//background layout
-background(255);
+	background(255);
+	windowResized();
 
 	//left colum
 	stroke(75, 0, 13);
 	strokeWeight(2);
 	fill(255,182,193); //RGBA
-	rect(0, 0, windowWidth * 2 / 8, windowHeight);
-
-	// center colum
-	stroke(230, 0, 24);
-	fill(255);
-	rect(windowWidth * 2 / 8, 0, windowWidth * 4 / 8, windowHeight);
-		image(BackgroundImg, windowWidth * 1 / 2, windowHeight / 2 + 1, 700, 550)
-
-	// Right colum
-	stroke(75, 0, 13);
-	fill(255,182,193);
-	rect(windowWidth * 6 / 8, 0, windowWidth * 2 / 8, windowHeight);
+	rect(0, 0, windowWidth, windowHeight);
+	//
+	// // center colum
+	// stroke(230, 0, 24);
+	// fill(255);
+	// rect(windowWidth * 2 / 8, 0, windowWidth * 4 / 8, windowHeight);
+	// 	image(BackgroundImg, windowWidth * 1 / 2, windowHeight / 2 + 1, 700, 550)
+	//
+	// // Right colum
+	// stroke(75, 0, 13);
+	// fill(255,182,193);
+	// rect(windowWidth * 6 / 8, 0, windowWidth * 2 / 8, windowHeight);
 
 	// Cookie counter indicator
 	fill(255, 255, 255);
-	textSize(35);
-	text("StrawBerryCake: " + round(handler.StrawBerryCake), 1, 40);
+	textSize(windowWidth/16);
+	text("StrawBerryCake: " + round(handler.StrawBerryCake), 1, windowWidth/16);
 
-
+	mainStrawBerryCake.x = windowWidth/2;
+	mainStrawBerryCake.y = windowHeight * 2.5/11 + 15;
+	mainStrawBerryCake.d = windowHeight * 4/11;
 	mainStrawBerryCake.Disp();
+
+	cursorBtn.fieldX = 0;
+	cursorBtn.fieldY = windowHeight * 5/11;
+	cursorBtn.h = windowHeight * 1/11 *2/3;
+	cursorBtn.w = windowWidth;
 	cursorBtn.Disp();
+
+	cursorApp.fieldX = 0;
+	cursorApp.fieldY = windowHeight * 6/11;
+	cursorApp.h = windowHeight * 1/11*2/3;
+	cursorApp.w = windowWidth;
   cursorApp.Disp();
+
+	cursorEpp.fieldX = 0;
+	cursorEpp.fieldY = windowHeight * 7/11;
+	cursorEpp.h = windowHeight * 1/11*2/3;
+	cursorEpp.w = windowWidth;
 	cursorEpp.Disp();
+
+	cursorIpp.fieldX = 0;
+	cursorIpp.fieldY = windowHeight * 8/11;
+	cursorIpp.h = windowHeight * 1/11*2/3;
+	cursorIpp.w = windowWidth;
   cursorIpp.Disp();
+
+	cursorOpp.fieldX = 0;
+	cursorOpp.fieldY = windowHeight * 9/11;
+	cursorOpp.h = windowHeight * 1/11*2/3;
+	cursorOpp.w = windowWidth;
   cursorOpp.Disp();
+
+	cursorBuV.fieldX = 0;
+	cursorBuV.fieldY = windowHeight * 10/11;
+	cursorBuV.h = windowHeight * 1/11*2/3;
+	cursorBuV.w = windowWidth;
 	cursorBuV.Disp();
 
+	// UPGRADES
+
+	cursorStr.fieldX = 0;
+	cursorStr.fieldY = windowHeight * (5/11+1/11*2/3);
+	cursorStr.h = windowHeight * 1/11*1/3;
+	cursorStr.w = windowWidth;
 	cursorStr.Disp();
+
+	cursorCre.fieldX = 0;
+	cursorCre.fieldY = windowHeight * (6/11+1/11*2/3);
+	cursorCre.h = windowHeight * 1/11*1/3;
+	cursorCre.w = windowWidth;
 	cursorCre.Disp();
+
+	cursorCho.fieldX = 0;
+	cursorCho.fieldY = windowHeight * (7/11+1/11*2/3);
+	cursorCho.h = windowHeight * 1/11*1/3;
+	cursorCho.w = windowWidth;
 	cursorCho.Disp();
+
+	cursorVan.fieldX = 0;
+	cursorVan.fieldY = windowHeight * (8/11+1/11*2/3);
+	cursorVan.h = windowHeight * 1/11*1/3;
+	cursorVan.w = windowWidth;
 	cursorVan.Disp();
+
+	cursorBut.fieldX = 0;
+	cursorBut.fieldY = windowHeight * (9/11+1/11*2/3);
+	cursorBut.h = windowHeight * 1/11*1/3;
+	cursorBut.w = windowWidth;
 	cursorBut.Disp();
+
+	cursorBud.fieldX = 0;
+	cursorBud.fieldY = windowHeight * (10/11+1/11*2/3);
+	cursorBud.h = windowHeight * 1/11*1/3;
+	cursorBud.w = windowWidth;
 	cursorBud.Disp();
 
 	for (var i = 0; i < clickTxts.length; i++) {
@@ -198,7 +273,7 @@ background(255);
 	}
 }
 function mouseClicked() {
-	print("current cps: " + cursorBtn.cps);
+	// print("current cps: " + cursorBtn.cps);
 
 	mainStrawBerryCake.Bite();
 	cursorBtn.Buy();
@@ -311,19 +386,19 @@ constructor(name,xPos, yPos, width, height, price, StrawBerryCakePerSecond, shad
 		this.textShade.setAlpha(this.textShadeAlpha);
 		fill(this.textShade);
 
-		textSize(25);
-		text(this.name, this.fieldX + 0.5 / 5 * this.w, this.fieldY + 30);
+		textSize(this.h * 2/3 * 0.85);
+		text(this.name, this.fieldX + 10, this.fieldY + this.h * 2/3 * 0.85);
 
 		fill(this.textShade);
-		textSize(15);
-		textFont('Comic Sans Ms');
-		text("Price:" + round(this.price), this.fieldX + 0.5 / 5 * this.w, this.fieldY + 50);
+		textSize(this.h * 1/3 * 0.85);
+		textFont('Comic Sans Ms'); //eww
+		text("Price:" + round(this.price), this.fieldX + 10, this.fieldY + this.h - 5 );
 
 
-		textSize(50);
+		textSize(this.h * 0.9);
 		push();
 		textAlign(RIGHT);
-		text(this.counter, this.fieldX, this.fieldY + 10, 300);
+		text(this.counter, this.fieldX, this.fieldY + 10, this.w);
 		pop();
 
 		if (this.counter > 0) {
@@ -396,18 +471,18 @@ Disp() {
   this.textShade.setAlpha(this.textShadeAlpha);
   fill(this.textShade);
 
-  textSize(25);
-  text(this.name, this.fieldX + 0.25 / 5 * this.w, this.fieldY + 25);
+  textSize(this.h * 0.75);
+  text(this.name + '(' + round(this.price) + ')', this.fieldX + 10, this.fieldY + this.h * 0.75);
 
-  fill(this.textShade);
-  textSize(15);
-  textFont('Comic Sans Ms');
-  text("Price:" + round(this.price), this.fieldX + 0.25 / 5 * this.w, this.fieldY + 45);
+  // fill(this.textShade);
+  // textSize(15);
+  // textFont('Comic Sans Ms');
+  // text("Price:" + round(this.price), this.fieldX + 0.25 / 5 * this.w, this.fieldY + 45);
 
   textSize(19);
   push();
   textAlign(RIGHT);
-  text(this.counterU, this.fieldX + 10 / 15 * this.w, this.fieldY + 30);
+  text(this.counterU, this.fieldX, this.fieldY+ this.h/8, this.w - 12);
   pop();
 
 }
