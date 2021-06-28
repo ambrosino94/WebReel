@@ -42,6 +42,7 @@ var y;
 var circleWidth = 45;
 var circleHeight = circleWidth;
 var circleX;
+var circleX2;
 var circleSpeed = 10.8;
 var ax;
 var r;
@@ -79,6 +80,7 @@ function setup() {
 	createCanvas(windowWidth, windowHeight);
 	windowResized();
 	circleX=windowWidth*3/4;
+	circleX2=windowWidth*3/4;
 	ax=windowWidth*3/4;
 	r= 1
 	ra=2
@@ -164,7 +166,7 @@ function setup() {
 	//=================================================================
 
 	//Upgrade #1: Magi Micknie Gloves
-	Santa = new upgrades("Magi Gloves",
+	Santa = new upgrades("Gloves",
 											 windowWidth * 1/2, //x-pos
 											 windowHeight* 2/11, //y-pos
 											 windowWidth * 1 / 6, //width
@@ -184,7 +186,7 @@ function setup() {
 										 );
 
 	//Upgrade #3: RottenApple
-	a = new upgrades("RottenApple",
+	a = new upgrades("Apple",
 									 windowWidth * 5/6, //x-pos
 									 windowHeight* 2/11, //y-pos
 									 windowWidth * 1 / 6, //width
@@ -246,13 +248,15 @@ function setup() {
 
 
 function draw() {
-	bgd(); //set 3-section background
+	windowResized();
+	bgd(); //set 3-secgtion background
+	// background(255,0,0);
 
 	//Cookie Counter indicator=================================================
 	fill(255, 255, 255);
 	textSize(windowWidth * 1/16);
 	text("Cookies:" + round(handler.cookies), 5, windowWidth * 0.05); //show amount of cookies
-	windowResized();
+
 	fill(255, 255, 255);
 	textSize(windowWidth * 1/14);
 	text("CPS: (╯°□°)╯︵ ┻━┻", 5, windowWidth * (1/16 + 0.05) + 15);
@@ -310,17 +314,17 @@ function draw() {
 	// image(Muln, windowWidth * 6 / 8 + 180, 500, 110, 97.2);
 	// image(Donny, windowWidth * 6 / 8 + 215, 605, 120, 95);
 	// image(Dosy, windowWidth * 6 / 8 + 285, 700, 190, 100);
-	push();
-	tint(255, 80);
+	// push();
+	// tint(255, 80);
 	// image(Fireworks, windowWidth * 1 / 2 - 25, windowHeight / 2 + 100, 550, 400)
 	// image(DisCastle, windowWidth * 1 / 2, windowHeight / 2 + 178, 470, 500)
-	image(Fireworks, windowWidth * 30 / 100 + 20, windowHeight * 68/100, windowWidth/2 , windowWidth/2)
+	// image(Fireworks, windowWidth * 30 / 100 + 20, windowHeight * 68/100, windowWidth/2 , windowWidth/2)
 	// image(DisCastle, windowWidth/4, windowHeight * 7.5/11 + 0, windowWidth/2, windowHeight * 7/11)
-	pop()
+	// pop()
 }
 
 
-function mousePressed(){
+function touchEnded(){
 	mainCookie.Bite(); //button for main cookie
 	mainCookie.d = mainCookie.d + 10
 
@@ -348,7 +352,8 @@ function bgd() {
 
 	//left column
 	noStroke();
-	fill(155, 218, 250);
+	// fill(155, 218, 250);
+	fill(100, 170, 200);
 	rect(0, 0, windowWidth, windowHeight);
 
 // 	//middle column
@@ -380,8 +385,8 @@ function bgd() {
 // 	triangle(32, windowHeight * 10.5 / 12, windowWidth / 9, windowHeight * 10.5 / 12, windowWidth / 16, windowHeight * 9.5 / 12);
 }
 
-function mouseReleased() {
-mainCookie.d = mainCookie.d - 10
+function touchStarted() {
+	mainCookie.d = mainCookie.d - 10
 }
 
 
@@ -497,23 +502,23 @@ class structureBtn {
 
 		//show item name
 		noStroke();
-		textSize(28);
-		text(this.name, 20, this.y + this.h * 7/16);
+		textSize(this.h/2 *0.8);
+		text(this.name, 5, this.y + this.h * 7/16);
 
 		//show item price
 		noStroke();
 		fill(this.textShade);
 		textFont('MingLiU-ExtB'); //text font chosen
-		textSize(25);
-		text("Price:" + round(this.price), 20, this.y + this.h * 63/80);
+		textSize(this.h/3 *0.8);
+		text("Price:" + round(this.price), 10, this.y + this.h * 63/80);
 
 		//show item counter, amount of items bought
 		noStroke();
 		textFont('MV Boli');
-		textSize(38);
+		textSize(this.h * 0.55);
 		push();
 		textAlign(RIGHT); //align text
-		text(this.counter, 0 , this.y + 25, 400);
+		text(this.counter, 0 , this.y + this.h * (1-0.5), this.w/2);
 		pop();
 	}
 
@@ -537,20 +542,38 @@ class structureBtn {
 
 	//cookie production bouncing
 	Animation1() {
+		// if (cursorBtn.counter >= 1) {
+		// 	stroke(0, 0, 0);
+		// 	strokeWeight(1);
+		// 	fill(255, 180, 75, this.alpha);
+		// 	rect(this.w/2 , this.y, windowWidth * 4 / 8 - 3, this.h);
+		//
+		// 	for (x = this.w/2;
+		// 		((x + 30 > this.w || (x - 30 <= this.w/2 + 1))); x++) {
+		// 		x += 2;
+		// 		for (y = this.y;
+		// 			(y + 30 >= this.y+this.h || y - 30 <= this.y); y++) {
+		// 			y += 1;
+		// 		}
+		// 		ellipse(random(x, this.w), random(y, this.y+this.h), this.h*0.15, this.h*0.15);
+		// 	}
+		// }
+
 		if (cursorBtn.counter >= 1) {
 			stroke(0, 0, 0);
 			strokeWeight(1);
-			fill(255, 180, 75, this.alpha);
-			rect(this.w/2 , this.y, windowWidth * 4 / 8 - 3, this.h);
+			fill(190, 176, 213,this,alpha);
+			rect(windowWidth/2, this.y, this.w/2, this.h);
 
-			for (x = this.w/2;
-				((x + 30 > this.w || (x - 30 <= this.w/2 + 1))); x++) {
-				x += 2;
-				for (y = this.y;
-					(y + 30 >= this.y+this.h || y - 30 <= this.y); y++) {
-					y += 1;
-				}
-				ellipse(random(x, this.w), random(y, this.y+this.h), this.h*0.15, this.h*0.15);
+			//moves circle across screen
+			stroke(0, 0, 0);
+			fill(214, 225, 243,this.alpha);
+			ellipse(circleX2, this.y+this.h-this.h/4, this.h/2, this.h/2);
+			circleX2 = circleX2 - circleSpeed;
+
+			//when circle gets out of screen, it comes back to the beginning
+			if (circleX2 - this.h/4 <= this.w/2) {
+				circleX2 = this.w - this.h/4;
 			}
 		}
 	}
@@ -727,50 +750,50 @@ class upgrades {
 		this.textShade.setAlpha(this.textShadeAlpha);
 		fill(this.textShade);
 
-		if(windowWidth <= 375){
+		// if(windowWidth <= 375){
+			//show upgrade name
+			// stroke(0, 0, 0);
+			// strokeWeight(0.2);
+			// textSize(this.h/8);
+			// text(this.name, this.fieldX + 50, this.fieldY + this.h/16);
+			//
+			// //show upgrade price
+			// fill(this.textShade);
+			// textFont('MingLiU-ExtB');
+			// textSize(15);
+			// text("$:" + round(this.price), this.fieldX + 1 / 15 * this.w, this.fieldY + 40);
+			//
+			// //show upgrade counter
+			// textFont('MV Boli');
+			// textSize(19);
+			// push();
+			// textAlign(RIGHT);
+			// text(this.counterU, this.fieldX + 14 / 15 * this.w, this.fieldY + 70);
+			// pop();
+
+		// }else{
+
 			//show upgrade name
 			stroke(0, 0, 0);
 			strokeWeight(0.2);
-			textSize(12);
-			text(this.name, this.fieldX + 1 / 15 * this.w, this.fieldY + 20);
+			textSize(this.h/5);
+			text(this.name, this.fieldX + 5, this.fieldY + this.h/5);
 
 			//show upgrade price
 			fill(this.textShade);
 			textFont('MingLiU-ExtB');
-			textSize(15);
-			text("$:" + round(this.price), this.fieldX + 1 / 15 * this.w, this.fieldY + 40);
+			textSize(this.h/5);
+			text("$:" + round(this.price), this.fieldX + 5, this.fieldY + 2*this.h/5 + 5);
 
 			//show upgrade counter
 			textFont('MV Boli');
-			textSize(19);
+			textSize(this.h/3);
 			push();
 			textAlign(RIGHT);
-			text(this.counterU, this.fieldX + 14 / 15 * this.w, this.fieldY + 70);
+			text(this.counterU, this.fieldX, this.fieldY + this.h * (1 - 1/3), this.w+ 5);
 			pop();
 
-		}else{
-
-			//show upgrade name
-			stroke(0, 0, 0);
-			strokeWeight(0.2);
-			textSize(17.3);
-			text(this.name, this.fieldX + 1 / 15 * this.w, this.fieldY + 20);
-
-			//show upgrade price
-			fill(this.textShade);
-			textFont('MingLiU-ExtB');
-			textSize(20);
-			text("Price:" + round(this.price), this.fieldX + 1 / 15 * this.w, this.fieldY + 40);
-
-			//show upgrade counter
-			textFont('MV Boli');
-			textSize(19);
-			push();
-			textAlign(RIGHT);
-			text(this.counterU, this.fieldX + 14 / 15 * this.w, this.fieldY + 70);
-			pop();
-
-		}
+		// }
 	}
 
 
