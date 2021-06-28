@@ -166,7 +166,7 @@ function setup() {
 	//=================================================================
 
 	//Upgrade #1: Magi Micknie Gloves
-	Santa = new upgrades("Magi Gloves",
+	Santa = new upgrades("Gloves",
 											 windowWidth * 1/2, //x-pos
 											 windowHeight* 2/11, //y-pos
 											 windowWidth * 1 / 6, //width
@@ -186,7 +186,7 @@ function setup() {
 										 );
 
 	//Upgrade #3: RottenApple
-	a = new upgrades("RottenApple",
+	a = new upgrades("Apple",
 									 windowWidth * 5/6, //x-pos
 									 windowHeight* 2/11, //y-pos
 									 windowWidth * 1 / 6, //width
@@ -502,23 +502,23 @@ class structureBtn {
 
 		//show item name
 		noStroke();
-		textSize(28);
-		text(this.name, 20, this.y + this.h * 7/16);
+		textSize(this.h/2 *0.8);
+		text(this.name, 5, this.y + this.h * 7/16);
 
 		//show item price
 		noStroke();
 		fill(this.textShade);
 		textFont('MingLiU-ExtB'); //text font chosen
-		textSize(25);
-		text("Price:" + round(this.price), 20, this.y + this.h * 63/80);
+		textSize(this.h/3 *0.8);
+		text("Price:" + round(this.price), 10, this.y + this.h * 63/80);
 
 		//show item counter, amount of items bought
 		noStroke();
 		textFont('MV Boli');
-		textSize(38);
+		textSize(this.h * 0.55);
 		push();
 		textAlign(RIGHT); //align text
-		text(this.counter, 0 , this.y + 25, 400);
+		text(this.counter, 0 , this.y + this.h * (1-0.5), this.w/2);
 		pop();
 	}
 
@@ -750,50 +750,50 @@ class upgrades {
 		this.textShade.setAlpha(this.textShadeAlpha);
 		fill(this.textShade);
 
-		if(windowWidth <= 375){
+		// if(windowWidth <= 375){
+			//show upgrade name
+			// stroke(0, 0, 0);
+			// strokeWeight(0.2);
+			// textSize(this.h/8);
+			// text(this.name, this.fieldX + 50, this.fieldY + this.h/16);
+			//
+			// //show upgrade price
+			// fill(this.textShade);
+			// textFont('MingLiU-ExtB');
+			// textSize(15);
+			// text("$:" + round(this.price), this.fieldX + 1 / 15 * this.w, this.fieldY + 40);
+			//
+			// //show upgrade counter
+			// textFont('MV Boli');
+			// textSize(19);
+			// push();
+			// textAlign(RIGHT);
+			// text(this.counterU, this.fieldX + 14 / 15 * this.w, this.fieldY + 70);
+			// pop();
+
+		// }else{
+
 			//show upgrade name
 			stroke(0, 0, 0);
 			strokeWeight(0.2);
-			textSize(12);
-			text(this.name, this.fieldX + 1 / 15 * this.w, this.fieldY + 20);
+			textSize(this.h/5);
+			text(this.name, this.fieldX + 5, this.fieldY + this.h/5);
 
 			//show upgrade price
 			fill(this.textShade);
 			textFont('MingLiU-ExtB');
-			textSize(15);
-			text("$:" + round(this.price), this.fieldX + 1 / 15 * this.w, this.fieldY + 40);
+			textSize(this.h/5);
+			text("$:" + round(this.price), this.fieldX + 5, this.fieldY + 2*this.h/5 + 5);
 
 			//show upgrade counter
 			textFont('MV Boli');
-			textSize(19);
+			textSize(this.h/3);
 			push();
 			textAlign(RIGHT);
-			text(this.counterU, this.fieldX + 14 / 15 * this.w, this.fieldY + 70);
+			text(this.counterU, this.fieldX, this.fieldY + this.h * (1 - 1/3), this.w+ 5);
 			pop();
 
-		}else{
-
-			//show upgrade name
-			stroke(0, 0, 0);
-			strokeWeight(0.2);
-			textSize(17.3);
-			text(this.name, this.fieldX + 1 / 15 * this.w, this.fieldY + 20);
-
-			//show upgrade price
-			fill(this.textShade);
-			textFont('MingLiU-ExtB');
-			textSize(20);
-			text("Price:" + round(this.price), this.fieldX + 1 / 15 * this.w, this.fieldY + 40);
-
-			//show upgrade counter
-			textFont('MV Boli');
-			textSize(19);
-			push();
-			textAlign(RIGHT);
-			text(this.counterU, this.fieldX + 14 / 15 * this.w, this.fieldY + 70);
-			pop();
-
-		}
+		// }
 	}
 
 
