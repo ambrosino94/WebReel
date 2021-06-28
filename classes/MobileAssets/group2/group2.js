@@ -42,6 +42,7 @@ var y;
 var circleWidth = 45;
 var circleHeight = circleWidth;
 var circleX;
+var circleX2;
 var circleSpeed = 10.8;
 var ax;
 var r;
@@ -79,6 +80,7 @@ function setup() {
 	createCanvas(windowWidth, windowHeight);
 	windowResized();
 	circleX=windowWidth*3/4;
+	circleX2=windowWidth*3/4;
 	ax=windowWidth*3/4;
 	r= 1
 	ra=2
@@ -540,20 +542,38 @@ class structureBtn {
 
 	//cookie production bouncing
 	Animation1() {
+		// if (cursorBtn.counter >= 1) {
+		// 	stroke(0, 0, 0);
+		// 	strokeWeight(1);
+		// 	fill(255, 180, 75, this.alpha);
+		// 	rect(this.w/2 , this.y, windowWidth * 4 / 8 - 3, this.h);
+		//
+		// 	for (x = this.w/2;
+		// 		((x + 30 > this.w || (x - 30 <= this.w/2 + 1))); x++) {
+		// 		x += 2;
+		// 		for (y = this.y;
+		// 			(y + 30 >= this.y+this.h || y - 30 <= this.y); y++) {
+		// 			y += 1;
+		// 		}
+		// 		ellipse(random(x, this.w), random(y, this.y+this.h), this.h*0.15, this.h*0.15);
+		// 	}
+		// }
+
 		if (cursorBtn.counter >= 1) {
 			stroke(0, 0, 0);
 			strokeWeight(1);
-			fill(255, 180, 75, this.alpha);
-			rect(this.w/2 , this.y, windowWidth * 4 / 8 - 3, this.h);
+			fill(190, 176, 213,this,alpha);
+			rect(windowWidth/2, this.y, this.w/2, this.h);
 
-			for (x = this.w/2;
-				((x + 30 > this.w || (x - 30 <= this.w/2 + 1))); x++) {
-				x += 2;
-				for (y = this.y;
-					(y + 30 >= this.y+this.h || y - 30 <= this.y); y++) {
-					y += 1;
-				}
-				ellipse(random(x, this.w), random(y, this.y+this.h), this.h*0.15, this.h*0.15);
+			//moves circle across screen
+			stroke(0, 0, 0);
+			fill(214, 225, 243,this.alpha);
+			ellipse(circleX2, this.y+this.h-this.h/4, this.h/2, this.h/2);
+			circleX2 = circleX2 - circleSpeed;
+
+			//when circle gets out of screen, it comes back to the beginning
+			if (circleX2 - this.h/4 <= this.w/2) {
+				circleX2 = this.w - this.h/4;
 			}
 		}
 	}
