@@ -31,6 +31,9 @@ var handler = {
 	activeItems: 0       //the total active items in the game
 };
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 
 //  image png loader ------------------------
 function preload() {
@@ -43,37 +46,37 @@ function preload() {
 function setup() {
 	windowHeight = windowHeight/heightMultiplier-menuOffset;
 	createCanvas(windowWidth, windowHeight);
-	windowResized()
+	windowResized();
 	imageMode(CENTER);
-	mainCTE = new CookieClickr(1 / 8.5 * windowWidth, 1 / 2 * windowHeight, 300, CTEImg);
+	mainCTE = new CookieClickr(windowWidth*1/2, windowHeight*3.5/14, windowWidth*3/7, CTEImg);
 
 
 	//items ==================================================================================
 	imdying = new itemBtn(
-		                      windowWidth * 6/8,             //xPos
-	 												280,												   //yPos
-													windowWidth * 2/8,				     //width
-													60,													   //height
+		                      0,             								 //xPos
+	 												windowHeight*6/14,					   //yPos
+													windowWidth,				     			 //width
+													windowHeight*1/14,						 //height
 											    "Social Cues",		  					 //title
 											 		15,													   //price
 													0.5,												   //cps
 													color(145, 187, 198, 200));	   //shade
 
 	ilovefrank = new itemBtn(
-		                      windowWidth * 6/8,             //xPos
-	 												340,												   //yPos
-													windowWidth * 2/8,				     //width
-													60,                            //height
-											    "Unpeeled",   //title
+		                      0,             								 //xPos
+	 												windowHeight*7/14,					   //yPos
+													windowWidth,				    			 //width
+													windowHeight*1/14,             //height
+											    "Unpeeled",   								 //title
 											 		65,													   //price
 													10,												     //cps
 													color(224, 190, 247, 225));	   //shade
 
 	popoffqueen = new itemBtn(
-		                      windowWidth * 6/8,             //xPos
-	 												400,												   //yPos
-													windowWidth * 2/8,				     //width
-													60,													   //height
+		                      0,             								 //xPos
+	 												windowHeight*8/14,					   //yPos
+													windowWidth,				    			 //width
+													windowHeight*1/14,					   //height
 											    "Tell Me ",       						 //title
 											 		120,													 //price
 													50,													   //cps
@@ -81,10 +84,10 @@ function setup() {
 
 
 	bocastown = new itemBtn(
-		                      windowWidth * 6/8,             //xPos
-	 												460,												   //yPos
-													windowWidth * 2/8,				     //width
-													60,													   //height
+		                      0,          								   //xPos
+	 												windowHeight*9/14,						 //yPos
+													windowWidth,				    			 //width
+													windowHeight*1/14,						 //height
 											    "Melophobia",        				   //title
 											 		250,												   //price
 													200,												   //cps
@@ -92,10 +95,10 @@ function setup() {
 
 
 	youneverknow = new itemBtn(
-		                      windowWidth * 6/8,             //xPos
-	 												520,												   //yPos
-													windowWidth * 2/8,				     //width
-													60,													   //height
+		                      0,             								 //xPos
+	 												windowHeight*10/14,						 //yPos
+													windowWidth,				     			 //width
+													windowHeight*1/14,						 //height
 											    "Skin and Bones",              //title
 											 		500,												 	 //price
 													3000,												   //cps
@@ -104,101 +107,166 @@ function setup() {
 
 
 	//upgrades=================================================================
-	imdyingBtn = new Upgrade1  (windowWidth * 6 / 8,                //xPos
-											            50,                                  //yPos
-                                  windowWidth * 1 / 12,				        //width
-											            50,                                 //height
-									     			      "Cold ",                    //name
-										    	        60,                                 //price
-											            color(145, 187, 198, 150));           //shade
+	imdyingBtn = new Upgrade1				(0,             						    //xPos
+											            windowHeight*11/14,             //yPos
+                                  windowWidth*1/2,				        //width
+											            windowHeight*1/14,              //height
+									     			      "Cold ",              		      //name
+										    	        60,                             //price
+											            color(145, 187, 198, 150));     //shade
 
-ilovefrankBtn = new Upgrade2      (windowWidth * 7.05 / 8,           //xPos
-											            50,                                  //yPos
-                                  windowWidth * 1 / 12,				        //width
-											            50,                                 //height
-									     			      "Broken ",                        //name
-										    	        150,                                //price
-											            color(224, 190, 247, 150));           //shade
+ilovefrankBtn = new Upgrade2      (windowWidth/2,          			  //xPos
+											            windowHeight*11/14,             //yPos
+                                  windowWidth*1/2,				        //width
+											            windowHeight*1/14,              //height
+									     			      "Broken ",                      //name
+										    	        150,                            //price
+											            color(224, 190, 247, 150));     //shade
 
-popoffqueenBtn = new Upgrade3(windowWidth * 6 / 8,           //xPos
-											            110,                                  //yPos
-                                  windowWidth * 1 / 12,				        //width
-											            50,                                 //height
-									     			      "Telescope",                  //name
-										    	        400,                               //price
-											            color(123, 116, 179, 150));           //shade
+popoffqueenBtn = new Upgrade3(0,          											  //xPos
+											            windowHeight*12/14,             //yPos
+                                  windowWidth*1/2,				        //width
+											            windowHeight*1/14,              //height
+									     			      "Telescope",                    //name
+										    	        400,                            //price
+											            color(123, 116, 179, 150));     //shade
 
-bocastownBtn = new Upgrade4   (windowWidth * 6.30 / 8,                //xPos
-											            170,                                 //yPos
-                                  windowWidth * 2 / 15,				        //width
-											            60,                                 //height
-									     			      "Spider ",                     //name
-										    	        500,                               //price
-											            color(158, 235, 179, 150));           //shade
+bocastownBtn = new Upgrade4   (0,              									  //xPos
+											            windowHeight*13/14,             //yPos
+                                  windowWidth,				     		    //width
+											            windowHeight*1/14,              //height
+									     			      "Spider ",                      //name
+										    	        500,                            //price
+											            color(158, 235, 179, 150));     //shade
 
-youneverknowBtn = new Upgrade5 (windowWidth * 7.05/ 8,           //xPos
-											            110,                                 //yPos
-                                  windowWidth * 1 / 12,				        //width
-											            50,                                 //height
-									     			      "Rubber ",                   //name
-										    	        600,                              //price
-											            color(229, 229, 131, 150));           //shade
-
-
-
+youneverknowBtn = new Upgrade5 (windowWidth/2,           					//xPos
+											            windowHeight*12/14,      	      //yPos
+                                  windowWidth*1/2,				        //width
+											            windowHeight*1/14,              //height
+									     			      "Rubber ",             	     	  //name
+										    	        600,                            //price
+											            color(229, 229, 131, 150));     //shade
 
 }
 //---------------------------------------------------------------------------------------
 function draw() {
 	background(100);
-
+	windowResized();
 	//Background colums
 
 	//left column
 	stroke(153, 172, 191);
 	strokeWeight(2);
 	fill(50,61,90);
-	rect(0, 0, windowWidth * 2 / 8, windowHeight);
+	rect(0, 0, windowWidth, windowHeight);
 
-	// middle column
-	stroke(153, 172, 191);
-	fill(129, 139, 189);
-	rect(windowWidth * 2 / 8, 0, windowWidth * 4 / 8, windowHeight);
-
-	// right column
-	stroke(153, 172, 191);
-	fill(50,61,90);
-	rect(windowWidth * 6 / 8, 0, windowWidth * 2 / 8, windowHeight);
-
-
-		// upgrade text
-	stroke(153,172,191);
-	fill(225, 225, 225);
-	textSize(35);
-	text("Upgrades", windowWidth * 6.40 / 8, windowHeight * 1 / 20);
+	// // middle column
+	// stroke(153, 172, 191);
+	// fill(129, 139, 189);
+	// rect(windowWidth * 2 / 8, 0, windowWidth * 4 / 8, windowHeight);
+	//
+	// // right column
+	// stroke(153, 172, 191);
+	// fill(50,61,90);
+	// rect(windowWidth * 6 / 8, 0, windowWidth * 2 / 8, windowHeight);
 
 
-	// item shop text
-	stroke(153,172,191);
-	fill(225, 225, 225);
-	textSize(35);
-	text("Items", windowWidth * 6.65 / 8, windowHeight * 7 / 20*1.1);
+	// 	// upgrade text
+	// stroke(153,172,191);
+	// fill(225, 225, 225);
+	// textSize(35);
+	// text("Upgrades", windowWidth * 6.40 / 8, windowHeight * 1 / 20);
+
+
+	// // item shop text
+	// stroke(153,172,191);
+	// fill(225, 225, 225);
+	// textSize(35);
+	// text("Items", windowWidth * 6.65 / 8, windowHeight * 7 / 20*1.1);
 
 
 
 // cage elephant counter indicator
 	fill(255, 255, 255);
 	textSize(30);
-	text("Cage The Elephant: " + round(handler.CTE), 25, 40);
+	text("Hits: " + round(handler.CTE), 25, 40);
+
+	mainCTE.x = windowWidth/2;
+	mainCTE.y = windowHeight * 2.5/11 + 15;
+	mainCTE.d = windowHeight * 4/11;
+	mainCTE.Disp();
+
+	imdying.x = 0;
+	imdying.y = windowHeight * 6/11;
+	imdying.h = windowHeight * 1/11 *2/3;
+	imdying.w = windowWidth;
+	imdying.Disp();
+
+	ilovefrank.x = 0;
+	ilovefrank.y = windowHeight * 7/11;
+	ilovefrank.h = windowHeight * 1/11*2/3;
+	ilovefrank.w = windowWidth;
+	ilovefrank.Disp();
+
+	popoffqueen.x = 0;
+	popoffqueen.y = windowHeight * 8/11;
+	popoffqueen.h = windowHeight * 1/11*2/3;
+	popoffqueen.w = windowWidth;
+	popoffqueen.Disp();
+
+	bocastown.x = 0;
+	bocastown.y = windowHeight * 9/11;
+	bocastown.h = windowHeight * 1/11*2/3;
+	bocastown.w = windowWidth;
+	bocastown.Disp();
+
+
+	youneverknow.x = 0;
+	youneverknow.y = windowHeight * 10/11;
+	youneverknow.h = windowHeight * 1/11*2/3;
+	youneverknow.w = windowWidth;
+	youneverknow.Disp();
+
+	//Upgrades
+
+	imdyingBtn.x = 0;
+	imdyingBtn.y = windowHeight * (6/11+1/11*2/3);
+	imdyingBtn.h = windowHeight * 1/11*1/3;
+	imdyingBtn.w = windowWidth;
+	imdyingBtn.Disp();
+
+	ilovefrankBtn.x = 0;
+	ilovefrankBtn.y = windowHeight * (7/11+1/11*2/3);
+	ilovefrankBtn.h = windowHeight * 1/11*1/3;
+	ilovefrankBtn.w = windowWidth;
+	ilovefrankBtn.Disp();
+
+	popoffqueenBtn.x = 0;
+	popoffqueenBtn.y = windowHeight * (8/11+1/11*2/3);
+	popoffqueenBtn.h = windowHeight * 1/11*1/3;
+	popoffqueenBtn.w = windowWidth;
+	popoffqueenBtn.Disp();
+
+	bocastownBtn.x = 0;
+	bocastownBtn.y = windowHeight * (9/11+1/11*2/3);
+	bocastownBtn.h = windowHeight * 1/11*1/3;
+	bocastownBtn.w = windowWidth;
+	bocastownBtn.Disp();
+
+	youneverknowBtn.x = 0;
+	youneverknowBtn.y = windowHeight * (10/11+1/11*2/3);
+	youneverknowBtn.h = windowHeight * 1/11*1/3;
+	youneverknowBtn.w = windowWidth;
+	youneverknowBtn.Disp();
 
 	// logo image
 	imageMode(CENTER);
-	image(LogoImg, windowWidth * 1/2, windowWidth * 2.85/8, 500, 300);
+	image(LogoImg, windowWidth*1.25/8, windowWidth*7/14, windowWidth*2/8, windowHeight*1/14); //(img,x,y,wdith,height)
 
 
-	//band image
-	imageMode(CENTER);
-	image(PicImg , windowWidth *2.5/4, windowWidth* 1/8, 500, 250);
+	// //band image
+	// imageMode(CENTER);
+	// image(PicImg , windowWidth *2.5/4, windowWidth* 1/8, 500, 250);
 
 
 // method playground
@@ -507,7 +575,8 @@ class Upgrade1 {
 		text(this.name, this.x + 1 / 10 * this.w, this.y + 25);
 
 		textSize(15);
-		text("Price: " + (this.price), this.x + 1 / 10 * this.w, this.y + 40);
+		text(this.name + '(' + round(this.price) + ')', this.x + 10, this.h * 0.75);
+		// text(this.name + '(' + round(this.price) + ')', this.fieldX + 10, this.fieldY + this.h * 0.75);
 
 		textSize(20);
 		push();

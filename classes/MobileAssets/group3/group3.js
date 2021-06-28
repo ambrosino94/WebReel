@@ -63,7 +63,7 @@ function setup() {
 	imageMode(CENTER);
 	createCanvas(windowWidth, windowHeight);
   windowResized()
-	mainCookie = new cookieClicker(windowWidth/2,windowHeight/2,windowWidth/1.5,cookieImg);
+	mainCookie = new cookieClicker(windowWidth*1/4,windowHeight*2/5,0.8921*windowWidth*2/3,cookieImg);
 	// ^^^ creates a new object of an especific class
 
 
@@ -97,33 +97,33 @@ print(windowHeight*1/11*3/4);
 															100);                         //price
 	// UPGRADES =============================================================
 
-	ganache = new upgrade (windowWidth * 6/8,               //xpos
-												 60,                              //ypos
-												 windowWidth,               			//width
+	ganache = new upgrade (windowWidth*1/2,               //xpos
+												 windowHeight*3.2/12.35,                              //ypos
+												 windowWidth/2,               			//width
 												 50,                              //height
 												 "Ganache",                       //name
 												 1000,                            //price
 												 color(255, 173, 245,180));       //color
 
-	cookiedough = new upgrade (windowWidth * 6/8,           //xpos
-														 0,                           //ypos
-														 windowWidth * 1/8,           //width
+	cookiedough = new upgrade (windowWidth*1/2,           //xpos
+														 windowHeight*4.2/12.35,                           //ypos
+														 windowWidth/2,           //width
 														 50,                          //height
 														 "Cookie Dough",              //name
 														 2000,                        //price
 														 color(255, 173, 245,180));   //color
 
-	caramel = new upgrade (windowWidth * 7/8,              //xpos
-												 0,                              //ypos
-												 windowWidth * 1/8,              //width
+	caramel = new upgrade (windowWidth*1/2,              //xpos
+												 windowHeight*5.2/12.35,                              //ypos
+												 windowWidth/2,              //width
 												 50,                             //height
 												 "Caramel",                      //name
 												 3000,                           //price
 												 color(255, 173, 245,180));      //color
 
-	bonus = new upgrade (windowWidth * 7/8,              //xpos
-											 60,                             //ypos
-											 windowWidth * 1/8,              //width
+	bonus = new upgrade (windowWidth*1/2,              //xpos
+											 windowHeight*6.2/12.35,                             //ypos
+											 windowWidth/2,              //width
 											 50,                             //height
 											 "Bonus",                        //name
 											 3000,                           //price
@@ -163,7 +163,7 @@ function draw() {
 	stroke(40, 143, 118);
 	fill(255);
 	textSize(35);
-	text("Macarons: " + round(handler.cookies), 25, 40);
+	text("Macarons: " + round(handler.cookies), windowWidth*1/31, windowHeight*1/10);
 
 // PLACING IMAGE ============================================================
 
