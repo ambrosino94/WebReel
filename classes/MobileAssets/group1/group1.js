@@ -514,13 +514,14 @@ function touchStarted(){
 	mainPopcorn.d -= 20;
 }
 
-function touchEnded() {           //When mouse is released...
-  mainPopcorn.d += 20;               //Popcorn Image diameter increase
-}
+// function touchEnded() {           //When mouse is released...
+//   mainPopcorn.d += 20;               //Popcorn Image diameter increase
+// }
 
 //=====================================================================================================================
 function touchEnded() {            //When mouse is pressed...
 	mainPopcorn.Bite();                //...over the item, popcorns are gain
+	mainPopcorn.d += 20;
 	// mainPopcorn.d -= 20;               //...popcorn size decrease
 
 	//Item Buy---------------------------------------------------------------------------------------------------
