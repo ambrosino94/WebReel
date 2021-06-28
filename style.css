@@ -974,7 +974,7 @@ div.main-content{
   }
 
   .grid-container {
-  grid-template-columns: 0.1fr 0.9fr;
+  grid-template-columns: 0.1fr 0.96fr;
   grid-template-rows: 0.6fr 0.05fr 1fr 0.6fr;
   gap: 0px 0px;
   grid-template-areas:
@@ -1068,6 +1068,101 @@ div.main-content{
 
 }
 
+/* Large Movile+ */
+@media only screen and (max-width: 639px) {
+  :root{
+    --navlogo_height: 48px;
+    --base-sizing: 48px;
+    --base-sizing-md: 21px;
+    --base-sizing-sm: 21px;
+    --footerlogo_width: 78px;
+  }
+
+  .introvid{
+    display: none;
+  }
+
+  .introvid_tablet{
+    display: none;
+  }
+
+  .introvid_mobile{
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    height: 100vh;
+  }
+
+  .brk-btn{
+    font-size: 21.2px;
+    transform: translateX(-47.45%) translateY(-210%);
+  }
+
+  /* Footer */
+  /* ========================================================================== */
+
+  .grid-container {
+  grid-template-columns: 0.2fr 0.615fr;
+  grid-template-rows: 0.6fr 0.05fr 1fr 0.6fr;
+  }
+
+  .footerlogo {
+    width: var(--footerlogo_width);
+    height: 58px;
+    cursor: pointer;
+    margin-bottom: -11px;
+  }
+
+  .names ul li {
+    list-style: none;
+    line-height: 1.35;
+    margin-top: 18px;
+    font-size: 18.5px;
+  }
+
+  .mobile_break{
+    display: block;
+  }
+
+  .name_divider{
+    display: none;
+  }
+
+  h2{
+    font-size: 38px;
+    color: #fff;
+  }
+
+  .aboutLogo{
+    font-size: 57px;
+    display: contents;
+    color: #fff;
+  }
+
+  .aboutLogo
+  span{
+    color:#B452FF;
+  }
+
+  .main-content {
+    grid-area: main-content;
+    color: #fff;
+    line-height: 1.8;
+    font-size: 12px;
+  }
+
+  .main-content p{
+    margin-left: calc(var(--footerlogo_width) + 13px);
+    letter-spacing: 7px;
+  }
+
+  .copyright {
+    font-size: 15px;
+  }
+}
+
 /* Large Mobile */
 @media only screen and (max-width: 425px) {
   :root{
@@ -1104,7 +1199,7 @@ div.main-content{
   /* ========================================================================== */
 
   .grid-container {
-  grid-template-columns: 0.1fr 0.825fr;
+  grid-template-columns: 0.1fr 0.865fr;
   grid-template-rows: 0.6fr 0.05fr 1fr 0.6fr;
   }
 
@@ -1119,7 +1214,7 @@ div.main-content{
     list-style: none;
     line-height: 1.35;
     margin-top: 18px;
-    font-size: 20px;
+    font-size: 18.5px;
   }
 
   .mobile_break{
@@ -1175,7 +1270,7 @@ div.main-content{
 
   .brk-btn{
     font-size: 18.21px;
-    transform: translateX(-47.45%) translateY(-270%); 
+    transform: translateX(-47.45%) translateY(-270%);
   }
 
   /* Mobile menu Buttons */
@@ -1230,7 +1325,7 @@ div.main-content{
   }
 
   .names ul li {
-    font-size: 18px;
+    font-size: 17.1px;
   }
 
   .navlogo{

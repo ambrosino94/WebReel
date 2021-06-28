@@ -572,7 +572,7 @@ class Upgrade1 {
 
 		fill(this.textShade);
 		textSize(15);
-		text(this.name, this.x + 1 / 10 * this.w, this.y + 25);
+		// text(this.name, this.x + 1 / 10 * this.w, this.y + 25);
 
 		textSize(15);
 		text(this.name + '(' + round(this.price) + ')', this.x + 10, this.h * 0.75);
