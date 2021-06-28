@@ -246,13 +246,15 @@ function setup() {
 
 
 function draw() {
-	bgd(); //set 3-section background
+	windowResized();
+	bgd(); //set 3-secgtion background
+	// background(255,0,0);
 
 	//Cookie Counter indicator=================================================
 	fill(255, 255, 255);
 	textSize(windowWidth * 1/16);
 	text("Cookies:" + round(handler.cookies), 5, windowWidth * 0.05); //show amount of cookies
-	windowResized();
+
 	fill(255, 255, 255);
 	textSize(windowWidth * 1/14);
 	text("CPS: (╯°□°)╯︵ ┻━┻", 5, windowWidth * (1/16 + 0.05) + 15);
@@ -310,13 +312,13 @@ function draw() {
 	// image(Muln, windowWidth * 6 / 8 + 180, 500, 110, 97.2);
 	// image(Donny, windowWidth * 6 / 8 + 215, 605, 120, 95);
 	// image(Dosy, windowWidth * 6 / 8 + 285, 700, 190, 100);
-	push();
-	tint(255, 80);
+	// push();
+	// tint(255, 80);
 	// image(Fireworks, windowWidth * 1 / 2 - 25, windowHeight / 2 + 100, 550, 400)
 	// image(DisCastle, windowWidth * 1 / 2, windowHeight / 2 + 178, 470, 500)
-	image(Fireworks, windowWidth * 30 / 100 + 20, windowHeight * 68/100, windowWidth/2 , windowWidth/2)
+	// image(Fireworks, windowWidth * 30 / 100 + 20, windowHeight * 68/100, windowWidth/2 , windowWidth/2)
 	// image(DisCastle, windowWidth/4, windowHeight * 7.5/11 + 0, windowWidth/2, windowHeight * 7/11)
-	pop()
+	// pop()
 }
 
 
@@ -348,7 +350,8 @@ function bgd() {
 
 	//left column
 	noStroke();
-	fill(155, 218, 250);
+	// fill(155, 218, 250);
+	fill(100, 170, 200);
 	rect(0, 0, windowWidth, windowHeight);
 
 // 	//middle column
