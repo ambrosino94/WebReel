@@ -510,16 +510,16 @@ function windowResized() {
 //=====================================================================================================================
 
 
-// function touchStarted(){
-// 	// mainPopcorn.d -= 20;
-// }
+function touchStarted(){
+	mainPopcorn.d -= 20;
+}
 
-function mouseReleased() {           //When mouse is released...
-  // mainPopcorn.d += 20;               //Popcorn Image diameter increase
+function touchEnded() {           //When mouse is released...
+  mainPopcorn.d += 20;               //Popcorn Image diameter increase
 }
 
 //=====================================================================================================================
-function mouseReleased() {            //When mouse is pressed...
+function TouchEnded() {            //When mouse is pressed...
 	mainPopcorn.Bite();                //...over the item, popcorns are gain
 	// mainPopcorn.d -= 20;               //...popcorn size decrease
 

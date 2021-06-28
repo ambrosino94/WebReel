@@ -324,7 +324,7 @@ function draw() {
 }
 
 
-function mousePressed(){
+function touchEnded(){
 	mainCookie.Bite(); //button for main cookie
 	mainCookie.d = mainCookie.d + 10
 
@@ -385,8 +385,8 @@ function bgd() {
 // 	triangle(32, windowHeight * 10.5 / 12, windowWidth / 9, windowHeight * 10.5 / 12, windowWidth / 16, windowHeight * 9.5 / 12);
 }
 
-function mouseReleased() {
-mainCookie.d = mainCookie.d - 10
+function touchStarted() {
+	mainCookie.d = mainCookie.d - 10
 }
 
 

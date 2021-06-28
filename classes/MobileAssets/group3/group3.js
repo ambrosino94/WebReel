@@ -236,7 +236,7 @@ clickTxts.splice(0,round(clickTxts.length/2));
 	if(handler.cookies > 28){
 }
 
-function mouseClicked(){
+function touchEnded(){
 	mainCookie.Bite();
 
 	chefHarryBtn.Buy();
