@@ -9,7 +9,7 @@
 var mainCookie; //main cookie button
 var cookieImg; //image for cookie btn
 var handler = { //handles specific vars for the cookie
-	multiplier: 100000,
+	multiplier: 1,
 	cookies: 0,
 	cpTime: 1,
 	totalCPS: 0,

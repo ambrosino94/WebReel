@@ -230,9 +230,10 @@ function draw() {
 	}
 
 	if(clickTxts.length > 25){
-clickTxts.splice(0,round(clickTxts.length/2));
+		clickTxts.splice(0,round(clickTxts.length/2));
 	}
 }
+
 	if(handler.cookies > 28){
 }
 
@@ -372,7 +373,7 @@ class upgrade {
 		this.color = color; // handles the color of the upgrade (background)
 		this.price = price; // handles the price of the upgrade
 		this.textcolor = color; // handles the color of the text
-
+		this.bonus = false;
 	}
 	// METHODS =================================================
 
@@ -394,44 +395,59 @@ class upgrade {
 
 	Buy() {
 		// GANACHE
-		if ((mouseX > ganache.x && mouseX <= ganache.x + this.w) & (mouseY > ganache.y && mouseY <= ganache.y + ganache.h)) {
+		if ((mouseX > this.x && mouseX <= this.x + this.w) & (mouseY > this.y && mouseY <= this.y + this.h)) {
 			// ^^^ checks if the upgrade is in the x and y axis
 			if (handler.cookies >= this.price) { // checks if we have the amount of money to buy the item
 				handler.cookies -= this.price; // shows that everytime we buy the item, the amount of cookies decreases
-				ganache.price += 0.30 * this.price // increases the price of the item as you buy it
-				chefHarryBtn.price -= 0.15 * this.price;
+				this.price += 0.30 * this.price // increases the price of the item as you buy it
+
+				//Ganache
+				//Cookie Dough
+				//Caramel
+				switch(this.name){
+					case "Ganache":
+						chefHarryBtn.price -= 0.15 * chefHarryBtn.price;
+					break;
+					case "Cookie Dough":
+						wisk.price -= 0.15 * wisk.price;
+					break;
+					case "Caramel":
+						Bakery.price -= 0.15 * Bakery.price;
+					break;
+				}
 			}
 		}
 
-		// COOKIE DOUGH
-		if ((mouseX > cookiedough.x && mouseX <= cookiedough.x + this.w) & (mouseY > cookiedough.y && mouseY <= cookiedough.y + cookiedough.x)) {
-			// ^^^ checks if the upgrade is in the x and y axis
-			if (handler.cookies >= this.price) { // checks if we have the amount of money to buy the item
-				handler.cookies -= this.price; // shows that everytime we buy the item, the amount of cookies decreases
-				cookiedough.price += 0.30 * this.price // increases the price of the item as you buy it
-				wisk.price -= 0.15 * this.price; // increases the price of the item as you buy it
-			}
-		}
-
-		// CARAMEL
-		if ((mouseX > caramel.x && mouseX <= caramel.x + this.w) & (mouseY > caramel.y && mouseY <= caramel.y + caramel.h)) {
-			// ^^^ checks if the upgrade is in the x and y axis
-			if (handler.cookies >= this.price) { // checks if we have the amount of money to buy the item
-				handler.cookies -= this.price; // shows that everytime we buy the item, the amount of cookies decreases
-				caramel.price += 0.30 * this.price // increases the price of the item as you buy it
-				Bakery.price -= 0.15 * this.price; // increases the price of the item as you buy it
-			}
-		}
+		// // COOKIE DOUGH
+		// if ((mouseX > cookiedough.x && mouseX <= cookiedough.x + this.w) & (mouseY > cookiedough.y && mouseY <= cookiedough.y + cookiedough.x)) {
+		// 	// ^^^ checks if the upgrade is in the x and y axis
+		// 	if (handler.cookies >= this.price) { // checks if we have the amount of money to buy the item
+		// 		handler.cookies -= this.price; // shows that everytime we buy the item, the amount of cookies decreases
+		// 		cookiedough.price += 0.30 * this.price // increases the price of the item as you buy it
+		// 		wisk.price -= 0.15 * this.price; // increases the price of the item as you buy it
+		// 	}
+		// }
+		//
+		// // CARAMEL
+		// if ((mouseX > caramel.x && mouseX <= caramel.x + this.w) & (mouseY > caramel.y && mouseY <= caramel.y + caramel.h)) {
+		// 	// ^^^ checks if the upgrade is in the x and y axis
+		// 	if (handler.cookies >= this.price) { // checks if we have the amount of money to buy the item
+		// 		handler.cookies -= this.price; // shows that everytime we buy the item, the amount of cookies decreases
+		// 		caramel.price += 0.30 * this.price // increases the price of the item as you buy it
+		// 		Bakery.price -= 0.15 * this.price; // increases the price of the item as you buy it
+		// 	}
+		// }
 
 		// BONUS
 		if ((mouseX > bonus.x && mouseX <= bonus.x + this.w) & (mouseY > bonus.y && mouseY <= bonus.y + bonus.h)) {
 			// ^^^ checks if the upgrade is in the x and y axis
-			if (handler.cookies >= this.price) { // checks if we have the amount of money to buy the item
+			if ((handler.cookies >= this.price) && (this.bonus == false)) { // checks if we have the amount of money to buy the item
 				handler.cookies -= this.price; // shows that everytime we buy the item, the amount of cookies decreases
-				bonus.price -= this.price; // show that everytime we buy the upgrade the price increases
-				chefHarryBtn.price -= 0.15 * this.price; // increases the price of the item as you buy it
-				wisk.price -= 0.15 * this.price; // increases the price of the item as you buy it
-				Bakery.price -= 0.15 * this.price; // increases the price of the item as you buy it
+				bonus.price = "unavailable"; // show that everytime we buy the upgrade the price increases
+				chefHarryBtn.price -= 0.15 * chefHarryBtn.price; // increases the price of the item as you buy it
+				wisk.price -= 0.15 * wisk.price; // increases the price of the item as you buy it
+				Bakery.price -= 0.15 * Bakery.price; // increases the price of the item as you buy it
+				this.bonus = true;
 			}
 		}
 	}

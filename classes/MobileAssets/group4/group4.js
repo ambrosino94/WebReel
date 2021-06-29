@@ -12,7 +12,7 @@ var heightMultiplier = 0.935;
 
 var handler = {
 	multiplier: 1, // Teacher hope you don't change this! Play the game until you buy everything, Good luck!
-	StrawBerryCake: 1000000,
+	StrawBerryCake: 0,
 	cpTime: 1,
 	totalCPS: 0,
 	activeItems: 0,
