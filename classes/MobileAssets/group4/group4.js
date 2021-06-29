@@ -479,7 +479,7 @@ Disp() {
   // textFont('Comic Sans Ms');
   // text("Price:" + round(this.price), this.fieldX + 0.25 / 5 * this.w, this.fieldY + 45);
 
-  textSize(19);
+  textSize(this.h*0.8);
   push();
   textAlign(RIGHT);
   text(this.counterU, this.fieldX, this.fieldY+ this.h/8, this.w - 12);
