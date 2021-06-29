@@ -46,7 +46,7 @@ var heightMultiplier = 0.935;
 
 // cross elements GUI object handler........................................................
 var handler = { multiplier: 1,     //this handles the global multiplier
-							  popcorns: 1000000,       //this handles the popcorn counter
+							  popcorns: 0,       //this handles the popcorn counter
 							  cpTime: 1,         //this handles the popcorns per second time
 							  textTime: 2000,    //this handles the text animation time
 							  totalCPS: 0,       //this handles the total popcorns per second counter

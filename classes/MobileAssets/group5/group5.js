@@ -23,7 +23,7 @@ var heightMultiplier = 0.935;
 // cross elements gui object handler --------------
 
 var handler = {
-	multiplier: 1000000,       // global muultiplier
+	multiplier: 1,       // global muultiplier
 	CTE: 0,         //cookie counter
 	cpTime: 1,            //cookies per second
 	txtTime: 2000,        //the text animation time
