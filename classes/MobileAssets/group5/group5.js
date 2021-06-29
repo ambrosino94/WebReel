@@ -23,7 +23,7 @@ var heightMultiplier = 0.935;
 // cross elements gui object handler --------------
 
 var handler = {
-	multiplier: 1,       // global muultiplier
+	multiplier: 1000000,       // global muultiplier
 	CTE: 0,         //cookie counter
 	cpTime: 1,            //cookies per second
 	txtTime: 2000,        //the text animation time
@@ -107,7 +107,7 @@ function setup() {
 
 
 	//upgrades=================================================================
-	imdyingBtn = new Upgrade1				(0,             						    //xPos
+	imdyingBtn = new Upgrade				(0,             						    //xPos
 											            windowHeight*11/14,             //yPos
                                   windowWidth*1/2,				        //width
 											            windowHeight*1/14,              //height
@@ -115,7 +115,7 @@ function setup() {
 										    	        60,                             //price
 											            color(145, 187, 198, 150));     //shade
 
-ilovefrankBtn = new Upgrade2      (windowWidth/2,          			  //xPos
+ilovefrankBtn = new Upgrade      (windowWidth/2,          			  //xPos
 											            windowHeight*11/14,             //yPos
                                   windowWidth*1/2,				        //width
 											            windowHeight*1/14,              //height
@@ -123,7 +123,7 @@ ilovefrankBtn = new Upgrade2      (windowWidth/2,          			  //xPos
 										    	        150,                            //price
 											            color(224, 190, 247, 150));     //shade
 
-popoffqueenBtn = new Upgrade3(0,          											  //xPos
+popoffqueenBtn = new Upgrade(0,          											  //xPos
 											            windowHeight*12/14,             //yPos
                                   windowWidth*1/2,				        //width
 											            windowHeight*1/14,              //height
@@ -131,7 +131,7 @@ popoffqueenBtn = new Upgrade3(0,          											  //xPos
 										    	        400,                            //price
 											            color(123, 116, 179, 150));     //shade
 
-bocastownBtn = new Upgrade4   (0,              									  //xPos
+bocastownBtn = new Upgrade   (0,              									  //xPos
 											            windowHeight*13/14,             //yPos
                                   windowWidth,				     		    //width
 											            windowHeight*1/14,              //height
@@ -139,7 +139,7 @@ bocastownBtn = new Upgrade4   (0,              									  //xPos
 										    	        500,                            //price
 											            color(158, 235, 179, 150));     //shade
 
-youneverknowBtn = new Upgrade5 (windowWidth/2,           					//xPos
+youneverknowBtn = new Upgrade (windowWidth/2,           					//xPos
 											            windowHeight*12/14,      	      //yPos
                                   windowWidth*1/2,				        //width
 											            windowHeight*1/14,              //height
@@ -191,8 +191,80 @@ function draw() {
 	textSize(30);
 	text("Hits: " + round(handler.CTE), 25, 40);
 
+
+	// first item
+	if (handler.CTE < imdying.price) {
+		imdying.shade = color(145, 187, 198, 100);
+	} else {
+		imdying.shade = color(145, 187, 198, 225);
+	}
+
+	// second item
+	if (handler.CTE < ilovefrank.price) {
+		ilovefrank.shade = color(224, 190, 247, 100);
+	} else {
+		ilovefrank.shade = color(224, 190, 247, 225);
+	}
+
+	// third item
+	if (handler.CTE < popoffqueen.price) {
+		popoffqueen.shade = color(123, 116, 179, 100);
+	} else {
+		popoffqueen.shade = color(123, 116, 179, 225);
+	}
+
+	// fourth item
+	if (handler.CTE < bocastown.price) {
+		bocastown.shade = color(158, 235, 179, 100);
+	} else {
+		bocastown.shade = color(158, 235, 179, 225);
+	}
+
+	// fifth item
+	if (handler.CTE < youneverknow.price) {
+		youneverknow.shade = color(229, 229, 131, 100);
+	} else {
+		youneverknow.shade = color(229, 229, 131, 225);
+	}
+
+
+	// the display of each upgrade
+	if (handler.CTE < imdyingBtn.price) {
+		imdyingBtn.shade = color(145, 187, 198, 50);
+	} else {
+		imdyingBtn.shade = color(145, 187, 198, 175);
+	}
+
+
+	if (handler.CTE < ilovefrankBtn.price) {
+		ilovefrankBtn.shade = color(224, 190, 247, 50);
+	} else {
+		ilovefrankBtn.shade = color(224, 190, 247, 175);
+	}
+
+	if (handler.CTE < popoffqueenBtn.price) {
+		popoffqueenBtn.shade = color(123, 116, 179, 50);
+	} else {
+		popoffqueenBtn.shade = color(123, 116, 179, 175);
+	}
+
+
+	if (handler.CTE < bocastownBtn.price) {
+		bocastownBtn.shade = color(158, 235, 179, 50);
+	} else {
+		bocastownBtn.shade = color(158, 235, 179, 175);
+	}
+
+
+	if (handler.CTE < youneverknowBtn.price) {
+		youneverknow.shade = color(229, 229, 131, 50);
+	} else {
+		youneverknowBtn.shade = color(229, 229, 131, 175);
+	}
+
+
 	mainCTE.x = windowWidth/2;
-	mainCTE.y = windowHeight * 2.5/11 + 15;
+	mainCTE.y = windowHeight * 3/11 + 15;
 	mainCTE.d = windowHeight * 4/11;
 	mainCTE.Disp();
 
@@ -259,9 +331,7 @@ function draw() {
 	youneverknowBtn.w = windowWidth;
 	youneverknowBtn.Disp();
 
-	// logo image
-	imageMode(CENTER);
-	image(LogoImg, windowWidth*1.25/8, windowWidth*7/14, windowWidth*2/8, windowHeight*1/14); //(img,x,y,wdith,height)
+
 
 
 	// //band image
@@ -280,123 +350,18 @@ function draw() {
 		clickTxts.splice(0, clickTxts.length / 2); // this flushes array after the specific amount of elements
 	}
 
+
+	// logo image
+	imageMode(CENTER);
+	image(LogoImg, windowWidth*1/4, windowHeight*5/11, windowWidth*1/2, windowHeight*2/11); //(img,x,y,wdith,height)
+
 	// the display of each item --------------
 
-	// first item
-	imdying.Disp();
-	if (handler.houses < imdying.price) {
-		imdying.shade = color(145, 187, 198, 100);
-
-	} else {
-
-		imdying.shade = color(145, 187, 198, 225);
-	}
-
-	// second item
-	ilovefrank.Disp();
-
-	if (handler.CTE < ilovefrank.price) {
-		ilovefrank.shade = color(224, 190, 247, 100);
-
-	} else {
-
-		ilovefrank.shade = color(224, 190, 247, 225);
-	}
-
-	// third item
-	popoffqueen.Disp();
-
-	if (handler.CTE < popoffqueen.price) {
-		popoffqueen.shade = color(123, 116, 179, 100);
-
-	} else {
-
-		popoffqueen.shade = color(123, 116, 179, 225);
-	}
-
-	// fourth item
-	bocastown.Disp();
-
-	if (handler.CTE < bocastown.price) {
-		bocastown.shade = color(158, 235, 179, 100);
-
-	} else {
-
-		bocastown.shade = color(158, 235, 179, 225);
-	}
-
-	// fifth item
-	youneverknow.Disp();
-
-	if (handler.CTE < youneverknow.price) {
-		youneverknow.shade = color(229, 229, 131, 100);
-
-	} else {
-
-		youneverknow.shade = color(229, 229, 131, 225);
-
-	}
-
-
-// the display of each upgrade
-
-imdyingBtn.Disp();
-
-	if (handler.CTE < imdyingBtn.price) {
-		imdyingBtn.shade = color(145, 187, 198, 100);
-
-	} else {
-
-		imdyingBtn.shade = color(145, 187, 198, 225);
-	}
-
-
-ilovefrankBtn.Disp();
-
-	if (handler.CTE < ilovefrankBtn.price) {
-		ilovefrankBtn.shade = color(224, 190, 247, 100);
-
-	} else {
-
-		ilovefrankBtn.shade = color(224, 190, 247, 225);
-	}
-
-popoffqueenBtn.Disp();
-
-	if (handler.CTE < popoffqueenBtn.price) {
-		popoffqueenBtn.shade = color(123, 116, 179, 100);
-
-	} else {
-
-		popoffqueenBtn.shade = color(123, 116, 179, 225);
-	}
-
-
-bocastownBtn.Disp();
-
-	if (handler.CTE < bocastownBtn.price) {
-		bocastownBtn.shade = color(158, 235, 179, 100);
-
-	} else {
-
-		bocastownBtn.shade = color(158, 235, 179, 225);
-	}
-
-youneverknowBtn.Disp();
-
-	if (handler.CTE < youneverknowBtn.price) {
-		youneverknow.shade = color(229, 229, 131, 100);
-
-	} else {
-
-		youneverknowBtn.shade = color(229, 229, 131, 225);
-
-	}
 
 
 }
 
-function mouseClicked() {
+function touchEnded() {
 
 	mainCTE.Bite();
 
@@ -496,17 +461,17 @@ class itemBtn {
 		rect(this.x, this.y, this.w, this.h);
 
 		fill(this.textShade);
-		textSize(20);
-		text(this.name, this.x + 1 / 6 * this.w, this.y + 20);
+		textSize(this.h * 2/3 * 0.85);
+		text(this.name, 5, this.y +  this.h * 2/3 * 0.85);
 
-		textSize(10);
-		text("Price: " + this.price, this.x + 1 / 6 * this.w, this.y + 35);
+		textSize(this.h * 1/3 * 0.85);
+		text("Price: " + round(this.price), 5, this.y + this.h - 4 );
 
-		textSize(30);
+		textSize(this.h );
 
 		push();
 		textAlign(RIGHT);
-		text(this.counter, this.x + this.w - 5, this.y + 35);
+		text(this.counter, this.x, this.y + this.h/16, this.w);
 		pop();
 
 		if (this.counter > 0) {
@@ -543,7 +508,7 @@ class itemBtn {
 	}
 }
 
-class Upgrade1 {
+class Upgrade {
 
 	// data - - - - - - - - - - - - -
 	constructor(xPos, yPos, w, h, name, price, shade) {
@@ -571,17 +536,13 @@ class Upgrade1 {
 		rect(this.x, this.y, this.w, this.h);
 
 		fill(this.textShade);
-		textSize(15);
-		text(this.name, this.x + 1 / 10 * this.w, this.y + 25);
+		textSize(this.h * 0.95);
+		text(this.name + '(' + round(this.price) + ')', 5, this.y + this.h * 0.85);
 
-		textSize(15);
-		text(this.name + '(' + round(this.price) + ')', this.x + 10, this.h * 0.75);
-		// text(this.name + '(' + round(this.price) + ')', this.fieldX + 10, this.fieldY + this.h * 0.75);
-
-		textSize(20);
+		textSize(this.h*0.95);
 		push();
 		textAlign(RIGHT);
-		text(this.counter, this.x + this.w - 5, this.y + 35);
+		text(this.counter, this.x, this.y + this.h/16, this.w);
 		pop();
 	}
 
@@ -598,219 +559,219 @@ class Upgrade1 {
 	}
 }
 
-class Upgrade2 {
-
-	// data=================================================
-	constructor(xPos, yPos, w, h, name, price, shade) {
-		this.x = xPos;
-		this.y = yPos;
-		this.w = w;
-		this.h = h;
-		this.name = name;
-		this.price = price;
-		this.alpha = 0;
-		this.shadeAlpha = 0;
-		this.textShadeAlpha = 0;
-		this.shade = shade;
-		this.textShade = color(0);
-		this.counter = 0;
-
-	}
-
-	// methods============================================
-
-	Disp() {
-		noStroke();
-
-		fill(this.shade);
-		rect(this.x, this.y, this.w, this.h);
-
-		fill(this.textShade);
-		textSize(15);
-		text(this.name, this.x + 1 / 10 * this.w, this.y + 20);
-
-		textSize(15);
-		text("Price: " + (this.price), this.x + 1 / 10 * this.w, this.y + 40);
-
-		textSize(20);
-		push();
-		textAlign(RIGHT);
-		text(this.counter, this.x + this.w - 25, this.y + 30);
-		pop();
-	}
-
-	UpgradeBuy() {
-		if ((mouseX > this.x && mouseX <= this.x + this.w) & (mouseY > this.y && mouseY <= this.y + this.h)) {
-
-			if (handler.CTE >= this.price) {
-				handler.CTE -= this.price;
-				ilovefrank.cps = ilovefrank.cps * 3;
-				this.price += 3 * this.price;
-				this.counter += 1
-			}
-		}
-	}
-}
-
-class Upgrade3 {
-
-	// data - - - - - - - - - - - - -
-	constructor(xPos, yPos, w, h, name, price, shade) {
-		this.x = xPos;
-		this.y = yPos;
-		this.w = w;
-		this.h = h;
-		this.name = name;
-		this.price = price;
-		this.alpha = 0;
-		this.shadeAlpha = 0;
-		this.textShadeAlpha = 0;
-		this.shade = shade;
-		this.textShade = color(0);
-		this.counter = 0;
-
-	}
-
-	// methods - - - - - - - - - - -
-
-	Disp() {
-		noStroke();
-
-		fill(this.shade);
-		rect(this.x, this.y, this.w, this.h);
-
-		fill(this.textShade);
-		textSize(15);
-		text(this.name, this.x + 1 / 10 * this.w, this.y + 25);
-
-		textSize(15);
-		text("Price: " + (this.price), this.x + 1 / 10 * this.w, this.y + 40);
-
-		textSize(20);
-		push();
-		textAlign(RIGHT);
-		text(this.counter, this.x + this.w - 5, this.y + 35);
-		pop();
-	}
-
-	UpgradeBuy() {
-		if ((mouseX > this.x && mouseX <= this.x + this.w) & (mouseY > this.y && mouseY <= this.y + this.h)) {
-
-			if (handler.CTE >= this.price) {
-				handler.CTE -= this.price;
-				popoffqueen.cps = popoffqueen.cps * 5;
-				this.price += 4 * this.price;
-				this.counter += 1
-			}
-		}
-	}
-}
-
-class Upgrade4 {
-
-	// data =========================================
-	constructor(xPos, yPos, w, h, name, price, shade) {
-		this.x = xPos;
-		this.y = yPos;
-		this.w = w;
-		this.h = h;
-		this.name = name;
-		this.price = price;
-		this.alpha = 0;
-		this.shadeAlpha = 0;
-		this.textShadeAlpha = 0;
-		this.shade = shade;
-		this.textShade = color(0);
-		this.counter = 0;
-
-	}
-
-	// methods ==================================
-
-	Disp() {
-		noStroke();
-
-		fill(this.shade);
-		rect(this.x, this.y, this.w, this.h);
-
-		fill(this.textShade);
-		textSize(15);
-		text(this.name, this.x + 1 / 10 * this.w, this.y + 25);
-
-		textSize(15);
-		text("Price: " + (this.price), this.x + 1 / 10 * this.w, this.y + 45);
-
-		textSize(20);
-		push();
-		textAlign(RIGHT);
-		text(this.counter, this.x + this.w - 5, this.y + 20);
-		pop();
-	}
-
-	UpgradeBuy() {
-		if ((mouseX > this.x && mouseX <= this.x + this.w) & (mouseY > this.y && mouseY <= this.y + this.h)) {
-
-			if (handler.CTE >= this.price) {
-				handler.CTE-= this.price;
-				bocastown.cps = bocastown.cps * 4;
-				this.price += 2 * this.price;
-				this.counter += 1
-			}
-		}
-	}
-}
-
-
-class Upgrade5 {
-
-	// data =============================================
-	constructor(xPos, yPos, w, h, name, price, shade) {
-		this.x = xPos;
-		this.y = yPos;
-		this.w = w;
-		this.h = h;
-		this.name = name;
-		this.price = price;
-		this.alpha = 0;
-		this.shadeAlpha = 0;
-		this.textShadeAlpha = 0;
-		this.shade = shade;
-		this.textShade = color(0);
-		this.counter = 0;
-
-	}
-
-	// methods ====================================
-
-	Disp() {
-		noStroke();
-
-		fill(this.shade);
-		rect(this.x, this.y, this.w, this.h);
-
-		fill(this.textShade);
-		textSize(15);
-		text(this.name, this.x + 1 / 5 * this.w, this.y + 25);
-
-		textSize(15);
-		text("Price: " + (this.price), this.x + 1 / 5 * this.w, this.y + 40);
-
-		textSize(20);
-		push();
-		textAlign(RIGHT);
-		text(this.counter, this.x + this.w - 25, this.y + 25);
-		pop();
-	}
-
-	UpgradeBuy() {
-		if ((mouseX > this.x && mouseX <= this.x + this.w) & (mouseY > this.y && mouseY <= this.y + this.h)) {
-
-			if (handler.CTE >= this.price) {
-				handler.CTE -= this.price;
-				youneverknow.cps = youneverknow.cps * 5;
-				this.price += 4 * this.price;
-				this.counter += 1
-			}
-		}
-	}
-}
+// class Upgrade2 {
+//
+// 	// data=================================================
+// 	constructor(xPos, yPos, w, h, name, price, shade) {
+// 		this.x = xPos;
+// 		this.y = yPos;
+// 		this.w = w;
+// 		this.h = h;
+// 		this.name = name;
+// 		this.price = price;
+// 		this.alpha = 0;
+// 		this.shadeAlpha = 0;
+// 		this.textShadeAlpha = 0;
+// 		this.shade = shade;
+// 		this.textShade = color(0);
+// 		this.counter = 0;
+//
+// 	}
+//
+// 	// methods============================================
+//
+// 	Disp() {
+// 		noStroke();
+//
+// 		fill(this.shade);
+// 		rect(this.x, this.y, this.w, this.h);
+//
+// 		fill(this.textShade);
+// 		textSize(this.h * 0.95);
+// 		text(this.name, 5, this.y + 20);
+//
+// 		textSize(15);
+// 		text("Price: " + (this.price), this.x + 1 / 10 * this.w, this.y + 40);
+//
+// 		textSize(20);
+// 		push();
+// 		textAlign(RIGHT);
+// 		text(this.counter, this.x + this.w - 25, this.y + 30);
+// 		pop();
+// 	}
+//
+// 	UpgradeBuy() {
+// 		if ((mouseX > this.x && mouseX <= this.x + this.w) & (mouseY > this.y && mouseY <= this.y + this.h)) {
+//
+// 			if (handler.CTE >= this.price) {
+// 				handler.CTE -= this.price;
+// 				ilovefrank.cps = ilovefrank.cps * 3;
+// 				this.price += 3 * this.price;
+// 				this.counter += 1
+// 			}
+// 		}
+// 	}
+// }
+//
+// class Upgrade3 {
+//
+// 	// data - - - - - - - - - - - - -
+// 	constructor(xPos, yPos, w, h, name, price, shade) {
+// 		this.x = xPos;
+// 		this.y = yPos;
+// 		this.w = w;
+// 		this.h = h;
+// 		this.name = name;
+// 		this.price = price;
+// 		this.alpha = 0;
+// 		this.shadeAlpha = 0;
+// 		this.textShadeAlpha = 0;
+// 		this.shade = shade;
+// 		this.textShade = color(0);
+// 		this.counter = 0;
+//
+// 	}
+//
+// 	// methods - - - - - - - - - - -
+//
+// 	Disp() {
+// 		noStroke();
+//
+// 		fill(this.shade);
+// 		rect(this.x, this.y, this.w, this.h);
+//
+// 		fill(this.textShade);
+// 		textSize(15);
+// 		text(this.name, this.x + 1 / 10 * this.w, this.y + 25);
+//
+// 		textSize(15);
+// 		text("Price: " + (this.price), this.x + 1 / 10 * this.w, this.y + 40);
+//
+// 		textSize(20);
+// 		push();
+// 		textAlign(RIGHT);
+// 		text(this.counter, this.x + this.w - 5, this.y + 35);
+// 		pop();
+// 	}
+//
+// 	UpgradeBuy() {
+// 		if ((mouseX > this.x && mouseX <= this.x + this.w) & (mouseY > this.y && mouseY <= this.y + this.h)) {
+//
+// 			if (handler.CTE >= this.price) {
+// 				handler.CTE -= this.price;
+// 				popoffqueen.cps = popoffqueen.cps * 5;
+// 				this.price += 4 * this.price;
+// 				this.counter += 1
+// 			}
+// 		}
+// 	}
+// }
+//
+// class Upgrade4 {
+//
+// 	// data =========================================
+// 	constructor(xPos, yPos, w, h, name, price, shade) {
+// 		this.x = xPos;
+// 		this.y = yPos;
+// 		this.w = w;
+// 		this.h = h;
+// 		this.name = name;
+// 		this.price = price;
+// 		this.alpha = 0;
+// 		this.shadeAlpha = 0;
+// 		this.textShadeAlpha = 0;
+// 		this.shade = shade;
+// 		this.textShade = color(0);
+// 		this.counter = 0;
+//
+// 	}
+//
+// 	// methods ==================================
+//
+// 	Disp() {
+// 		noStroke();
+//
+// 		fill(this.shade);
+// 		rect(this.x, this.y, this.w, this.h);
+//
+// 		fill(this.textShade);
+// 		textSize(15);
+// 		text(this.name, this.x + 1 / 10 * this.w, this.y + 25);
+//
+// 		textSize(15);
+// 		text("Price: " + (this.price), this.x + 1 / 10 * this.w, this.y + 45);
+//
+// 		textSize(20);
+// 		push();
+// 		textAlign(RIGHT);
+// 		text(this.counter, this.x + this.w - 5, this.y + 20);
+// 		pop();
+// 	}
+//
+// 	UpgradeBuy() {
+// 		if ((mouseX > this.x && mouseX <= this.x + this.w) & (mouseY > this.y && mouseY <= this.y + this.h)) {
+//
+// 			if (handler.CTE >= this.price) {
+// 				handler.CTE-= this.price;
+// 				bocastown.cps = bocastown.cps * 4;
+// 				this.price += 2 * this.price;
+// 				this.counter += 1
+// 			}
+// 		}
+// 	}
+// }
+//
+//
+// class Upgrade5 {
+//
+// 	// data =============================================
+// 	constructor(xPos, yPos, w, h, name, price, shade) {
+// 		this.x = xPos;
+// 		this.y = yPos;
+// 		this.w = w;
+// 		this.h = h;
+// 		this.name = name;
+// 		this.price = price;
+// 		this.alpha = 0;
+// 		this.shadeAlpha = 0;
+// 		this.textShadeAlpha = 0;
+// 		this.shade = shade;
+// 		this.textShade = color(0);
+// 		this.counter = 0;
+//
+// 	}
+//
+// 	// methods ====================================
+//
+// 	Disp() {
+// 		noStroke();
+//
+// 		fill(this.shade);
+// 		rect(this.x, this.y, this.w, this.h);
+//
+// 		fill(this.textShade);
+// 		textSize(15);
+// 		text(this.name, this.x + 1 / 5 * this.w, this.y + 25);
+//
+// 		textSize(15);
+// 		text("Price: " + (this.price), this.x + 1 / 5 * this.w, this.y + 40);
+//
+// 		textSize(20);
+// 		push();
+// 		textAlign(RIGHT);
+// 		text(this.counter, this.x + this.w - 25, this.y + 25);
+// 		pop();
+// 	}
+//
+// 	UpgradeBuy() {
+// 		if ((mouseX > this.x && mouseX <= this.x + this.w) & (mouseY > this.y && mouseY <= this.y + this.h)) {
+//
+// 			if (handler.CTE >= this.price) {
+// 				handler.CTE -= this.price;
+// 				youneverknow.cps = youneverknow.cps * 5;
+// 				this.price += 4 * this.price;
+// 				this.counter += 1
+// 			}
+// 		}
+// 	}
+// }
