@@ -1,6 +1,6 @@
 //DEVELOPMENT PROJECT - FINAL PROJECT
 //POPCORN CLICKER - NETFLIX THEME
-//Members: Erika Zou & Samuel Pinto 
+//Members: Erika Zou & Samuel Pinto
 //Group: 10-3A
 //November 20, 2020
 //===============================================VARIABLES DECLARATION===================================================//
@@ -39,7 +39,7 @@ var upgrade5Shade;
 
 // cross elements GUI object handler........................................................
 var handler = { multiplier: 1,     //this handles the global multiplier
-							  popcorns: 1000000,       //this handles the popcorn counter
+							  popcorns: 0,       //this handles the popcorn counter
 							  cpTime: 1,         //this handles the popcorns per second time
 							  textTime: 2000,    //this handles the text animation time
 							  totalCPS: 0,       //this handles the total popcorns per second counter
