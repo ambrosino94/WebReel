@@ -272,7 +272,7 @@ function draw() {
 		clickTxts.splice(0, round(clickTxts.length/2));
 	}
 }
-function mouseClicked() {
+function touchEnded() {
 	// print("current cps: " + cursorBtn.cps);
 
 	mainStrawBerryCake.Bite();
